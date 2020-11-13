@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import QAComponent from './QAComponents/QAComponent.jsx';
 
 export default class App extends Component {
   constructor(props) {
@@ -10,7 +11,13 @@ export default class App extends Component {
 
   render() {
     return (
+
+      <div>
       <h1>Hello World</h1>
+
+        <QAComponent/>
+      </div>
+
     )
   }
 }
