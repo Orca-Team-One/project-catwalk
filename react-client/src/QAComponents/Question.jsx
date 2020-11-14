@@ -1,19 +1,9 @@
-import React, { Component } from 'react'\
-import HelpfulButton from './HelpfulButton.jsx';
-import AddAnswerButton from './AddAnswerButton.jsx';
-import LoadMoreAnswers from './LoadMoreAnswers.jsx';
-import AnswerList from './AnswerList.jsx';
+import React from 'react'
 
+export default function Question() {
+  return (
+    <div>
 
-export default class Question extends Component {
-  render() {
-    return (
-      <>
-      <div>
-
-
-      </div>
-      </>
-    )
-  }
+    </div>
+  )
 }

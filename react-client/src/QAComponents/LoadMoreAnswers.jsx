@@ -4,7 +4,7 @@ export default function LoadMoreAnswers() {
   return (
     <div>
       <button>
-        Load More Answers
+        Load More Answer
       </button>
     </div>
   )
