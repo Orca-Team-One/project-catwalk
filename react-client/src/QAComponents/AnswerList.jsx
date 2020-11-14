@@ -4,7 +4,7 @@ export default class AnswerList extends Component {
   render() {
     return (
       <div>
-
+        An Answer
       </div>
     )
   }
