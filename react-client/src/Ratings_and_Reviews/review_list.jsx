@@ -1,3 +1,4 @@
+import { data } from 'jquery'
 import React, { Component } from 'react'
 import Review_item from './Review_item.jsx'
 
@@ -8,7 +9,10 @@ export class Review_list extends Component {
         return (
             <div>
                 This is the review List
-                <Review_item/>
+                {this.props.data.results.map((review) => (
+                    <Review_item review = {review}/>
+                ))
+            }
             </div>
         )
     }
