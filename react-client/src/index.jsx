@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ProductView from './ProductOverview/ProductView.jsx';
 import QAComponent from './QAComponents/QAComponent.jsx';
 
 export default class App extends Component {
@@ -14,7 +15,7 @@ export default class App extends Component {
 
       <div>
       <h1>Hello World</h1>
-
+        <ProductView />
         <QAComponent/>
       </div>
 
