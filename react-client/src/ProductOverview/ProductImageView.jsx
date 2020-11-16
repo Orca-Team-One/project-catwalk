@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductImageThumbnails from './ProductImageThumbnails';
+import ProductImageThumbnails from './ProductImageThumbnails.jsx';
 
 function ProductImageView() {
   return (
