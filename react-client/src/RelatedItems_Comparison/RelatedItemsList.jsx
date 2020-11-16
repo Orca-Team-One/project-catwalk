@@ -5,6 +5,7 @@ export default class RelatedItemsList extends Component {
   render() {
     return (
       <div>
+        Related Items!
         <RelatedItemsEntry/>
       </div>
     )
