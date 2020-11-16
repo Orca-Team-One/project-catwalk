@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 
-export class review_item extends Component {
+export class Review_item extends Component {
    
-
     render() {
         return (
             <div>
-                
+                Review Item
             </div>
         )
     }
 }
 
-export default review_item
+export default Review_item
