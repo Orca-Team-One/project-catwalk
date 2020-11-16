@@ -8,7 +8,7 @@ export class Review_list extends Component {
     render() {
         return (
             <div>
-                This is the review List
+                This is the review List:
                 {this.props.data.results.map((review) => (
                     <Review_item review = {review}/>
                 ))

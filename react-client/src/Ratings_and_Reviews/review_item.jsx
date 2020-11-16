@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 
+// TODO flush out review item
 export class Review_item extends Component {
    
     render() {
         return (
             <div>
-                Review Item
+                {this.props.review.body}
             </div>
         )
     }
