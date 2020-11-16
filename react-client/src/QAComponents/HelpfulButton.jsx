@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function HelpfulButton() {
-  return (
-    <div>
+export default class HelpfulButton extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+
+      const count = this.props.helpfulCount || 0;
+    return (
+      <div>
       <button>
-        Helpful?
+        Helpful? Yes ({count})
       </button>
-    </div>
-  )
+      </div>
+    )
+  }
 }
+

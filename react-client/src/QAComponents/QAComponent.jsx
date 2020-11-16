@@ -8,11 +8,13 @@ export default class QAComponent extends Component {
   render() {
     return (
       <>
-      <div class="bg-gray-100 p-8">
-       <p class="mt-6 text-2xl text-gray-900">QandAComponent</p>
+      <div>
+       <p>QandAComponent</p>
        <QASearchBar/>
-          <QuestionList/>
+        <QuestionList/>
+      <p>
       <MoreAnsweredQuestions/> <AddAQuestion/>
+        </p>
       </div>
       </>
     )
