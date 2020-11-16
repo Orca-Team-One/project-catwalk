@@ -4,11 +4,20 @@ import HelpfulButton from './HelpfulButton.jsx';
 import ReportButton from './ReportButton.jsx';
 
 export default class Answer extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+    // console.log('Answer props;', this.props.answer);
+    // const {answer} = this.props.answer;
     return (
       <div>
-        This is the answer
-        <UserInfo/> <HelpfulButton/> <ReportButton/>
+       <b>
+       A:
+        </b>
+         {this.props.answer.body}
+
+          <UserInfo user={this.props.answer.answerer_name}/> <HelpfulButton helpfulCount={this.props.answer.helpfulness}/> <ReportButton/>
       </div>
     )
   }

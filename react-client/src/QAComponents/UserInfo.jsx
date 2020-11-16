@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function UserInfo() {
-  return (
-    <div>
-      Userinfo
-    </div>
-  )
+export default class UserInfo extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        {this.props.user}
+      </div>
+    )
+  }
 }

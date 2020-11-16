@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import Question from './Question.jsx'
+import Question from './Question.jsx';
+import exampleQAData from './QADummyData.js';
 
 export default class QuestionList extends Component {
-// const qArray = ['this is question 1', 'this is question 2', 'this is question 3']
+
   render() {
+    var qArray = exampleQAData[0].results;
+    const questionList = qArray.map((question) =>
+        <Question question={question} key={question.id}/>
+    );
+
     return (
-      <div>
-        <Question/>
-        <Question/>
-      </div>
+      <>
+      {questionList}
+      </>
     )
   }
 }
