@@ -13,6 +13,7 @@ export class Ratings_and_reviews extends Component {
                 <Breakdown data = {sampledata}/>
                 <Product_breakdown/>
                 <Review_list data = {sampledata}/>
+                Insert Dropdown List for Review List
                 <Add_review/>
             </div>
         )
