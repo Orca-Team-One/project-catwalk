@@ -6,8 +6,11 @@ export default class UserInfo extends Component {
   }
   render() {
     return (
-      <div>
-        {this.props.user}
+      <div style={{
+        fontSize: "90%",
+        paddingRight: "5px",
+      }}>
+        User: {this.props.user}
       </div>
     )
   }
