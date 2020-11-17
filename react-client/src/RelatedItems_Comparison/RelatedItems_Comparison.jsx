@@ -3,7 +3,6 @@ import ComparisonItemsList from './ComparisonItemsList.jsx'
 import RelatedItemsList from './RelatedItemsList.jsx'
 import dummyData from './dummyData.js'
 
-
 export default class RelatedItems_Comparison extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +15,7 @@ export default class RelatedItems_Comparison extends Component {
       <div>
         Hello from RelatedItems_Comparison
         <ComparisonItemsList/>
-        <RelatedItemsList relatedItems = {this.state.RelatedItems}/>
+        <RelatedItemsList relatedItems = {this.state.RelatedItems.dummyData}/>
       </div>
     )
   }

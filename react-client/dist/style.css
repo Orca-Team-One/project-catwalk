@@ -13,3 +13,7 @@
   text-align: center;
   font-family: arial;
 }
+
+.align_cards {
+  float: left;
+}

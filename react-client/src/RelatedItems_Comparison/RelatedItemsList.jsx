@@ -7,7 +7,7 @@ export default class RelatedItemsList extends Component {
   render() {
     console.log(this.props.relatedItems);
     return (
-      <div>
+      <div >
         Related Items
         {
           this.props.relatedItems.map((relatedEntry, index) => (
