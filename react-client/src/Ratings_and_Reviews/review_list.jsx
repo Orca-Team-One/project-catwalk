@@ -1,7 +1,7 @@
 import { data } from 'jquery'
 import React, { Component } from 'react'
 import Review_item from './Review_item.jsx'
-
+import Show_more_reviews from './Show_more_reviews.jsx'
 
 export class Review_list extends Component {
    
@@ -13,6 +13,7 @@ export class Review_list extends Component {
                     <Review_item review = {review}/>
                 ))
             }
+            <Show_more_reviews/>
             </div>
         )
     }
