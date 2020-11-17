@@ -7,14 +7,15 @@ export default class RelatedItems_Comparison extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      RelatedItems: dummyData
+      RelatedItems: dummyData,
+      ComparisonItems: dummyData
     }
   }
   render() {
     return (
       <div>
         Hello from RelatedItems_Comparison
-        <ComparisonItemsList/>
+        <ComparisonItemsList comparedItems = {this.state.ComparisonItems.dummyData}/>
         <RelatedItemsList relatedItems = {this.state.RelatedItems.dummyData}/>
       </div>
     )
