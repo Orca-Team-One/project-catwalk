@@ -9,10 +9,14 @@ export default class HelpfulButton extends Component {
 
       const count = this.props.helpfulCount || 0;
     return (
-      <div>
-      <button>
+      <div className="helpful">
+      <div style={{
+      fontSize: '80%',
+      paddingLeft: "5px",
+      paddingRight: "5px"
+         }}>
         Helpful? Yes ({count})
-      </button>
+      </div>
       </div>
     )
   }

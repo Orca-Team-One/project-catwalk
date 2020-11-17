@@ -14,14 +14,34 @@ export default class Question extends Component {
 
     return (
       <>
-      <div>
-      <dt>
-       Q: {this.props.question.question_body}
-        <HelpfulButton/> <AddAnswerButton/>
+        <div class="row">
+          <div class="col-">
+          <b style={{
+              paddingRight: "2px",
+            }}>
+              Q:
+            </b>
+           {this.props.question.question_body}
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-">
+            <HelpfulButton/>
+           </div>
+          <div class="col-">
+          <AddAnswerButton/>
+          </div>
+        </div>
+      <div class="row">
         <AnswerList answers={questionObject.answers}/>
-      </dt>
+      </div>
+      <div class="row" style={{
+        paddingTop: "10px",
+        fontWeight: "bold",
+      }}>
       <LoadMoreAnswers/>
       </div>
+
       </>
     )
   }

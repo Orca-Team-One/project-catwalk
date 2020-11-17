@@ -16,7 +16,7 @@ export default class QASearchBar extends Component {
     return (
       <>
         <label htmlFor="search"></label>
-        <input type="text" value={this.state.value} onChange={this.handleChange}></input>
+        <input type="text" value={this.state.value} onChange={this.handleChange} className="searchBar"></input>
       </>
     )
   }

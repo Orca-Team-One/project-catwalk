@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AddAQuestion() {
   return (
-    <div>
+    <div className="addAQ">
       <button>
         Add A Question
       </button>
