@@ -3,8 +3,8 @@ import React from 'react';
 function AddToCart() {
   return (
     <div>
-      <p>Add to Cart Button</p>
-      <p>Favorite Button</p>
+      <button>Add to Cart</button>
+      <button>Favorite</button>
     </div>
   );
 }
