@@ -14,6 +14,10 @@
   font-family: arial;
 }
 
-.align_cards {
+.alignRelatedCards {
+  float: left;
+}
+
+.alignComparedCards {
   float: left;
 }
