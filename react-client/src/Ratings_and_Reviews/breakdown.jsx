@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Breakdown_rating_list from './Breakdown_rating_list.jsx'
-import sampledata from './sampledata.jsx'
+
 
 
 // needs average all ratings for product
@@ -12,7 +12,7 @@ export class Breakdown extends Component {
             <div>
                 Review Breakdown
                 Average Review Score: {/*compute average review score*/}
-                There were {sampledata.results.length} total reviews for this product
+                There were {this.props.productdata.results.length} total reviews for this product
                 {/*compute percentage of reviewers recomending product*/} Percentage of reviewers recomend this product
                 <Breakdown_rating_list/>
             </div>

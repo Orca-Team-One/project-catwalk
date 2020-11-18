@@ -1,5 +1,5 @@
 
-var sampledata = {
+var productdata = {
     "product": "2",
     "page": 0,
     "count": 5,
@@ -39,5 +39,6 @@ var sampledata = {
       },
     ]
   }
+  export default productdata;
 
-  export default sampledata;
+  

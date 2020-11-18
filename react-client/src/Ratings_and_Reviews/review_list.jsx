@@ -9,10 +9,11 @@ export class Review_list extends Component {
         return (
             <div>
                 This is the review List:
-                {this.props.data.results.map((review) => (
+                {this.props.productdata.results.map((review) => (
                     <Review_item review = {review}/>
                 ))
             }
+            {/* only show this component if more than 2 reviews...conditional rendering?*/}
             <Show_more_reviews/>
             </div>
         )
