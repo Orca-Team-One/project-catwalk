@@ -1,44 +1,47 @@
 
 var productdata = {
-    "product": "2",
-    "page": 0,
-    "count": 5,
-    "results": [
+  "product": "5",
+  "page": 0,
+  "count": 5,
+  "results": [
       {
-        "review_id": 5,
-        "rating": 3,
-        "summary": "I'm enjoying wearing these shades",
-        "recommend": 0,
-        "response": "",
-        "body": "Comfortable and practical.",
-        "date": "2019-04-14T00:00:00.000Z",
-        "reviewer_name": "shortandsweeet",
-        "helpfulness": 5,
-        "photos": [{
-            "id": 1,
-            "url": "urlplaceholder/review_5_photo_number_1.jpg"
-          },
-          {
-            "id": 2,
-            "url": "urlplaceholder/review_5_photo_number_2.jpg"
-          },
-          // ...
-        ]
+          "review_id": 12,
+          "rating": 3,
+          "summary": "They're heavy but great",
+          "recommend": 0,
+          "response": "",
+          "body": "I like them but they run wide.",
+          "date": "2019-04-13T00:00:00.000Z",
+          "reviewer_name": "thinfootjim",
+          "helpfulness": 4,
+          "photos": []
       },
       {
-        "review_id": 3,
-        "rating": 4,
-        "summary": "I am liking these glasses",
-        "recommend": 0,
-        "response": "Glad you're enjoying the product!",
-        "body": "They are very dark. But that's good because I'm in very sunny spots",
-        "date": "2019-06-23T00:00:00.000Z",
-        "reviewer_name": "bigbrotherbenjamin",
-        "helpfulness": 5,
-        "photos": [],
+          "review_id": 57427,
+          "rating": 2,
+          "summary": "Are these even shoes?",
+          "recommend": 0,
+          "response": null,
+          "body": "What even are these?",
+          "date": "2020-10-09T00:00:00.000Z",
+          "reviewer_name": "Confused",
+          "helpfulness": 2,
+          "photos": []
       },
-    ]
-  }
+      {
+          "review_id": 57426,
+          "rating": 5,
+          "summary": "My favorite shoes",
+          "recommend": 1,
+          "response": null,
+          "body": "These are just fantastic shoes. I love them and I'm never taking them off.",
+          "date": "2020-10-09T00:00:00.000Z",
+          "reviewer_name": "luvslie",
+          "helpfulness": 1,
+          "photos": []
+      }
+  ]
+}
   export default productdata;
 
   
