@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class ComparisonItemsEntry extends Component {
   render() {
     return (
-      <div class="container card comparison_card alignRelatedCards"><a href="#" class="stretched-link">
+      <div class="card comparison_card alignRelatedCards"><a href="#" class="stretched-link">
         <img src="https://picsum.photos/id/237/200/300" alt="Denim Jeans" ></img>
         <p>{this.props.comparedEntries.name}</p>
         <p>{this.props.comparedEntries.category}</p>
