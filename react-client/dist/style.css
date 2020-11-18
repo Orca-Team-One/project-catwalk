@@ -1,3 +1,4 @@
+/* RelatedItems And Comparison Styling */ 
 .related_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -21,3 +22,64 @@
 .alignComparedCards {
   float: left;
 }
+
+/* Questions and Answers Component Styling:  */
+.askWidgetContainer {
+  display: block;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 800px;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 20px;
+  /* box-sizing: border-box; */
+  max-width: 500px;
+}
+
+.askWidgetHeader {
+  color: #0F1111!important;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  padding-bottom: 2px;
+  text-rendering: optimizeLegibility;
+  /* margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
+}
+
+.searchBar {
+  font-size: 14px;
+  line-height: 20px;
+  color: #0F1111;
+  font-family: Helvetica;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 8px!important;
+  margin-top: 6px!important;
+  margin: 0;
+  overflow: visible;
+  max-width: 500px;
+}
+
+.QandSection {
+  font-size: 14px;
+  line-height: 20px;
+  color: #0F1111;
+  font-family: Helvetica;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.questionListContainer {
+  display: box;
+
+}
+
+

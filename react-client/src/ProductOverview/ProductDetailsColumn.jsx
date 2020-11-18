@@ -4,13 +4,13 @@ import StyleSelector from './StyleSelector.jsx';
 import Selectors from './SizeAndQuantity.jsx';
 import AddToCart from './AddToCart.jsx';
 
-function ProductDetails() {
+function ProductDetails(props) {
   return (
     <div>
       <p>Product Details</p>
-      <ProductInfo />
-      <StyleSelector />
-      <Selectors />
+      <ProductInfo product={props.product} details={props.details}/>
+      <StyleSelector details={props.details}/>
+      <Selectors details={props.details}/>
       <AddToCart />
     </div>
   );
