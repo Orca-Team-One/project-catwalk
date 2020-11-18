@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ProductDescription() {
+function ProductDescription(props) {
   return (
     <div>
-      <p>Product Slogan</p>
-      <p>Product Description</p>
+      <p>Product Slogan: {props.product.slogan}</p>
+      <p>Product Description: {props.product.description}</p>
     </div>
   );
 }

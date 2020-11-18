@@ -1,11 +1,14 @@
 import React from 'react';
-import ProductImageThumbnails from './ProductImageThumbnails.jsx';
+import ProductThumbnailsColumn from './ProductThumbnailsColumn.jsx';
 
-function ProductImageView() {
+function ProductImageView(props) {
   return (
-    <div>
-      <p>Product Image View</p>
-      <ProductImageThumbnails />
+    <div className="productImageView">
+      <p>Product Image View:</p>
+      {/* Default image is set at the first thumbnail */}
+      <img src={props.details.results[0].photos[0].url}></img>
+
+      <ProductThumbnailsColumn details={props.details}/>
     </div>
   );
 }
