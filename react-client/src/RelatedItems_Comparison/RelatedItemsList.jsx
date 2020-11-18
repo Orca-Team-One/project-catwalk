@@ -8,7 +8,6 @@ export default class RelatedItemsList extends Component {
     console.log(this.props.relatedItems);
     return (
       <div >
-        Related Items
         {
           this.props.relatedItems.map((relatedEntry, index) => (
             <RelatedItemsEntry key = {index} relatedEntries = {this.props.relatedItems[index]}/>

@@ -8,7 +8,6 @@ export default class ComparisonItemsList extends Component {
   render() {
     return (
       <div>
-        Compare!
         {
           this.props.comparedItems.map((comparedEntry, index) => (
             <ComparisonItemsEntry key = {index} comparedEntries = {this.props.comparedItems[index]}/>
