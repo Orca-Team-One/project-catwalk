@@ -17,11 +17,8 @@ export default class App extends Component {
     
 
       <div>
-
-        <h1>Hello World</h1>
-
+      <h1>Hello World</h1>
         <ProductView />
-
         <QAComponent/>
         <Ratings_and_reviews/>
         
