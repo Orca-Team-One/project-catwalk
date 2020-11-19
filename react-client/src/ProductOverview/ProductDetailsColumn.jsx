@@ -6,7 +6,7 @@ import AddToCart from './AddToCart.jsx';
 
 function ProductDetails(props) {
   return (
-    <div>
+    <div className="productDetailsColumn">
       <p>Product Details</p>
       <ProductInfo product={props.product} details={props.details}/>
       <StyleSelector details={props.details}/>

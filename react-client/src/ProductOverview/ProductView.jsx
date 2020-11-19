@@ -5,15 +5,16 @@ import ProductDescription from './ProductDescription.jsx';
 // Test rendering with dummy data
 import sampleProducts from './sampleProducts.js';
 import sampleDetails from './sampleDetails.js';
+import sampleInfo from './sampleInfo.js';
 
 class ProductView extends Component {
   render() {
     return (
-      <div>
+      <div className="productViewContainer">
         <p>Product Overview</p>
         <ProductImageView details={sampleDetails}/>
-        <ProductDetailsColumn product={sampleProducts[0]} details={sampleDetails}/>
-        <ProductDescription product={sampleProducts[0]}/>
+        <ProductDetailsColumn product={sampleProducts[4]} details={sampleDetails}/>
+        <ProductDescription product={sampleProducts[4]} info={sampleInfo}/>
       </div>
     );
   }

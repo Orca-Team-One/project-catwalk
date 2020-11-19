@@ -1,10 +1,14 @@
 import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
 
 function ProductThumbnail(props) {
   return (
     <div>
-      <p>Product Image Single Thumbnail: </p>
-      <img src={props.photo.thumbnail_url}></img>
+      <Avatar
+        variant="rounded"
+        src={props.photo.thumbnail_url}
+      />
+      <br></br>
     </div>
   );
 }
