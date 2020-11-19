@@ -7,17 +7,15 @@ import sampleProducts from './sampleProducts.js';
 import sampleDetails from './sampleDetails.js';
 import sampleInfo from './sampleInfo.js';
 
-class ProductView extends Component {
-  render() {
-    return (
-      <div className="productViewContainer">
-        <p>Product Overview</p>
-        <ProductImageView details={sampleDetails}/>
-        <ProductDetailsColumn product={sampleProducts[4]} details={sampleDetails}/>
-        <ProductDescription product={sampleProducts[4]} info={sampleInfo}/>
-      </div>
-    );
-  }
+function ProductView(props) {
+  return (
+    <div className="productViewContainer">
+      <p>Product Overview</p>
+      <ProductImageView details={sampleDetails}/>
+      <ProductDetailsColumn product={sampleProducts[4]} details={sampleDetails}/>
+      <ProductDescription product={props.productData} info={sampleInfo}/>
+    </div>
+  );
 }
 
 export default ProductView;
