@@ -18,6 +18,7 @@ export default class App extends Component {
       relatedProducts: [],
       productReviews:{},
       reviewMetadata:{},
+      isRelatedItemsLoaded: false,
     }
     // bind functions here
     this.getProduct = this.getProduct.bind(this)
@@ -97,7 +98,8 @@ export default class App extends Component {
     axios.get(`http://3.21.164.220/products/${this.state.productID}/related`)
     .then((relatedData) => {
       this.setState({
-        relatedProducts: relatedData.data
+        relatedProducts: relatedData.data,
+        isRelatedItemsLoaded: true
       });
     }).catch(error => {console.log('There was in error in getRelatedItems')})
 }
@@ -109,7 +111,7 @@ export default class App extends Component {
         <ProductView productData={this.state.productData} />
         <QAComponent/>
         <RatingsAndReviews/>
-        <RelatedItems_Comparison currentProduct={this.state.productID} getProduct={this.getProduct} relatedProducts={this.state.relatedProducts}/>
+        <RelatedItems_Comparison getRelatedItems={this.getRelatedItems} currentProduct={this.state.productID} getProduct={this.getProduct} relatedProducts={this.state.relatedProducts}/>
       </div>
     )
   }
