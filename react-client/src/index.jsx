@@ -97,7 +97,7 @@ export default class App extends Component {
     axios.get(`http://3.21.164.220/products/${this.state.productID}/related`)
     .then((relatedData) => {
       this.setState({
-        relatedProducts: relatedData.array
+        relatedProducts: relatedData.data
       });
     }).catch(error => {console.log('There was in error in getRelatedItems')})
 }
