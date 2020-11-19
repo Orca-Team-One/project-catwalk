@@ -8,6 +8,7 @@ export default class ComparisonItemsEntry extends Component {
         <p>{this.props.comparedEntries.name}</p>
         <p>{this.props.comparedEntries.category}</p>
         <p class="card_price">${this.props.comparedEntries.default_price}</p>
+        {/* will need to create seperate component to calculate ratings  */}
         <p>Ratings</p>
         </a>
       </div>
