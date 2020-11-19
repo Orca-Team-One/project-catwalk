@@ -56,7 +56,7 @@ export default class App extends Component {
         console.log(`Error fetching data for current product's styles: ${err}`)
       })
   }
-  
+
   // get questions for a single product
   getQuestions() {
     axios.get(`http://3.21.164.220/qa/questions/${this.state.productID}`)
@@ -69,7 +69,7 @@ export default class App extends Component {
   }
 
   //get review data for given product
-  getReviewData(productID) {
+  getReviewData() {
     axios.get(`http://3.21.164.220/reviews?product_id=${this.state.productID}`)
       .then((results) => {
           this.setState({/*do something*/})
@@ -79,7 +79,7 @@ export default class App extends Component {
   }
 
   //get ratings metadata for a given product
-  getMetaData (productID) {
+  getMetaData () {
     axios.get(`http://3.21.164.220/reviews/meta?product_id=${this.state.productID}`)
       .then((results) => {
           this.setState({/*do something*/})
@@ -88,7 +88,7 @@ export default class App extends Component {
       })
   }
 
-  getRelatedItems (productID) {
+  getRelatedItems () {
     axios.get(`http://3.21.164.220/products/${this.state.productID}/related`)
     .then((relatedData) => {
       this.setState({});
