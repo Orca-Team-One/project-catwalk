@@ -21,7 +21,9 @@ function Selectors(props) {
       <div>
         <label htmlFor="size">Select quantity: </label>
         <select name="size" className="sizeSelector">
-          {quantities.map((quantity) => <option>{quantity}</option>)}
+          {quantities.map((quantity) =>
+            <option>{quantity}</option>
+          )}
         </select>
       </div>
     </div>
