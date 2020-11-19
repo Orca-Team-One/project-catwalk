@@ -4,6 +4,7 @@ import RatingsAndReviews from './RatingsAndReviews/RatingsAndReviews.jsx'
 import ProductView from './ProductOverview/ProductView.jsx';
 import QAComponent from './QAComponents/QAComponent.jsx';
 import RelatedItems_Comparison from './RelatedItems_Comparison/RelatedItems_Comparison.jsx';
+import axios from 'axios'
 
 export default class App extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class App extends Component {
       productReviews:{},
       reviewMetadata:{},
     }
-    // bind functions here?
+    // bind functions here
     this.getProduct = this.getProduct.bind(this)
     this.getProductStyles = this.getProductStyles.bind(this)
     this.getQuestions = this.getQuestions.bind(this)
@@ -29,8 +30,12 @@ export default class App extends Component {
 
   componentDidMount() {
  // promise chain to call each API function
-
-
+    this.getProduct()
+    this.getProductStyles()
+    this.getQuestions()
+    this.getReviewData()
+    this.getMetaData()
+    this.getRelatedItems()
   }
 
   // get a single product
