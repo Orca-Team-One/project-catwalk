@@ -65,18 +65,18 @@ productId = 5
 
 // get questions for a single product
 const getQuestions = (productID) => {
-    axios.get(`${apiURL}/qa/questions/${productID}`)
+  axios.get(`${apiURL}/qa/questions/${productID}`)
     .then((data) => {
       this.setState({'do something'})
     })
     .catch(error => console.log('there was an error getting the questions:', error));
 }
 
-
 // get related items for a single product
 const getRelatedItems = (productID) => {
   axios.get(`${apiURL}/products/${productID}/related`)
-  .then((relatedData) => {
-    this.setState({});
-  }).catch(error => console.log('There was in error in getRelatedItems'))
+    .then((relatedData) => {
+      this.setState({});
+    })
+    .catch(error => console.log('There was in error in getRelatedItems'))
 };
