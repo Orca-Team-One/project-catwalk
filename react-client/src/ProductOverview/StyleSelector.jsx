@@ -1,4 +1,6 @@
 import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+// import Badge from '@material-ui/core/Badge';
 
 function StyleSelector (props) {
   return (
@@ -7,7 +9,9 @@ function StyleSelector (props) {
 
       <p>Style Icons</p>
       {props.details.results.map((result) =>
-        <img src={result.photos[0].thumbnail_url}></img>
+        <div>
+          <Avatar src={result.photos[0].thumbnail_url} />
+        </div>
       )}
     </div>
   );

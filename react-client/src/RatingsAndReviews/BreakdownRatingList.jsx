@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 const ratings = ['One', 'Two', 'Three', 'Four', 'Five']
 
-export class Breakdown_rating_list extends Component {
-   
-    render() {
+const BreakdownRatingList = () => {
         return (
             <div>
                 <ul>
@@ -13,7 +11,5 @@ export class Breakdown_rating_list extends Component {
                 </ul>
             </div>
         )
-    }
 }
-
-export default Breakdown_rating_list
+export default BreakdownRatingList;

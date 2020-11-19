@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 
-
-export class Rating_helpfulness extends Component {
-    
-    render() {
+const RatingHelpfulness = () => {
         return (
             <div>
                 
             </div>
         )
-    }
 }
-
-export default Rating_helpfulness
+export default RatingHelpfulness
