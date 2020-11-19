@@ -5,7 +5,7 @@ export default class RelatedItemsList extends Component {
 
 
   render() {
-    console.log(this.props.relatedItems);
+    console.log('HERE!!!!!', this.props.relatedProducts)
     return (
       <div >
         {

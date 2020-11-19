@@ -109,7 +109,7 @@ export default class App extends Component {
         <ProductView productData={this.state.productData} />
         <QAComponent/>
         <RatingsAndReviews/>
-        <RelatedItems_Comparison getRelatedItems={this.getRelatedItems}/>
+        <RelatedItems_Comparison currentProduct={this.state.productID} getProduct={this.getProduct} relatedProducts={this.state.relatedProducts}/>
       </div>
     )
   }

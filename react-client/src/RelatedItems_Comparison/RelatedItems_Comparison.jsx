@@ -12,11 +12,11 @@ export default class RelatedItems_Comparison extends Component {
     }
   }
   render() {
-    console.log(this.props);
+    console.log('PRODUCT ID', this.props.currentProduct)
     return (
       <div>
         <ComparisonItemsList comparedItems = {this.state.ComparisonItems.dummyData}/>
-        <RelatedItemsList relatedItems = {this.state.RelatedItems.dummyData}/>
+        <RelatedItemsList relatedProducts={this.props.relatedProducts} currentProduct={this.props.currentProduct} getProduct={this.props.getProduct} relatedItems = {this.state.RelatedItems.dummyData}/>
       </div>
     )
   }
