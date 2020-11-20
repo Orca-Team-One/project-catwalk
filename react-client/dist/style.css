@@ -83,6 +83,7 @@
 /* Ratings and Reviews Styling*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .reviewContainer {
   display: box;
   box-sizing: border-box;
@@ -98,5 +99,19 @@
 =======
 .questionContainer {
   padding-top: 15px
+=======
+.helpfulButton {
+  background: none;
+  border: none;
+  display: inline-block;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  font-size: 80%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.helpfulButton:hover {
+  background-color: #F8F8FF;
+>>>>>>> main
 }
 >>>>>>> main
