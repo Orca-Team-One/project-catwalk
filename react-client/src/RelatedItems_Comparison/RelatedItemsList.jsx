@@ -22,11 +22,12 @@ import RelatedItemsEntry from './RelatedItemsEntry.jsx'
 
 function RelatedItemsList(props) {
   if (props.relatedProducts.length > 0) {
-    console.log('Ok now there is...', props.relatedProducts)
+    console.log('HERE ARE PROPS!', props)
     return (
       <div >
       {
         props.relatedItems.map((relatedEntry, index) => (
+          //insert get product function here - with promises!
           <RelatedItemsEntry key = {index} relatedEntries = {props.relatedItems[index]}/>
         ))
       }
