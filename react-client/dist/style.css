@@ -1,4 +1,4 @@
-/* RelatedItems And Comparison Styling */ 
+/* RelatedItems And Comparison Styling */
 .related_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -79,10 +79,10 @@
 
 .questionListContainer {
   display: box;
-
 }
 /* Ratings and Reviews Styling*/
 
+<<<<<<< HEAD
 .reviewContainer {
   display: box;
   box-sizing: border-box;
@@ -95,3 +95,8 @@
   max-width: 1000px;
   margin-bottom: 0;
 }
+=======
+.questionContainer {
+  padding-top: 15px
+}
+>>>>>>> main

@@ -3,9 +3,9 @@ import ProductImageView from './ProductImageView.jsx';
 import ProductDetailsColumn from './ProductDetailsColumn.jsx';
 import ProductDescription from './ProductDescription.jsx';
 // Test rendering with dummy data
-import sampleProducts from './sampleProducts.js';
-import sampleDetails from './sampleDetails.js';
-import sampleInfo from './sampleInfo.js';
+import sampleProducts from './sampleData/sampleProducts.js';
+import sampleDetails from './sampleData/sampleDetails.js';
+import sampleInfo from './sampleData/sampleInfo.js';
 
 function ProductView(props) {
   return (
