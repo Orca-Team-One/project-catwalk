@@ -3,15 +3,20 @@ import QASearchBar from './QASearchBar.jsx';
 import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
 import AddAQuestion from './AddAQuestion.jsx';
 import QuestionList from './QuestionList.jsx';
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 
 export default class QAComponent extends Component {
+  constructor({productQuestions}){
+    super({productQuestions});
+      this.state = {
+        questionList: productQuestions,
+      }
+  }
+
   render() {
+    const {questionList} = this.state;
+    console.log('questions', questionList)
     return (
       <>
-
       <div className="askWidgetContainer">
         <h2 className="askWidgetHeader">
           Questions and Answers
@@ -21,15 +26,15 @@ export default class QAComponent extends Component {
             <QASearchBar/>
         </div>
           <div>
-            <QuestionList/>
+            <QuestionList questions={questionList}/>
           </div>
       </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-">
+        <div className="container">
+          <div className="row">
+            <div className="col-">
             <MoreAnsweredQuestions />
             </div>
-            <div class="col-">
+            <div className="col-">
             <AddAQuestion/>
             </div>
           </div>
