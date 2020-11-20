@@ -52,17 +52,6 @@ export default class App extends Component {
       .catch((err) => {
         console.log(`Error fetching data for current product's styles: ${err}`)
       })
-  // get questions for a single product
-      .then(
-        axios.get(`http://3.21.164.220/qa/questions?product_id=${this.state.productID}`)
-      )
-      .then((data) => {
-        console.log('question data received:', data)
-        this.setState({
-          productQuestions: data.results,
-        })
-      })
-      .catch(error => console.log('there was an error getting the questions:', error))
   //get review data for given product
       .then(
         axios.get(`http://3.21.164.220/reviews?product_id=${this.state.productID}`)
@@ -87,6 +76,16 @@ export default class App extends Component {
     .then((relatedData) => {
       this.setState({});
     }).catch(error => {console.log('There was in error in getRelatedItems')})
+    // get questions for a single product
+    .then(
+      axios.get(`http://3.21.164.220/qa/questions?product_id=${this.state.productID}`))
+    .then((data) => {
+      console.log('question data received:', data)
+      this.setState({
+        productQuestions: data.results,
+      })
+    })
+    .catch(error => console.log('there was an error getting the questions:', error))
   }
 
   render() {
