@@ -81,5 +81,17 @@
   display: box;
 
 }
+/* Ratings and Reviews Styling*/
 
-
+.reviewContainer {
+  display: box;
+  box-sizing: border-box;
+  width: 400px;
+  height: 150px;
+  border-width: 1px;
+  border-bottom-style: solid;
+  font-family: Helvetica;
+  font-size: 14px;
+  max-width: 1000px;
+  margin-bottom: 0;
+}

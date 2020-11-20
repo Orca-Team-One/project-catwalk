@@ -2,11 +2,11 @@ import { data } from 'jquery'
 import React, { Component } from 'react'
 import ReviewItem from './ReviewItem.jsx'
 import ShowMoreReviews from './ShowMoreReviews.jsx'
+import { Col } from 'react-bootstrap'
 
 const ReviewList = ({productdata}) => {
         return (
             <div>
-                This is the review List:
                 {productdata.results.map((review) => (
                     <ReviewItem review = {review}/>
                 ))
