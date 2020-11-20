@@ -5,19 +5,23 @@ import AddReview from './AddReview.jsx'
 import productdata from './productdata.jsx'
 import ProductBreakdown from './ProductBreakdown.jsx'
 import metadata from './metadata.jsx'
-import { Container } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
+
 
 export class RatingsAndReviews extends Component {
     render() {
         return (
-                <Container classname= "ratings_and_reviews_container">
-                    <Row>
-                        <Col>
+            <div>
+                    <div class="row">
+                        <div class="col-3" style={{
+                        backgroundColor: "#EBEBEB",
+                        fontSize:"20px",
+                        }}>
                         Ratings {'&'} Reviews
-                        </Col>
-                        <Col>
+                        </div>
+                        <div class = "col-4" style={{
+                        backgroundColor: "#ABBAEA",
+                        fontSize:"10px",
+                        }}>
                         <label>248 reviews, sorted by:</label>
                         {/*set default to relevance by creating state for form */}
                             <select>
@@ -25,23 +29,25 @@ export class RatingsAndReviews extends Component {
                                 <option>Newest</option>
                                 <option>Relevance</option>
                             </select>
-                        </Col>
-                    </Row>
-                    <Row >
-                    <Col classname = 'breakdowns'>
+                        </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-3" style={{
+                            backgroundColor: "#FBD603",
+                            fontSize:"11px",
+                        }}>
                 <Breakdown ratingdata= {metadata} productdata= {productdata}/>
                 <ProductBreakdown ratingdata= {metadata}/>
-                </Col>
-                <Col classname = "review_list">
+                </div>
+                <div class="col-4" style={{
+                            backgroundColor: "#33FFF9",
+                            fontSize:"12px"
+                        }}>
                 <ReviewList productdata= {productdata}/>
-                </Col>
-                </Row>
-                <Row>
-                    <Col>
                 <AddReview/>
-                </Col>
-                </Row>
-                </Container>
+                </div>
+                </div>
+                </div>
         )
     }
 }

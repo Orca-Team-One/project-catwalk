@@ -1,17 +1,28 @@
 import React, { Component } from 'react'
 import RatingHelpfulness from './RatingHelpfulness.jsx'
-import { Container } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
 
 // TODO flush out review item
 const ReviewItem = ({review}) => {
         return (
-            <div class="reviewContainer">
+            <>
+                <div class="row">
+                    <div class="col">
             {review.summary}
-            {review.body}
-                <RatingHelpfulness/>  
             </div>
+            </div>
+            <div class="row">
+                <div class="col">
+            {review.body}
+            </div>
+            </div>
+            <div class="row">
+                <div class="col" style= {{
+                     borderBottom: "1px solid"
+                }}>
+                <RatingHelpfulness/>
+                </div>  
+                </div>
+    </>
         )
 }
 export default ReviewItem
