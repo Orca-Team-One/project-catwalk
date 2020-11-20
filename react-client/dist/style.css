@@ -76,30 +76,15 @@
   box-sizing: border-box;
   margin-bottom: 0;
 }
-
 .questionListContainer {
   display: box;
 }
-/* Ratings and Reviews Styling*/
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-.reviewContainer {
-  display: box;
-  box-sizing: border-box;
-  width: 400px;
-  height: 150px;
-  border-width: 1px;
-  border-bottom-style: solid;
-  font-family: Helvetica;
-  font-size: 14px;
-  max-width: 1000px;
-  margin-bottom: 0;
-}
-=======
 .questionContainer {
   padding-top: 15px
-=======
+}
+.questionContainer {
+  padding-top: 15px
+}
 .helpfulButton {
   background: none;
   border: none;
@@ -112,6 +97,5 @@
 }
 .helpfulButton:hover {
   background-color: #F8F8FF;
->>>>>>> main
 }
->>>>>>> main
+
