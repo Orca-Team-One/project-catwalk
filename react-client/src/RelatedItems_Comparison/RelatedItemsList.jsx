@@ -34,7 +34,6 @@ function RelatedItemsList(props) {
     </div>
     )
   } else {
-    console.log('THERES NO DATA YET! ', props.relatedProducts)
     return (
       <div>
         Loading...
