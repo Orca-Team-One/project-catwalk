@@ -64,6 +64,9 @@ export default class App extends Component {
 
           // use/access the results
           console.log('HELLO?' ,responseOne, responseTwo, responseThree, responseFour, responseFive, responseSix);
+          this.setState({
+            productQuestions: responseThree.results,
+          })
         })
       )
       .catch(errors => {
@@ -152,7 +155,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        <ProductView productData={this.state.productData} />
+        {/* <ProductView productData={this.state.productData} /> */}
         {(this.state.productQuestions.length > 0) ?
         <QAComponent productQuestions={this.state.productQuestions}/> :
         <div>'Loading questions'</div>
