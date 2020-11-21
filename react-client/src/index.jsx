@@ -81,19 +81,19 @@ export default class App extends Component {
       // });
   }
   render() {
-<<<<<<< HEAD
-    console.log('this.state.productQuestions:',this.state.productQuestions)
-=======
->>>>>>> main
     return (
       <div>
         <h1>Hello World</h1>
-        {/*<ProductView
+        <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
-        <QAComponent productQuestions={this.state.productQuestions}/>*/}
-        <RatingsAndReviews 
+          {this.state.productQuestions.length ?
+        <QAComponent productQuestions={this.state.productQuestions}/> :
+        <div>
+          Questions loading
+          </div>}
+        <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
         />

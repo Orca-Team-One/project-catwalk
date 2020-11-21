@@ -14,7 +14,6 @@ export default class QAComponent extends Component {
 
   render() {
     const {questionList} = this.state;
-    console.log('questions', questionList)
     return (
       <>
       <div className="askWidgetContainer">

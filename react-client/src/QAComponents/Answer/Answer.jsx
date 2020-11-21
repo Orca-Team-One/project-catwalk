@@ -8,8 +8,7 @@ export default class Answer extends Component {
     super(props);
   }
   render() {
-    // console.log('Answer props;', this.props.answer);
-    // const {answer} = this.props.answer;
+
     return (
       <div className="container">
         <div className="row">
@@ -27,16 +26,22 @@ export default class Answer extends Component {
         </div>
           <div className="row">
             <div className="col-">
-              <UserInfo user={this.props.answer.answerer_name}/>
+              <UserInfo user={this.props.answer.answerer_name} date={this.props.answer.date}/>
             </div>
-            <div className="col-">
+            <div className="col-" style={{
+              paddingLeft: "5px",
+              paddingRight: "5px",
+            }}>
             |
             </div>
             <div className="col-">
               <HelpfulButton helpfulCount={this.props.answer.helpfulness}/>
             </div>
 
-            <div className="col-">
+            <div className="col-" style={{
+              paddingLeft: "5px",
+              paddingRight: "5px",
+            }}>
             |
             </div>
 

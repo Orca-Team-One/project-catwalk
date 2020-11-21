@@ -13,13 +13,11 @@ export default class QuestionList extends Component {
   render() {
     //destructuring assignment
     const {questions} = this.state;
-    console.log('questions from questionlist:', questions)
     //sorting the questions array by their helpfulness rating
     const sortedArray = questions.sort(function(a, b) {
       return b.question_helpfulness - a.question_helpfulness;
     });
 
-    console.log(sortedArray)
     return (
       <>
         <div class="container" style={{
