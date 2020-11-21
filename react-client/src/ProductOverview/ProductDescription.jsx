@@ -10,17 +10,16 @@ function ProductDescription({ productData }) {
           <p>{productData.description}</p>
         </Col>
         <Col lg={4}>
+
           <h5>Product Features</h5>
-          { !productData.features
-            ? <p>Loading...</p>
-            : productData.features.map((feature, index) => {
-              return (
-                <div key={index}>
-                  <p>{feature.value} {feature.feature}</p>
-                </div>
-              )
-            })
-          }
+          {productData.features.map((feature, index) => {
+            return (
+              <div key={index}>
+                <p>{feature.value} {feature.feature}</p>
+              </div>
+            )
+          })}
+
         </Col>
       </Row>
     </Container>
