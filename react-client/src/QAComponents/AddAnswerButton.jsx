@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Button, Modal} from 'react-bootstrap';
 import AddAnswerModal from './AddAnswerModal.jsx';
 
+
 export default class AddAnswerButton extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showHide: false
     }
@@ -15,20 +16,7 @@ export default class AddAnswerButton extends Component {
       showHide: !this.state.showHide
     })
   }
-//   return (
-//     <button className="helpfulButton" onClick={this.handleClick}>
-// Helpful? Yes ({helpfulCount})
 
-//     </button>
-//     <div className="addAnswer" >
-//       <div style={{
-//       fontSize: '80%',
-//       textDecoration: "underline",
-//     }} >
-//         Add Answer
-//       </div>
-//     </div>
-//   )
 render() {
   return (
     <div>
@@ -38,9 +26,10 @@ render() {
 
     <Modal show={this.state.showHide}>
         <Modal.Header closeButton onClick={() => this.handleModalShowHide()}>
-          <Modal.Title>Add an Answer</Modal.Title>
+          <Modal.Title>Submit your Answer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          Product Name: {this.props.questionBody}
         <AddAnswerModal/>
 
         </Modal.Body>

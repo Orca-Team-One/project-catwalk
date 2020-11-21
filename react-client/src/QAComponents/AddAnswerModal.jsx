@@ -1,15 +1,18 @@
 import { Button, Modal} from 'react-bootstrap';
 import React, { Component } from 'react'
 
+const defaultState = {
+  answer: '',
+  nickname: '',
+  email: '',
+  photos: [],
+}
+
 export default class AddAnswerModal extends Component {
   constructor(){
     super();
-    this.state = {
-      answer: null,
-      nickname: null,
-      email: null,
-      photos: [],
-    }
+    this.state = defaultState;
+
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -33,7 +36,7 @@ export default class AddAnswerModal extends Component {
     }
 
     if(!this.state.nickName){
-        nickNameError = "nickName field is required";
+        nickNameError = "Nickname field is required";
     }
 
     const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -58,47 +61,67 @@ export default class AddAnswerModal extends Component {
   render() {
     return (
       <div>
-       <div className="row">
-                    <div className="col-md-6 offset-md-3">
+        <div className="row">
+          <div className="col-md-6 offset-md-3">
+            <h3> </h3>
+            <br />
 
-                        <h3>React Custom Form Validation</h3><br />
+            <div className="form-row">
+              <div className="form-group col-lg-6">
+                <label>Answer :</label>
+                <textarea
+                  type="text"
+                  className="form-control"
+                  name="answer"
+                  value={this.state.answer}
+                  onChange={this.handleInputChange}
+                />
+                <span className="text-danger">{this.state.answerError}</span>
+              </div>
+            </div>
 
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                    <label>Answer :</label>
-                                    <input type="text" className="form-control" name="answer" value={this.state.answer} onChange={this.handleInputChange} />
-                                    <span className="text-danger">{this.state.answerError}</span>
-                                </div>
-                            </div>
+            <div className="form-row">
+              <div className="form-group col-lg-6">
+                <label>Nickname :</label>
+                <input
+                  type="nickName"
+                  className="form-control"
+                  name="nickName"
+                  value={this.state.nickName}
+                  onChange={this.handleInputChange}
+                />
+                <span className="text-danger">{this.state.nickNameError}</span>
+              </div>
+            </div>
 
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                    <label>Nickname :</label>
-                                    <input type="nickName" className="form-control" name="nickName" value={this.state.nickName} onChange={this.handleInputChange} />
-                                    <span className="text-danger">{this.state.nickNameError}</span>
-                                </div>
-                            </div>
+            <div className="form-row">
+              <div className="form-group col-lg-6">
+                <label>Email :</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                />
+                <span className="text-danger">{this.state.emailError}</span>
+              </div>
+            </div>
 
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                    <label>Email :</label>
-                                    <input type="email" className="form-control" name="email" value={this.state.email} onChange={this.handleInputChange} />
-                                    <span className="text-danger">{this.state.emailError}</span>
-                                </div>
-                            </div>
-
-
-                            <div className="form-row">
-                                <div className="col-md-12 text-center">
-                                    <button type="submit" className="btn btn-primary" onClick={()=>this.submit()}>Submit</button>
-                                </div>
-                            </div>
-
-                    </div>
-                </div>
-
-
+            <div className="form-row">
+              <div className="col-md-12 text-center">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={() => this.submit()}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    )
+    );
   }
 }

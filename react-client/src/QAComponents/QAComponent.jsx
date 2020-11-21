@@ -7,13 +7,11 @@ import QuestionList from './QuestionList.jsx';
 export default class QAComponent extends Component {
   constructor(props){
     super(props);
-      this.state = {
-        questionList: this.props.productQuestions,
-      }
+
   }
 
   render() {
-    const {questionList} = this.state;
+    const {productQuestions} = this.props;
     return (
       <>
       <div className="askWidgetContainer">
@@ -25,7 +23,7 @@ export default class QAComponent extends Component {
             <QASearchBar/>
         </div>
           <div>
-            <QuestionList questions={questionList}/>
+            <QuestionList questions={productQuestions}/>
           </div>
       </div>
         <div className="container">

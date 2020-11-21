@@ -12,8 +12,8 @@ export default class Question extends Component {
     //declaring a question object variable equal to the question object passed from Question List
     const questionObject = this.props.question[0];
 
-    //destructuring assignment for helpfulness rating
-    const {question_helpfulness} = this.props.question[0];
+    //destructuring assignment for helpfulness rating and quesiton body
+    const {question_helpfulness, question_body} = this.props.question[0];
 
     return (
       <>
@@ -32,7 +32,7 @@ export default class Question extends Component {
             <HelpfulButton helpfulCount={question_helpfulness}/>
            </div>
           <div className="col-">
-          <AddAnswerButton/>
+          <AddAnswerButton questionBody={question_body}/>
           </div>
         </div>
       <div className="row">
