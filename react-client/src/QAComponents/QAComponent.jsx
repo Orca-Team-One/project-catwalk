@@ -5,16 +5,13 @@ import AddAQuestion from './AddAQuestion.jsx';
 import QuestionList from './QuestionList.jsx';
 
 export default class QAComponent extends Component {
-  constructor({productQuestions}){
-    super({productQuestions});
-      this.state = {
-        questionList: productQuestions,
-      }
+  constructor(props){
+    super(props);
+
   }
 
   render() {
-    const {questionList} = this.state;
-    console.log('questions', questionList)
+    const {productQuestions} = this.props;
     return (
       <>
       <div className="askWidgetContainer">
@@ -26,7 +23,7 @@ export default class QAComponent extends Component {
             <QASearchBar/>
         </div>
           <div>
-            <QuestionList questions={questionList}/>
+            <QuestionList questions={productQuestions}/>
           </div>
       </div>
         <div className="container">

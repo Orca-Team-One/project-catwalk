@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function ReportButton() {
-  return (
-    <div style={{
-      fontSize: '80%',
-      paddingLeft: "5px",
-      paddingRight: "5px"
-         }}>
+export default class ReportButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      reportClicked: false,
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      reportClicked: !prevState.reportClicked
+    }));
+  }
+
+  render() {
+    return (
+      <>
+      {this.state.reportClicked ?
+      <button className="reportButton" onClick={this.handleClick}>
+        Reported
+      </button>  :
+
+      <button className="reportButton" onClick={this.handleClick}>
         Report
-    </div>
-  )
+      </button>
+      }
+      </>
+    )
+  }
 }
+
+
+

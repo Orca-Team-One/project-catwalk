@@ -68,17 +68,17 @@ export default class App extends Component {
           this.setState({
             productData: getProductResponse.data,
             productStyles: getProductStylesReponse.data.results,
-            productQuestions: getProductQuestionsResponse.results,
+            productQuestions: getProductQuestionsResponse.data.results,
             relatedProducts: getReleatedItemsResponse.data,
             productReviews: getProductReviewsResponse.data,
             reviewMetadata: getMetaDataReponse.data,
           })
         })
       )
-      .catch(errors => {
-        // react on errors.
-        console.error('Err', errors);
-      });
+      // .catch(errors => {
+      //   // react on errors.
+      //   console.error('Err', errors);
+      // });
   }
   render() {
     return (
@@ -88,7 +88,11 @@ export default class App extends Component {
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
-        <QAComponent productQuestions={this.state.productQuestions}/>
+        {this.state.productQuestions.length ?
+        <QAComponent productQuestions={this.state.productQuestions}/> :
+        <div>
+          Questions loading
+          </div>}
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
