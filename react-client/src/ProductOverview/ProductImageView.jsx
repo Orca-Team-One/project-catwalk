@@ -1,14 +1,16 @@
 import React from 'react';
 import ProductThumbnailsColumn from './ProductThumbnailsColumn.jsx';
 
-function ProductImageView(props) {
+function ProductImageView({ productID, productStyles }) {
   return (
     <div className="productImageView">
-      <p>Product Image View:</p>
-      {/* Default image is set at the first thumbnail */}
-      <img className="currentImageView" src={props.details.results[0].photos[0].url}></img>
+      { productStyles.length !== 0
+        ? <img className="currentImageView" src={productStyles[0].photos[0].url}></img>
+        : <p>Loading...</p>
+      }
 
-      <ProductThumbnailsColumn details={props.details}/>
+      {/* Product Thumbnails */}
+      <ProductThumbnailsColumn productStyles={productStyles}/>
     </div>
   );
 }
