@@ -10,14 +10,14 @@ export default class Question extends Component {
   }
   render() {
     //declaring a question object variable equal to the question object passed from Question List
-    const questionObject = this.props.question;
-
+    const questionObject = this.props.question[0];
+    console.log('questionObject from Question:', questionObject)
     //destructuring assignment for helpfulness rating
     const {question_helpfulness} = this.props.question
     return (
       <>
-        <div class="row">
-          <div class="col-">
+        <div className="row">
+          <div className="col-">
           <b style={{
               paddingRight: "2px",
             }}>
@@ -25,19 +25,19 @@ export default class Question extends Component {
             </b>
            {this.props.question.question_body}
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
           </div>
-          <div class="col-">
+          <div className="col-">
             <HelpfulButton helpfulCount={question_helpfulness}/>
            </div>
-          <div class="col-">
+          <div className="col-">
           <AddAnswerButton/>
           </div>
         </div>
-      <div class="row">
+      <div className="row">
         <AnswerList answers={questionObject.answers}/>
       </div>
-      <div class="row" style={{
+      <div className="row" style={{
         paddingTop: "10px",
         fontWeight: "bold",
       }}>

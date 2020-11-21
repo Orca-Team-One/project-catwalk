@@ -11,9 +11,9 @@ export default class Answer extends Component {
     // console.log('Answer props;', this.props.answer);
     // const {answer} = this.props.answer;
     return (
-      <div class="container">
-        <div class="row">
-          <div class="col-" style={{
+      <div className="container">
+        <div className="row">
+          <div className="col-" style={{
             paddingBottom: "5px",
             paddingTop: "10px",
           }}>
@@ -25,22 +25,22 @@ export default class Answer extends Component {
             {this.props.answer.body}
           </div>
         </div>
-          <div class="row">
-            <div class="col-">
+          <div className="row">
+            <div className="col-">
               <UserInfo user={this.props.answer.answerer_name}/>
             </div>
-            <div class="col-">
+            <div className="col-">
             |
             </div>
-            <div class="col-">
+            <div className="col-">
               <HelpfulButton helpfulCount={this.props.answer.helpfulness}/>
             </div>
 
-            <div class="col-">
+            <div className="col-">
             |
             </div>
 
-            <div class="col-">
+            <div className="col-">
               <ReportButton/>
             </div>
           </div>

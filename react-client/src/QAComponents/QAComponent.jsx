@@ -5,10 +5,10 @@ import AddAQuestion from './AddAQuestion.jsx';
 import QuestionList from './QuestionList.jsx';
 
 export default class QAComponent extends Component {
-  constructor({productQuestions}){
-    super({productQuestions});
+  constructor(props){
+    super(props);
       this.state = {
-        questionList: productQuestions,
+        questionList: this.props.productQuestions,
       }
   }
 
