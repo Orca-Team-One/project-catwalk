@@ -4,16 +4,26 @@ import ReviewItem from './ReviewItem.jsx'
 import ShowMoreReviews from './ShowMoreReviews.jsx'
 import { Col } from 'react-bootstrap'
 
-const ReviewList = ({productdata}) => {
+const ReviewList = ({productdata, reviewstoRender, updateReviewList}) => {
+// will always take in current review list
+console.log('productdata', productdata)
+
+if(productdata.results.length === 0) {
+    return (
+        <div>
+        'No reviews for this product'
+        </div>
+    )
+}
         return (
             <div>
-                {productdata.results.map((review) => (
+                {productdata.results.slice(0, reviewstoRender).map((review) => (
                     <ReviewItem review = {review}/>
                 ))
             }
             {/* only show this component if more than 2 reviews...conditional rendering?*/}
-            <ShowMoreReviews/>
-            </div>
+            <ShowMoreReviews updateReviewList = {updateReviewList} reviewstoRender = {reviewstoRender} productdata = {productdata}/>
+            </div> 
         )
 }
 

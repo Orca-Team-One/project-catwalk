@@ -14,9 +14,23 @@ export class RatingsAndReviews extends Component {
     constructor(props) {
         super(props)
         this.state = {
-    
+            reviewstoRender: 2,
         }
+        this.updateReviewList = this.updateReviewList.bind(this);
     }
+    updateReviewList() {
+
+        if(this.state.reviewstoRender === this.props.productReviews.results.length) {
+            return
+        }
+        this.setState({reviewstoRender: this.state.reviewstoRender + 2})
+            // if(this.state.currentReviewList.length === 0) {
+            //     this.setState({currentReviewList: [this.props.productReviews.results[0], this.props.productReviews.results[1]]}, () => {
+            //         console.log('currentReviewList', this.state.currentReviewList)
+            //     })
+            // } 
+    }
+
     render() {
         if(Object.keys(this.props.productReviews).length === 0  || Object.keys(this.props.reviewMetadata).length === 0) { 
             return (
@@ -25,8 +39,6 @@ export class RatingsAndReviews extends Component {
                 </div>
             )
         } else {
-            console.log('product reviews', this.props.productReviews)
-            console.log('reviewMetadata', this.props.reviewMetadata)
         return (
             <div>
                     <div class="row">
@@ -61,7 +73,7 @@ export class RatingsAndReviews extends Component {
                             backgroundColor: "#33FFF9",
                             fontSize:"12px"
                         }}>
-                <ReviewList productdata= {this.props.productReviews}/>
+                <ReviewList updateReviewList = {this.updateReviewList} productdata={this.props.productReviews} reviewstoRender={this.state.reviewstoRender}/>
                 <AddReview/>
                 </div>
                 </div>
