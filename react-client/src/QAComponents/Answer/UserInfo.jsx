@@ -9,7 +9,7 @@ export default class UserInfo extends Component {
   }
   render() {
     const date = dayjs(this.props.date).format("MMMM D, YYYY");
-    console.log('userinfo props', this.props)
+    // console.log('userinfo props', this.props)
     return (
       <>
       {this.props.user === "Seller" ?

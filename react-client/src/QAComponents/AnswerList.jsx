@@ -15,7 +15,7 @@ export default class AnswerList extends Component {
     //an array of all the answers
     const answersArray = Object.values(answers)
 
-    console.log('answerArray', answersArray)
+    // console.log('answerArray', answersArray)
     //final answer list array
     var finalAnswerList = [];
 
@@ -33,13 +33,13 @@ export default class AnswerList extends Component {
       return b.helpfulness - a.helpfulness;
     });
 
-    console.log('sorted Array', sortedArray)
+    // console.log('sorted Array', sortedArray)
     //add the remaining answers, if any, in order of helpfulness
     if (sortedArray.length !== 0) {
       finalAnswerList = finalAnswerList.push(sortedArray);
     }
 
-    console.log('finalAnswers', finalAnswerList)
+    // console.log('finalAnswers', finalAnswerList)
     //if all answers need to be displayed:
     const fullAnswerList = answersArray.map((answer) =>
     <Answer answer={answer} key={answer.id}/> )
