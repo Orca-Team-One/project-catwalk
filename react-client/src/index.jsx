@@ -87,9 +87,12 @@ export default class App extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        {/* <ProductView productData={this.state.productData} />
+        <ProductView
+          productID={this.state.productID}
+          productData={this.state.productData}
+          productStyles={this.state.productStyles}/>
         <QAComponent productQuestions={this.state.productQuestions}/>
-        <RatingsAndReviews/> */}
+        <RatingsAndReviews/>
         <RelatedItems_Comparison
         getRelatedItems={this.getRelatedItems}
         currentProduct={this.state.productID}
