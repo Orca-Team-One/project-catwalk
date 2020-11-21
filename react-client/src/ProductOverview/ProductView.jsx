@@ -10,15 +10,20 @@ import sampleInfo from './sampleData/sampleInfo.js';
 function ProductView({ productID, productData, productStyles }) {
   return (
     <div className="productViewContainer">
-      <ProductImageView
-        productID={productID}
-        productStyles={productStyles}/>
-      <ProductDetailsColumn
-        productID={productID}
-        productData={productData}
-        productStyles={productStyles}/>
-      <ProductDescription
-        productData={productData}/>
+      { Object.keys(productData).length === 0 || productStyles.length === 0
+        ? <p>Loading...</p>
+        : <div>
+            <ProductImageView
+              productID={productID}
+              productStyles={productStyles}/>
+            <ProductDetailsColumn
+              productID={productID}
+              productData={productData}
+              productStyles={productStyles}/>
+            <ProductDescription
+              productData={productData}/>
+          </div>
+      }
     </div>
   );
 }
