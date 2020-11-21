@@ -7,13 +7,18 @@ import sampleProducts from './sampleData/sampleProducts.js';
 import sampleDetails from './sampleData/sampleDetails.js';
 import sampleInfo from './sampleData/sampleInfo.js';
 
-function ProductView(props) {
+function ProductView({ productID, productData, productStyles }) {
   return (
     <div className="productViewContainer">
-      <p>Product Overview</p>
-      <ProductImageView details={sampleDetails}/>
-      <ProductDetailsColumn product={sampleProducts[4]} details={sampleDetails}/>
-      <ProductDescription product={props.productData} info={sampleInfo}/>
+      <ProductImageView
+        productID={productID}
+        productStyles={productStyles}/>
+      <ProductDetailsColumn
+        productID={productID}
+        productData={productData}
+        productStyles={productStyles}/>
+      <ProductDescription
+        productData={productData}/>
     </div>
   );
 }

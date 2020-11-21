@@ -4,8 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Selectors(props) {
-  let skuNums = Object.keys(props.details.results[0].skus); // [1, 2, 3, 4, 5, 6]
+function Selectors({ productID, productStyles}) {
+  let skuNums = Object.keys(productStyles[0].skus);
   let quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
@@ -14,10 +14,12 @@ function Selectors(props) {
       <Col sm={3}>
         <label>Select size: </label>
         <select className="selector">
-          {skuNums.map((num) =>
-            <option>{props.details.results[0].skus[`${num}`].size}</option>
-          )}
-
+          { productStyles.length !== 0
+            ? skuNums.map((num, index) =>
+                <option key={index}>{productStyles[0].skus[`${num}`].size}</option>
+              )
+            : <p>Loading...</p>
+          }
         </select>
       </Col>
 
