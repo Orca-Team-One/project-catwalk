@@ -1,3 +1,11 @@
+# DS Store
+.DS_Store
+react-client/.DS_Store
+react-client/src/.DS_Store
+
+# Node Modules
 node_modules
+
+# Bundle Files
 react-client/dist/bundle.js
 react-client/dist/bundle.js.map
