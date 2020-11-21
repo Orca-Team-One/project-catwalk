@@ -80,6 +80,7 @@ export default class App extends Component {
         // react on errors.
         console.error('Err', errors);
       });
+
   }
 
   render() {

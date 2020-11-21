@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 export default class ComparisonItemsEntry extends Component {
+
   render() {
     return (
       <div class="card comparison_card alignRelatedCards"><a href="#" class="stretched-link">
