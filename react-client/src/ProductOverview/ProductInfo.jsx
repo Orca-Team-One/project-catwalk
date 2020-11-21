@@ -12,11 +12,11 @@ function ProductInfo({ productID, productData, productStyles }) {
       <h5>{productData.name}</h5>
 
       {/* Product Price, Sale Price */}
-      { productStyles[0]["sale_price"] === '0'
-        ? <p>Original Price: ${productStyles[0]["original_price"]}</p>
+      { productStyles[0].sale_price === '0'
+        ? <p>${productStyles[0].original_price}</p>
         : <div>
-            <p style={{textDecoration: 'line-through'}}>${productStyles[0]["original_price"]}</p>
-            <p>${productStyles[0]["sale_price"]}</p>
+            <p style={{textDecoration: 'line-through'}}>${productStyles[0].original_price}</p>
+            <p>${productStyles[0].sale_price}</p>
           </div>
       }
 
