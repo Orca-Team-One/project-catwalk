@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RelatedItemsEntry from './RelatedItemsEntry.jsx'
+import axios from 'axios'
 
 // export default class RelatedItemsList extends Component {
 
@@ -21,14 +22,36 @@ import RelatedItemsEntry from './RelatedItemsEntry.jsx'
 
 
 function RelatedItemsList(props) {
+
   if (props.relatedProducts.length > 0) {
-    console.log('HERE ARE PROPS!', props)
+    // do axios request here
+      const reqArray = [];
+      console.log('LOOK!!!', props.relatedProducts)
+      for (var i = 0; i < props.relatedProducts.length; i++) {
+        console.log('QUERY HERE' , props.relatedProducts[i])
+        axios.get(`http://3.21.164.220/products/${props.relatedProducts[i]}`)
+        .then(function (response) {
+          console.log('RESPONSE!!!', response)
+          reqArray.push(response);
+        })
+      } console.log('RESPONSE', reqArray);
+
+
+
+
+
+
+    console.log('HERE ARE PROPS!', props.relatedProducts)
     return (
       <div >
       {
-        props.relatedItems.map((relatedEntry, index) => (
+        props.relatedProducts.map((relatedEntry, index) => (
           //insert get product function here - with promises!
-          <RelatedItemsEntry key = {index} relatedEntries = {props.relatedItems[index]}/>
+          axios.get(`http://3.21.164.220/products/${props.relatedProducts[index]}`)
+          .then(function (response) {
+            <RelatedItemsEntry key = {index} relatedEntries = {response.data}/>
+          })
+
         ))
       }
     </div>
