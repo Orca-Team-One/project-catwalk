@@ -84,12 +84,12 @@ export default class App extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        {/*<ProductView
+        <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
-        <QAComponent productQuestions={this.state.productQuestions}/>*/}
-        <RatingsAndReviews 
+        <QAComponent productQuestions={this.state.productQuestions}/>
+        <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
         />
