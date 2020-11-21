@@ -14,9 +14,9 @@ function ProductDetails({ productID, productData, productStyles }) {
       <StyleSelector
         productID={productID}
         productStyles={productStyles}/>
-      <Selectors
+      {/* <Selectors
         productID={productID}
-        productStyles={productStyles}/>
+        productStyles={productStyles}/> */}
       <AddToCart />
     </div>
   );
