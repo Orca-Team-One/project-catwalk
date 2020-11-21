@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProductInfo({ productID, productData, productStyles }) {
+function ProductInfo({ productID, productData, productStyles, currentStyle }) {
 
   return (
     <div>
@@ -12,11 +12,11 @@ function ProductInfo({ productID, productData, productStyles }) {
       <h5>{productData.name}</h5>
 
       {/* Product Price, Sale Price */}
-      { productStyles[0].sale_price === '0'
-        ? <p>${productStyles[0].original_price}</p>
+      { currentStyle.sale_price !== '0'
+        ? <p>${currentStyle.original_price}</p>
         : <div>
-            <p style={{textDecoration: 'line-through'}}>${productStyles[0].original_price}</p>
-            <p>${productStyles[0].sale_price}</p>
+            <p style={{textDecoration: 'line-through'}}>${currentStyle.original_price}</p>
+            <p style={{fontWeight: 'bold'}}>${currentStyle.sale_price}</p>
           </div>
       }
 
