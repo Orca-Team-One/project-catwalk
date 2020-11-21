@@ -4,22 +4,22 @@ import StyleSelector from './StyleSelector.jsx';
 import Selectors from './SizeAndQuantity.jsx';
 import AddToCart from './AddToCart.jsx';
 
-function ProductDetails({ productID, productData, productStyles, currentStyle }) {
+function ProductDetails({ productID, productData, productStyles, selectedStyle }) {
   return (
     <div className="productDetailsColumn">
       <ProductInfo
         productID={productID}
         productData={productData}
         productStyles={productStyles}
-        currentStyle={currentStyle}/>
+        selectedStyle={selectedStyle}/>
       <StyleSelector
         productID={productID}
         productStyles={productStyles}
-        currentStyle={currentStyle}/>
+        selectedStyle={selectedStyle}/>
       <Selectors
         productID={productID}
         productStyles={productStyles}
-        currentStyle={currentStyle}/>
+        selectedStyle={selectedStyle}/>
       <AddToCart />
     </div>
   );
