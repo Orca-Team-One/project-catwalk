@@ -88,15 +88,11 @@ export default class App extends Component {
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
-<<<<<<< HEAD
-          {this.state.productQuestions.length ?
+        {this.state.productQuestions.length ?
         <QAComponent productQuestions={this.state.productQuestions}/> :
         <div>
           Questions loading
           </div>}
-=======
-        <QAComponent productQuestions={this.state.productQuestions}/>
->>>>>>> main
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
