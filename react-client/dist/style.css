@@ -76,11 +76,15 @@
   box-sizing: border-box;
   margin-bottom: 0;
 }
-
 .questionListContainer {
   display: box;
 }
-
+.questionContainer {
+  padding-top: 15px
+}
+.questionContainer {
+  padding-top: 15px
+}
 .helpfulButton {
   background: none;
   border: none;
@@ -94,3 +98,4 @@
 .helpfulButton:hover {
   background-color: #F8F8FF;
 }
+
