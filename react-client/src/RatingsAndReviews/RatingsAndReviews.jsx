@@ -7,8 +7,27 @@ import ProductBreakdown from './ProductBreakdown.jsx'
 import metadata from './metadata.jsx'
 
 
+// pass prod data and metadata as props
+// only use state for form data, dont pass state as props 
 export class RatingsAndReviews extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+    
+        }
+    }
+
     render() {
+
+        if(this.state.productdata === {} && this.state.metadata === {}) { 
+            return (
+                <div>
+                    Loading
+                </div>
+            )
+        } else {
+            console.log(this.state.productdata)
         return (
             <div>
                     <div class="row">
@@ -36,8 +55,8 @@ export class RatingsAndReviews extends Component {
                             backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
-                <Breakdown ratingdata= {metadata} productdata= {productdata}/>
-                <ProductBreakdown ratingdata= {metadata}/>
+                <Breakdown productdata= {this.state.productdata}/>
+                <ProductBreakdown ratingdata= {this.state.metadata}/>
                 </div>
                 <div class="col-4" style={{
                             backgroundColor: "#33FFF9",
@@ -48,8 +67,10 @@ export class RatingsAndReviews extends Component {
                 </div>
                 </div>
                 </div>
-        )
-    }
+            )
+                    }
+}
+
 }
 export default RatingsAndReviews
 

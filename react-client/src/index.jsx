@@ -90,7 +90,10 @@ export default class App extends Component {
         {/* <ProductView productData={this.state.productData} />
         <QAComponent productQuestions={this.state.productQuestions}/>
         <RatingsAndReviews/> */}
-        <RatingsAndReviews/>
+        <RatingsAndReviews 
+        productReviews = {this.state.productReviews}
+        reviewMetadata = {this.state.reviewMetadata}
+        />
         <RelatedItems_Comparison
         getRelatedItems={this.getRelatedItems}
         currentProduct={this.state.productID}
