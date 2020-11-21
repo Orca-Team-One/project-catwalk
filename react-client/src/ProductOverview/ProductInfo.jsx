@@ -18,7 +18,7 @@ function ProductInfo({ productID, productData, productStyles }) {
 
       {/* Product Price, Sale Price */}
       { productStyles.length !== 0
-        ? productStyles[0]["sale_price"] !== 0
+        ? productStyles[0]["sale_price"] !== '0'
           ? <div>
               <p style={{textDecoration: 'line-through'}}>${productStyles[0]["original_price"]}</p>
               <p>${productStyles[0]["sale_price"]}</p>
