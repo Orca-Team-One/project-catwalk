@@ -1,8 +1,5 @@
 import React from 'react';
-// Testing React Bootstrap
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function ProductDescription({ productData }) {
   return (
@@ -16,9 +13,9 @@ function ProductDescription({ productData }) {
           <h5>Product Features</h5>
           { !productData.features
             ? <p>Loading...</p>
-            : productData.features.map((feature) => {
+            : productData.features.map((feature, index) => {
               return (
-                <div>
+                <div key={index}>
                   <p>{feature.value} {feature.feature}</p>
                 </div>
               )

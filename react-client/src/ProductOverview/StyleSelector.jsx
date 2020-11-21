@@ -1,22 +1,24 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 // import Badge from '@material-ui/core/Badge';
-// Testing React Bootstrap
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
 
-function StyleSelector (props) {
+function StyleSelector ({ productID, productStyles }) {
   return (
     <div>
-      <h6>Style > {props.details.results[0].name}</h6>
-      <Row>
-        {props.details.results.map((result) =>
-          <Col sm={2}>
-            <Avatar src={result.photos[0].thumbnail_url} />
-          </Col>
-        )}
-      </Row>
+      { productStyles.length !== 0
+        ? <div>
+            <h6>STYLE > {productStyles[0].name}</h6>
+            <Row>
+              {productStyles.map((result, index) =>
+                <Col sm={2} key={index}>
+                  <Avatar src={result.photos[0].thumbnail_url} />
+                </Col>
+              )}
+            </Row>
+          </div>
+        : <p>Loading...</p>
+      }
     </div>
   );
 }
