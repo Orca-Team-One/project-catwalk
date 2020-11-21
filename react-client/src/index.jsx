@@ -64,7 +64,6 @@ export default class App extends Component {
 
           // use/access the results
           console.log('ReponseData: ' ,getProductResponse, getProductStylesReponse, getProductQuestionsResponse, getProductReviewsResponse, getMetaDataReponse, getReleatedItemsResponse);
-
           // setState functions
           this.setState({
             productData: getProductResponse.data,
@@ -81,17 +80,15 @@ export default class App extends Component {
         console.error('Err', errors);
       });
   }
-
   render() {
-
     return (
       <div>
         <h1>Hello World</h1>
-        <ProductView
+        {/*<ProductView
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
-        <QAComponent productQuestions={this.state.productQuestions}/>
+        <QAComponent productQuestions={this.state.productQuestions}/>*/}
         <RatingsAndReviews 
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}

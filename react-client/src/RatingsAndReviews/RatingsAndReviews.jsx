@@ -17,17 +17,16 @@ export class RatingsAndReviews extends Component {
     
         }
     }
-
     render() {
-
-        if(this.state.productdata === {} && this.state.metadata === {}) { 
+        if(Object.keys(this.props.productReviews).length === 0  || Object.keys(this.props.reviewMetadata).length === 0) { 
             return (
                 <div>
                     Loading
                 </div>
             )
         } else {
-            console.log(this.state.productdata)
+            console.log('product reviews', this.props.productReviews)
+            console.log('reviewMetadata', this.props.reviewMetadata)
         return (
             <div>
                     <div class="row">
@@ -55,14 +54,14 @@ export class RatingsAndReviews extends Component {
                             backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
-                <Breakdown productdata= {this.state.productdata}/>
-                <ProductBreakdown ratingdata= {this.state.metadata}/>
+                <Breakdown productdata= {this.props.productReviews}/>
+                <ProductBreakdown ratingdata= {this.props.reviewMetadata}/>
                 </div>
                 <div class="col-4" style={{
                             backgroundColor: "#33FFF9",
                             fontSize:"12px"
                         }}>
-                <ReviewList productdata= {productdata}/>
+                <ReviewList productdata= {this.props.productReviews}/>
                 <AddReview/>
                 </div>
                 </div>
