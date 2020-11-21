@@ -9,13 +9,33 @@ export default class UserInfo extends Component {
   }
   render() {
     const date = dayjs(this.props.date).format("MMMM D, YYYY");
+    console.log('userinfo props', this.props)
     return (
+      <>
+      {this.props.user === "Seller" ?
       <div style={{
         fontSize: "90%",
         paddingRight: "5px",
       }}>
-        User: {this.props.user}  {date}
+        by
+        <b style={{
+          paddingLeft: "5px",
+          paddingRight: "5px",
+        }}>
+        {this.props.user}
+        </b>
+        {date}
       </div>
+
+     :
+      <div style={{
+        fontSize: "90%",
+        paddingRight: "5px",
+      }}>
+        by {this.props.user}  {date}
+      </div>
+    }
+    </>
     )
   }
 }
