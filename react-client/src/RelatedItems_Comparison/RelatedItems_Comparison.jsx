@@ -18,7 +18,7 @@ export default class RelatedItems_Comparison extends Component {
   render() {
     return (
       <div>
-        <ComparisonItemsList comparedItems = {this.state.ComparisonItems.dummyData}/>
+        {/* <ComparisonItemsList comparedItems = {this.state.ComparisonItems.dummyData}/> */}
 
 
         <RelatedItemsList

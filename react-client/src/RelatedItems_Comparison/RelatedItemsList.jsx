@@ -25,41 +25,32 @@ function RelatedItemsList(props) {
 
   if (props.relatedProducts.length > 0) {
     // do axios request here
-      const reqArray = [];
-      console.log('LOOK!!!', props.relatedProducts)
-      for (var i = 0; i < props.relatedProducts.length; i++) {
-        console.log('QUERY HERE' , props.relatedProducts[i])
-        axios.get(`http://3.21.164.220/products/${props.relatedProducts[i]}`)
-        .then(function (response) {
-          console.log('RESPONSE!!!', response)
-          reqArray.push(response);
-        })
-      } console.log('RESPONSE', reqArray);
+    const requestArray = [];
+    const responseArray = [];
+    for (var i = 0; i < props.relatedProducts.length; i++) {
+      requestArray.push(axios.get(`http://3.21.164.220/products/${props.relatedProducts[i]}`));
+    } Promise.all(requestArray).then((responses) =>{
+      for (var k = 0; k < responses.length; k++) {
+        responseArray.push(responses[k])
+      }
+      console.log('responseArray', responseArray)
+      console.log(responseArray[1].data)
+    })
 
-
-
-
-
-
-    console.log('HERE ARE PROPS!', props.relatedProducts)
     return (
       <div >
       {
-        props.relatedProducts.map((relatedEntry, index) => (
-          //insert get product function here - with promises!
-          axios.get(`http://3.21.164.220/products/${props.relatedProducts[index]}`)
-          .then(function (response) {
-            <RelatedItemsEntry key = {index} relatedEntries = {response.data}/>
-          })
-
-        ))
-      }
+        // responseArray.map((response, index) => (
+        <div>{responseArray}</div>
+          // <RelatedItemsEntry key = {index} reponseData = {responseArray[index].data} />
+        // ))
+        }
     </div>
     )
   } else {
-    return (
+    return(
       <div>
-        Loading...
+        Now loading....
       </div>
     )
   }
