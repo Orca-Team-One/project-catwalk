@@ -8,7 +8,7 @@ const ReviewList = ({productdata, reviewstoRender, updateReviewList}) => {
 // will always take in current review list
 console.log('productdata', productdata)
 
-if(productdata.results.length === 0) {
+if(productdata.length === 0) {
     return (
         <div>
         'No reviews for this product'
@@ -17,7 +17,7 @@ if(productdata.results.length === 0) {
 }
         return (
             <div>
-                {productdata.results.slice(0, reviewstoRender).map((review) => (
+                {productdata.slice(0, reviewstoRender).map((review) => (
                     <ReviewItem review = {review}/>
                 ))
             }
