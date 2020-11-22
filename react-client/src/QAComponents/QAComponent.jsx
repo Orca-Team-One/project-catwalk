@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import QASearchBar from './QASearchBar.jsx';
-import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
-import AddAQuestion from './AddAQuestion.jsx';
+
 import QuestionList from './QuestionList.jsx';
 
 export default class QAComponent extends Component {
@@ -11,7 +10,12 @@ export default class QAComponent extends Component {
   }
 
   render() {
+    //destructuring assignment
     const {productQuestions} = this.props;
+    //sorting the questions array by their helpfulness rating
+    const sortedArray = productQuestions.sort(function(a, b) {
+      return b.question_helpfulness - a.question_helpfulness;
+      });
     return (
       <>
       <div className="askWidgetContainer">
@@ -23,19 +27,10 @@ export default class QAComponent extends Component {
             <QASearchBar/>
         </div>
           <div>
-            <QuestionList questions={productQuestions}/>
+            <QuestionList questions={sortedArray}/>
           </div>
       </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-">
-            <MoreAnsweredQuestions />
-            </div>
-            <div className="col-">
-            <AddAQuestion/>
-            </div>
-          </div>
-          </div>
+
       </>
     )
   }

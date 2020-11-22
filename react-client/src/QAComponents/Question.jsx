@@ -9,11 +9,12 @@ export default class Question extends Component {
     super(props);
   }
   render() {
+    console.log('question props:', this.props.question)
     //declaring a question object variable equal to the question object passed from Question List
-    const questionObject = this.props.question[0];
+    const questionObject = this.props.question;
 
     //destructuring assignment for helpfulness rating and quesiton body
-    const {question_helpfulness, question_body} = this.props.question[0];
+    const {question_helpfulness, question_body} = this.props.question;
 
     return (
       <>
@@ -24,7 +25,7 @@ export default class Question extends Component {
             }}>
               Q:
             </b>
-           {this.props.question[0].question_body}
+           {question_body}
           </div>
           <div className="col-sm">
           </div>

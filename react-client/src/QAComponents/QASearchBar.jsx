@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 
 export default class QASearchBar extends Component {
-  constructor() {
+  constructor({keyword, setKeyword}) {
     super();
     this.state = {
-      value: 'Have a Question? Search for Answers...',
     }
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value})
-  }
+  // handleChange(event) {
+  //   this.setState({value: event.target.value})
+  // }
 
   render() {
     return (
       <>
-        <label htmlFor="search"></label>
-        <input type="text" value={this.state.value} onChange={this.handleChange} className="searchBar"></input>
+        <input className="searchBar"
+        // key='random1'
+        // value={keyword}
+        placeholder={'Have a Question? Search for Answers...'}
+        onChange={(e) => setKeyword(e.target.value)}></input>
       </>
     )
   }
