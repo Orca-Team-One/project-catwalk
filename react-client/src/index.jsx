@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import RatingsAndReviews from './RatingsAndReviews/RatingsAndReviews.jsx'
+import RatingsAndReviews from './RatingsAndReviews/RatingsAndReviews.jsx';
 import ProductView from './ProductOverview/ProductView.jsx';
 import QAComponent from './QAComponents/QAComponent.jsx';
 import RelatedItems_Comparison from './RelatedItems_Comparison/RelatedItems_Comparison.jsx';
-import axios from 'axios'
+import axios from 'axios';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
     this.state = {
       productID: 5,
@@ -49,23 +49,30 @@ export default class App extends Component {
     let getRelatedItems =
     `http://3.21.164.220/products/${this.state.productID}/related`;
 
-    const getProductRequest = axios.get(getProduct);
-    const getProductStylesRequest = axios.get(getProductStyles);
-    const getProductQuestionsRequest = axios.get(getProductQuestions);
-    const getProductReviewsRequest = axios.get(getProductReviews);
-    const getMetaDataRequest = axios.get(getMetaData);
-    const getRelatedItemsRequest = axios.get(getRelatedItems);
+		const getProductRequest = axios.get(getProduct);
+		const getProductStylesRequest = axios.get(getProductStyles);
+		const getProductQuestionsRequest = axios.get(getProductQuestions);
+		const getProductReviewsRequest = axios.get(getProductReviews);
+		const getMetaDataRequest = axios.get(getMetaData);
+		const getRelatedItemsRequest = axios.get(getRelatedItems);
 
-    axios
-      .all([getProductRequest, getProductStylesRequest, getProductQuestionsRequest, getProductReviewsRequest, getMetaDataRequest, getRelatedItemsRequest])
-      .then(
-        axios.spread((...responses) => {
-          const getProductResponse = responses[0];
-          const getProductStylesReponse = responses[1];
-          const getProductQuestionsResponse = responses[2]
-          const getProductReviewsResponse = responses[3];
-          const getMetaDataReponse = responses[4];
-          const getReleatedItemsResponse = responses[5];
+		axios
+			.all([
+				getProductRequest,
+				getProductStylesRequest,
+				getProductQuestionsRequest,
+				getProductReviewsRequest,
+				getMetaDataRequest,
+				getRelatedItemsRequest,
+			])
+			.then(
+				axios.spread((...responses) => {
+					const getProductResponse = responses[0];
+					const getProductStylesReponse = responses[1];
+					const getProductQuestionsResponse = responses[2];
+					const getProductReviewsResponse = responses[3];
+					const getMetaDataReponse = responses[4];
+					const getReleatedItemsResponse = responses[5];
 
           // use/access the results
           console.log('ReponseData: ' ,getProductResponse, getProductStylesReponse, getProductQuestionsResponse, getProductReviewsResponse, getMetaDataReponse, getReleatedItemsResponse);
