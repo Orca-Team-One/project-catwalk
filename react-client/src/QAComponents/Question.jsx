@@ -9,12 +9,14 @@ export default class Question extends Component {
     super(props);
   }
   render() {
-    console.log('question props:', this.props.question)
     //declaring a question object variable equal to the question object passed from Question List
     const questionObject = this.props.question;
 
     //destructuring assignment for helpfulness rating and quesiton body
     const {question_helpfulness, question_body} = this.props.question;
+
+    //destructuring assignment
+     const {productName} = this.props;
 
     return (
       <>
@@ -33,7 +35,7 @@ export default class Question extends Component {
             <HelpfulButton helpfulCount={question_helpfulness}/>
            </div>
           <div className="col-">
-          <AddAnswerButton questionBody={question_body}/>
+          <AddAnswerButton questionBody={question_body} productName={productName}/>
           </div>
         </div>
       <div className="row">

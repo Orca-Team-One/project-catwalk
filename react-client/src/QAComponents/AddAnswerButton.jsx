@@ -18,6 +18,9 @@ export default class AddAnswerButton extends Component {
   }
 
 render() {
+  //destructuring assignment
+  const {productName} = this.props;
+
   return (
     <div>
       <button className="addAnswerButton" onClick={() => this.handleModalShowHide()}>
@@ -29,7 +32,7 @@ render() {
           <Modal.Title>Submit your Answer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Product Name: {this.props.questionBody}
+          Product Name: {productName}
         <AddAnswerModal/>
 
         </Modal.Body>

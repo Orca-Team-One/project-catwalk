@@ -2,13 +2,12 @@ import { Button, Modal} from 'react-bootstrap';
 import React, { Component } from 'react'
 
 const defaultState = {
-  answer: '',
+  question: '',
   nickname: '',
   email: '',
-  photos: [],
 }
 
-export default class AddAnswerModal extends Component {
+export default class AddQuestionModal extends Component {
   constructor(){
     super();
     this.state = defaultState;
@@ -27,12 +26,12 @@ export default class AddAnswerModal extends Component {
 }
 
   validate(){
-    let answerError = "";
+    let questionError = "";
     let nickNameError = "";
     let emailError = "";
 
-    if(!this.state.answer){
-        answerError = "Name field is required";
+    if(!this.state.question){
+        questionError = "Name field is required";
     }
 
     if(!this.state.nickName){
@@ -44,8 +43,8 @@ export default class AddAnswerModal extends Component {
         emailError = "Email Field is Invalid ";
     }
 
-    if(emailError || answerError || nickNameError){
-        this.setState({answerError,emailError,nickNameError});
+    if(emailError || questionError || nickNameError){
+        this.setState({questionError,emailError,nickNameError});
         return false;
     }
     return true;
@@ -68,24 +67,25 @@ export default class AddAnswerModal extends Component {
 
             <div className="form-row">
               <div className="form-group col-lg-6">
-                <label>Answer :</label>
+                <label>Your Question:</label>
                 <textarea
                   type="text"
+                  placeholder="Why did you like the product or not?"
                   className="form-control"
-                  name="answer"
-                  value={this.state.answer}
+                  name="question"
+                  value={this.state.question}
                   onChange={this.handleInputChange}
                 />
-                <span className="text-danger">{this.state.answerError}</span>
+                <span className="text-danger">{this.state.questionError}</span>
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group col-lg-6">
-                <label>Nickname :</label>
-                <p>For privacy reasons, do not use your full name or email addres.</p>
+                <label>Nickname:</label>
+                <p>For privacy reasons, do not use your full name or email address.</p>
                 <input
-                  placeholder="Example: jack543!"
+                  placeholder="Example: jackson11!"
                   type="nickName"
                   className="form-control"
                   name="nickName"
@@ -101,7 +101,7 @@ export default class AddAnswerModal extends Component {
                 <label>Email :</label>
                 <p>For authentication reasons, you will not be emailed.</p>
                 <input
-                  placeholder="Example: jack@email.com"
+                  placeholder="Example: jackson@email.com"
                   type="email"
                   className="form-control"
                   name="email"

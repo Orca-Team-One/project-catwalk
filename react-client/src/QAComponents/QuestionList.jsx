@@ -10,7 +10,7 @@ export default class QuestionList extends Component {
 
   render() {
     //destructuring assingment
-    const {questions} = this.props;
+    const {questions, productName} = this.props;
 
     return (
       <>
@@ -18,7 +18,7 @@ export default class QuestionList extends Component {
           <div class="container" style={{
             paddingTop: "15px",
           }}>
-          <Question question={question} key={question.id}/>
+          <Question question={question} key={question.id} productName={productName}/>
           </div>
         )}
       </>

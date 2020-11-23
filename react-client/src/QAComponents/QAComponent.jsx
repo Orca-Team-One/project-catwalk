@@ -26,20 +26,17 @@ export default class QAComponent extends Component {
   }
 
   render() {
-    //destructuring assignment
-    const {productQuestions} = this.props;
+    //destructuring assignments
+    const {productQuestions, productName} = this.props;
     const {questionsToShow} = this.state;
 
     //a copy of questions array takes the number of questions to be displayed from question array passed from the parent
     const copyOfQuestions = productQuestions.slice(0, questionsToShow);
-    console.log('copyOfQuestions:', copyOfQuestions)
 
     //sorting the questions array by their helpfulness rating
     const sortedArray = copyOfQuestions.sort(function(a, b) {
       return b.question_helpfulness - a.question_helpfulness;
       });
-
-    console.log('sortedArray:', sortedArray)
 
     return (
       <>
@@ -52,7 +49,7 @@ export default class QAComponent extends Component {
             <QASearchBar/>
         </div>
           <div>
-            <QuestionList questions={sortedArray}/>
+            <QuestionList questions={sortedArray} productName={productName}/>
           </div>
       </div>
       <div className="container">
@@ -67,7 +64,7 @@ export default class QAComponent extends Component {
             }
             </div>
             <div className="col-">
-            <AddAQuestion/>
+            <AddAQuestion productName={productName}/>
             </div>
           </div>
         </div>
