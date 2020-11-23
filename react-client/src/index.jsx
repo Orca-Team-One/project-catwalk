@@ -150,8 +150,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        {
-        /* {<ProductView
+         <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
@@ -163,8 +162,7 @@ export default class App extends Component {
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
-        /> */
-        }
+        /> 
         <RelatedItems_Comparison
         currentProduct={this.state.productID}
         getProduct={this.getProduct}

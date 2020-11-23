@@ -7,7 +7,21 @@ const ReviewItem = ({review}) => {
             <>
                 <div class="row">
                     <div class="col">
+                        <div class="col" style= {{
+                            backgroundColor: "#FE1CFE"
+                        }}>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
             {review.summary}
+            </div>
+            <div class="col" style= {{
+            paddingLeft: "400px"
+            }}>
+                    {review.date}
             </div>
             </div>
             <div class="row">
