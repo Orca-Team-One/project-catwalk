@@ -94,7 +94,6 @@ export class RatingsAndReviews extends Component {
                 <ProductBreakdown ratingdata= {this.props.reviewMetadata}/>
                 </div>
                 <div class="col-4" style={{
-                            backgroundColor: "#33FFF9",
                             fontSize:"12px"
                         }}>
                 <ReviewList updateReviewList = {this.updateReviewList} productdata={this.state.sortedReviews || this.props.productReviews.results} reviewstoRender={this.state.reviewstoRender}/>
