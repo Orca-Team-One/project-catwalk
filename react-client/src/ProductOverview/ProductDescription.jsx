@@ -3,27 +3,24 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function ProductDescription({ productData }) {
   return (
-    <Container className="productDescription">
+    <div className="productDescription">
       <Row>
-        <Col lg={8}>
+        <Col sm={8}>
           <h5>{productData.slogan}</h5>
           <p>{productData.description}</p>
         </Col>
-        <Col lg={4}>
+        <Col sm={4}>
           <h5>Product Features</h5>
-          { !productData.features
-            ? <p>Loading...</p>
-            : productData.features.map((feature, index) => {
-              return (
-                <div key={index}>
-                  <p>{feature.value} {feature.feature}</p>
-                </div>
-              )
-            })
-          }
+          {productData.features.map((feature, index) => {
+            return (
+              <div key={index}>
+                <p>{feature.value} {feature.feature}</p>
+              </div>
+            )
+          })}
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 

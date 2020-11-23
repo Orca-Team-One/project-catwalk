@@ -64,27 +64,23 @@ export default class App extends Component {
 
           // use/access the results
           console.log('ReponseData: ' ,getProductResponse, getProductStylesReponse, getProductQuestionsResponse, getProductReviewsResponse, getMetaDataReponse, getReleatedItemsResponse);
-
           // setState functions
           this.setState({
             productData: getProductResponse.data,
             productStyles: getProductStylesReponse.data.results,
-            productQuestions: getProductQuestionsResponse.results,
+            productQuestions: getProductQuestionsResponse.data.results,
             relatedProducts: getReleatedItemsResponse.data,
             productReviews: getProductReviewsResponse.data,
             reviewMetadata: getMetaDataReponse.data,
           })
         })
       )
-      .catch(errors => {
-        // react on errors.
-        console.error('Err', errors);
-      });
-
+      // .catch(errors => {
+      //   // react on errors.
+      //   console.error('Err', errors);
+      // });
   }
-
   render() {
-
     return (
       <div>
         <h1>Hello World</h1>
@@ -92,8 +88,15 @@ export default class App extends Component {
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
-        <QAComponent productQuestions={this.state.productQuestions}/>
-        <RatingsAndReviews/> */}
+        {this.state.productQuestions.length ?
+        <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
+        <div>
+          Questions loading
+          </div>}
+        <RatingsAndReviews
+        productReviews = {this.state.productReviews}
+        reviewMetadata = {this.state.reviewMetadata}
+        />
         <RelatedItems_Comparison
         getRelatedItems={this.getRelatedItems}
         currentProduct={this.state.productID}

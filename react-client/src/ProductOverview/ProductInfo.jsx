@@ -1,30 +1,23 @@
 import React from 'react';
 
-function ProductInfo({ productID, productData, productStyles }) {
+function ProductInfo({ productID, productData, productStyles, selectedStyle }) {
 
   return (
     <div>
       {/* Star Rating, Read all Reviews */}
-      <p>* * * * * | <a href="">Read all # reviews</a></p>
+      <p>* * * * * | <a href="#ratingsReviewsComponent">Read all # reviews</a></p>
 
       {/* Product Category and Name */}
-      { productData.category
-        ? <div>
-            <p>{productData.category.toUpperCase()}</p>
-            <h5>{productData.name}</h5>
-          </div>
-        : <p>Loading...</p>
-      }
+      <p>{productData.category.toUpperCase()}</p>
+      <h5>{productData.name}</h5>
 
       {/* Product Price, Sale Price */}
-      { productStyles.length !== 0
-        ? productStyles[0]["sale_price"] !== 0
-          ? <div>
-              <p style={{textDecoration: 'line-through'}}>${productStyles[0]["original_price"]}</p>
-              <p>${productStyles[0]["sale_price"]}</p>
-            </div>
-          : <p>Original Price: ${productStyles[0]["original_price"]}</p>
-        : <p>Loading...</p>
+      { productStyles[selectedStyle].sale_price === '0'
+        ? <p>${productStyles[selectedStyle].original_price}</p>
+        : <div>
+            <p style={{textDecoration: 'line-through'}}>${productStyles[selectedStyle].original_price}</p>
+            <p style={{fontWeight: 'bold'}}>${productStyles[selectedStyle].sale_price}</p>
+          </div>
       }
 
       {/* <p>Social Media Links</p> */}

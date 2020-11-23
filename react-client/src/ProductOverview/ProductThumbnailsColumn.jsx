@@ -1,18 +1,12 @@
 import React from 'react';
 import ProductThumbnail from './ProductThumbnail.jsx';
 
-function ProductThumbnailsColumn({ productStyles }) {
+function ProductThumbnailsColumn({ productStyles, selectedStyle }) {
   return (
     <div>
-      <p>Product Image Thumbnails: </p>
-      { productStyles.length !== 0
-        ? <div>
-            {productStyles[0].photos.map((photo, index) => {
-              return <ProductThumbnail photo={photo} key={index}/>
-            })}
-          </div>
-        : <p>Loading...</p>
-      }
+      {productStyles[selectedStyle].photos.map((photo, index) => {
+        return <ProductThumbnail photo={photo} key={index}/>
+      })}
     </div>
   );
 }

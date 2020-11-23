@@ -10,16 +10,7 @@ export default class HelpfulButton extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // handleClick() {
-  //   this.setState(state => ({
-  //     helpfulClicked: !this.state.helpfulCLicked,
-  //     helpfulCount: this.state.helpfulCount++,
-  //   }));
-  // }
-
-
   handleClick() {
-    console.log('clicked!', this.state.helpfulClicked, this.state.helpfulCount)
     this.setState(prevState => ({
       helpfulClicked: !prevState.helpfulClicked
     }));
@@ -32,7 +23,6 @@ export default class HelpfulButton extends Component {
         helpfulCount: this.props.helpfulCount
       })
     }
-    console.log('clicked!', this.state.helpfulClicked, this.state.helpfulCount)
   }
 
 
