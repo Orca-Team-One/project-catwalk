@@ -40,6 +40,15 @@ export default class QAComponent extends Component {
 			return b.question_helpfulness - a.question_helpfulness;
 		});
 
+		let questionSection;
+		if (productQuestions.length > 0) {
+			questionSection = (
+				<QuestionList questions={sortedArray} productName={productName} />
+			);
+		} else {
+			questionSection = <div></div>;
+		}
+
 		return (
 			<>
 				<div className="askWidgetContainer">
@@ -51,10 +60,10 @@ export default class QAComponent extends Component {
 					<div
 						style={{
 							overflow: 'scroll',
-							height: '400px',
+							maxHeight: '400px',
 						}}
 					>
-						<QuestionList questions={sortedArray} productName={productName} />
+						{questionSection}
 					</div>
 				</div>
 				<div className="container">
@@ -68,6 +77,7 @@ export default class QAComponent extends Component {
 								<></>
 							)}
 						</div>
+
 						<div className="col-">
 							<AddAQuestion productName={productName} productID={productID} />
 						</div>

@@ -99,7 +99,6 @@ export default class App extends Component {
 					productData={this.state.productData}
 					productStyles={this.state.productStyles}
 				/>
-				this.state.productQuestions.length ?
 				<QAComponent
 					productQuestions={this.state.productQuestions}
 					productName={this.state.productData.name}

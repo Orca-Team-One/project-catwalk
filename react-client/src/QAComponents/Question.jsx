@@ -37,7 +37,10 @@ export default class Question extends Component {
 					</div>
 					<div className="col-sm"></div>
 					<div className="col-">
-						<HelpfulButton helpfulCount={question_helpfulness} />
+						<HelpfulButton
+							helpfulCount={question_helpfulness}
+							questionID={question_id}
+						/>
 					</div>
 					<div className="col-">
 						<AddAnswerButton
