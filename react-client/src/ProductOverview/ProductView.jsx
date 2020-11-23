@@ -13,6 +13,18 @@ class ProductView extends Component {
     this.state = {
       selectedStyle: 0
     };
+
+    // bind functions
+    this.changeStyle = this.changeStyle.bind(this);
+  }
+
+  changeStyle(selectedStyleId, event) {
+    event.preventDefault();
+    let currentProductStyles = this.props.productStyles;
+    console.log("Default Style:", currentProductStyles[this.state.selectedStyle]);
+    // this.setState({
+    //   currentSelectedStyle: currentProductStyles[selectedStyleId]
+    // });
   }
 
   render() {
@@ -24,16 +36,15 @@ class ProductView extends Component {
               <Row>
                 <Col sm={6}>
                   <ProductImageView
-                    productID={this.props.productID}
                     productStyles={this.props.productStyles}
                     selectedStyle={this.state.selectedStyle}/>
                 </Col>
                 <Col sm={4}>
                   <ProductDetailsColumn
-                    productID={this.props.productID}
                     productData={this.props.productData}
                     productStyles={this.props.productStyles}
-                    selectedStyle={this.state.selectedStyle}/>
+                    selectedStyle={this.state.selectedStyle}
+                    changeStyle={this.changeStyle}/>
                 </Col>
               </Row>
                 <ProductDescription

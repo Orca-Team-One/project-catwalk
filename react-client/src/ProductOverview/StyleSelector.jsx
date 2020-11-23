@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Style from './Style.jsx';
 
-function StyleSelector ({ productID, productStyles, selectedStyle }) {
+function StyleSelector ({ productStyles, selectedStyle, changeStyle }) {
   return (
     <div>
       <h6>STYLE > {productStyles[selectedStyle].name.toUpperCase()}</h6>
@@ -10,7 +10,7 @@ function StyleSelector ({ productID, productStyles, selectedStyle }) {
         <Row>
           {productStyles.map((style, index) =>
             <Col sm={2} key={index}>
-              <Style style={style} />
+              <Style style={style} changeStyle={changeStyle} />
             </Col>
           )}
         </Row>
