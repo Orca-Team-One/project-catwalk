@@ -4,19 +4,67 @@ import ReviewList from './ReviewList.jsx'
 import AddReview from './AddReview.jsx'
 import productdata from './productdata.jsx'
 import ProductBreakdown from './ProductBreakdown.jsx'
+import ReviewsSorting from './ReviewsSorting.jsx'
 import metadata from './metadata.jsx'
 
 
 // pass prod data and metadata as props
 // only use state for form data, dont pass state as props 
 export class RatingsAndReviews extends Component {
-
     constructor(props) {
         super(props)
         this.state = {
-    
+            reviewstoRender: 2,
+            sortingPreference: 'Relevance',
+            sortedReviews: []
         }
+        this.updateReviewList = this.updateReviewList.bind(this);
+        this.handleSortingChange = this.handleSortingChange.bind(this);
+        this.sortPreferences= this.sortPreferences.bind(this)
     }
+
+    componentDidMount() {
+          this.sortPreferences()
+    }
+
+    handleSortingChange(e) {
+        console.log('e.target.value', e.target.value)
+         this.setState({sortingPreference: e.target.value}, () => {
+             this.sortPreferences()
+         })
+    }
+
+    sortPreferences() {
+        // add axios.then to handle sorting of relevance when API call comes in
+        if (this.state.sortingPreference === 'Relevance') {
+            // combined date and helfulness score
+
+       } 
+       if (this.state.sortingPreference === 'Helpfulness') {
+        results = this.props.productReviews.results.sort((a, b) => {
+            return a.helpfulness - b.helpfulness
+        })
+
+       } if (this.state.sortingPreference === 'Rating') {
+        results = this.props.productReviews.results.sort((a, b) => {
+            console.log('ratings', a.rating, b.rating)
+            return b.rating - a.rating
+        })
+    
+       }
+
+       this.setState({sortedReviews: results})
+
+    }
+
+
+    updateReviewList() {
+        if(this.state.reviewstoRender === this.props.productReviews.results.length) {
+            return
+        }
+        this.setState({reviewstoRender: this.state.reviewstoRender + 2})
+    }
+
     render() {
         if(Object.keys(this.props.productReviews).length === 0  || Object.keys(this.props.reviewMetadata).length === 0) { 
             return (
@@ -25,8 +73,6 @@ export class RatingsAndReviews extends Component {
                 </div>
             )
         } else {
-            console.log('product reviews', this.props.productReviews)
-            console.log('reviewMetadata', this.props.reviewMetadata)
         return (
             <div>
                     <div class="row">
@@ -36,18 +82,7 @@ export class RatingsAndReviews extends Component {
                         }}>
                         Ratings {'&'} Reviews
                         </div>
-                        <div class = "col-4" style={{
-                        backgroundColor: "#ABBAEA",
-                        fontSize:"10px",
-                        }}>
-                        <label>248 reviews, sorted by:</label>
-                        {/*set default to relevance by creating state for form */}
-                            <select>
-                                <option>Helpfulness</option>
-                                <option>Newest</option>
-                                <option>Relevance</option>
-                            </select>
-                        </div>
+                        <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
                         </div>
                     <div class="row">
                         <div class="col-3" style={{
@@ -61,7 +96,7 @@ export class RatingsAndReviews extends Component {
                             backgroundColor: "#33FFF9",
                             fontSize:"12px"
                         }}>
-                <ReviewList productdata= {this.props.productReviews}/>
+                <ReviewList updateReviewList = {this.updateReviewList} productdata={this.state.sortedReviews || this.props.productReviews.results} reviewstoRender={this.state.reviewstoRender}/>
                 <AddReview/>
                 </div>
                 </div>
