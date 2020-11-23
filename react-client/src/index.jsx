@@ -85,16 +85,16 @@ export default class App extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        {/* <ProductView
+        <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
 
-        {this.state.productQuestions.length ?
+        this.state.productQuestions.length ?
         <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
         <div>
           Questions loading
-        </div>*/}
+        </div>
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
@@ -106,7 +106,9 @@ export default class App extends Component {
         relatedProducts={this.state.relatedProducts}/>
       </div>
     )
+
   }
+
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
