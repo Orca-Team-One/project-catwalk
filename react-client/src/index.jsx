@@ -94,7 +94,7 @@ export default class App extends Component {
         <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
         <div>
           Questions loading
-          </div>}
+        </div>*/}
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
