@@ -35,6 +35,7 @@ export class RatingsAndReviews extends Component {
     }
 
     sortPreferences() {
+        var results;
         // add axios.then to handle sorting of relevance when API call comes in
         if (this.state.sortingPreference === 'Relevance') {
             // combined date and helfulness score

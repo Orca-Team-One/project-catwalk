@@ -84,6 +84,7 @@ export default class App extends Component {
 					});
 				})
 			);
+
 		// .catch(errors => {
 		//   // react on errors.
 		//   console.error('Err', errors);
@@ -98,19 +99,16 @@ export default class App extends Component {
 					productData={this.state.productData}
 					productStyles={this.state.productStyles}
 				/>
-				{this.state.productQuestions.length ? (
-					<QAComponent
-						productQuestions={this.state.productQuestions}
-						productName={this.state.productData.name}
-						productID={this.state.productData.id}
-					/>
-				) : (
-					<div>Questions loading</div>
-				)}
-				{/* <RatingsAndReviews
-        productReviews = {this.state.productReviews}
-        reviewMetadata = {this.state.reviewMetadata}
-        /> */}
+				this.state.productQuestions.length ?
+				<QAComponent
+					productQuestions={this.state.productQuestions}
+					productName={this.state.productData.name}
+				/>{' '}
+				:<div>Questions loading</div>
+				<RatingsAndReviews
+					productReviews={this.state.productReviews}
+					reviewMetadata={this.state.reviewMetadata}
+				/>
 				<RelatedItems_Comparison
 					getRelatedItems={this.getRelatedItems}
 					currentProduct={this.state.productID}
