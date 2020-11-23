@@ -11,7 +11,7 @@ const Breakdown = ({productdata}) =>  {
             <div>
                 Review Breakdown
                 Average Review Score: {/*compute average review score*/}
-                There were {productdata.results.length} total reviews for this product
+                {/*There were {productdata.results.length} total reviews for this product*/}
                 {/*compute percentage of reviewers recomending product*/} Percentage of reviewers recomend this product
                 <BreakdownRatingList/>
             </div>

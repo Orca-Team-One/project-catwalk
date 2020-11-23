@@ -1,16 +1,25 @@
 import React from 'react';
+import { Row, Col, Figure, FigureImage} from 'react-bootstrap'
 import ProductThumbnailsColumn from './ProductThumbnailsColumn.jsx';
 
-function ProductImageView({ productID, productStyles }) {
+function ProductImageView({ productID, productStyles, selectedStyle }) {
   return (
     <div className="productImageView">
-      { productStyles.length !== 0
-        ? <img className="currentImageView" src={productStyles[0].photos[0].url}></img>
-        : <p>Loading...</p>
-      }
-
-      {/* Product Thumbnails */}
-      <ProductThumbnailsColumn productStyles={productStyles}/>
+      <Row>
+        <Col sm={1}>
+          <ProductThumbnailsColumn
+            productStyles={productStyles}
+            selectedStyle={selectedStyle}/>
+        </Col>
+        <Col sm={8}>
+          <Figure className="currentImageView">
+            <Figure.Image
+              width={500}
+              height={1100}
+              src={productStyles[selectedStyle].photos[0].url} />
+          </Figure>
+        </Col>
+      </Row>
     </div>
   );
 }
