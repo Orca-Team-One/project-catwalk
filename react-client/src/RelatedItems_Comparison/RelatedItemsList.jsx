@@ -10,7 +10,11 @@ function RelatedItemsList(props) {
       <div >
       {
         props.relatedProducts.map((product, index) => (
-          <RelatedItemsEntry key = {index} productID = {props.relatedProducts[index]} />
+          <RelatedItemsEntry
+          key = {index}
+          productID = {props.relatedProducts[index]}
+          handleRelatedItemClick={props.handleRelatedItemClick}
+          />
         ))
         }
     </div>
