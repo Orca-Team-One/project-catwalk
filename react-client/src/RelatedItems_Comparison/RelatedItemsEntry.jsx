@@ -23,7 +23,6 @@ export default class RelatedItemsEntry extends Component {
       this.setState({
         productImage: response.data.results[0].photos[0].thumbnail_url
       })
-      console.log('photo URL', this.state.productImage)
     })
   }
 
