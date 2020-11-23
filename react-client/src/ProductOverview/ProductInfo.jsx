@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProductInfo({ productID, productData, productStyles, selectedStyle }) {
+function ProductInfo({ productData, productStyles, selectedStyle }) {
 
   return (
     <div>

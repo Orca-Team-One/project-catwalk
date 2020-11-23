@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Figure, FigureImage} from 'react-bootstrap'
 import ProductThumbnailsColumn from './ProductThumbnailsColumn.jsx';
 
-function ProductImageView({ productID, productStyles, selectedStyle }) {
+function ProductImageView({ productStyles, selectedStyle }) {
   return (
     <div className="productImageView">
       <Row>
