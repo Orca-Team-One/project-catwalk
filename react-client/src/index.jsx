@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import RatingsAndReviews from './RatingsAndReviews/RatingsAndReviews.jsx';
+import Header from './ProductOverview/Header.jsx';
 import ProductView from './ProductOverview/ProductView.jsx';
+import RatingsAndReviews from './RatingsAndReviews/RatingsAndReviews.jsx';
 import QAComponent from './QAComponents/QAComponent.jsx';
 import RelatedItems_Comparison from './RelatedItems_Comparison/RelatedItems_Comparison.jsx';
 import axios from 'axios';
@@ -85,39 +86,32 @@ export default class App extends Component {
 				})
 			);
 
-		// .catch(errors => {
-		//   // react on errors.
-		//   console.error('Err', errors);
-		// });
-	}
-	render() {
-		return (
-			<div>
-				<h1>Hello World</h1>
-				<ProductView
-					productID={this.state.productID}
-					productData={this.state.productData}
-					productStyles={this.state.productStyles}
-				/>
-				this.state.productQuestions.length ?
-				<QAComponent
-					productQuestions={this.state.productQuestions}
-					productName={this.state.productData.name}
-				/>{' '}
-				:<div>Questions loading</div>
-				<RatingsAndReviews
-					productReviews={this.state.productReviews}
-					reviewMetadata={this.state.reviewMetadata}
-				/>
-				<RelatedItems_Comparison
-					getRelatedItems={this.getRelatedItems}
-					currentProduct={this.state.productID}
-					getProduct={this.getProduct}
-					relatedProducts={this.state.relatedProducts}
-				/>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <Header />
+        <ProductView
+          productID={this.state.productID}
+          productData={this.state.productData}
+          productStyles={this.state.productStyles}/>
+        {this.state.productQuestions.length ?
+        <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
+        <div>
+          Questions loading
+          </div>}
+        <RatingsAndReviews
+        productReviews = {this.state.productReviews}
+        reviewMetadata = {this.state.reviewMetadata}
+        />
+        <RelatedItems_Comparison
+        currentProduct={this.state.productID}
+        getProduct={this.getProduct}
+        relatedProducts={this.state.relatedProducts}
+        handleRelatedItemClick={this.handleRelatedItemClick}
+        />
+      </div>
+    )
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));

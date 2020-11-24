@@ -1,17 +1,16 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-// import Badge from '@material-ui/core/Badge';
 import { Container, Row, Col } from 'react-bootstrap';
+import Style from './Style.jsx';
 
-function StyleSelector ({ productID, productStyles, selectedStyle }) {
+function StyleSelector ({ productStyles, selectedStyle, changeStyle }) {
   return (
     <div>
       <h6>STYLE > {productStyles[selectedStyle].name.toUpperCase()}</h6>
       <Container>
         <Row>
-          {productStyles.map((result, index) =>
+          {productStyles.map((style, index) =>
             <Col sm={2} key={index}>
-              <Avatar src={result.photos[0].thumbnail_url} />
+              <Style style={style} changeStyle={changeStyle} />
             </Col>
           )}
         </Row>

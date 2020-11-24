@@ -4,8 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 function Header() {
   return (
     <div className="header">
-      <p>Logo</p>
-      <input>Searchbar Icon</input>
+      <p>Logo | App Name</p>
     </div>
   );
 }
