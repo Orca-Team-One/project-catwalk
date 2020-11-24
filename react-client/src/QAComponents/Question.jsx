@@ -31,8 +31,8 @@ export default class Question extends Component {
 							}}
 						>
 							Q:
+							{question_body}
 						</b>
-						{question_body}
 					</div>
 					<div className="col-sm"></div>
 					<div className="col-">

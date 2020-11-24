@@ -3,6 +3,8 @@ import Answer from './Answer.jsx';
 import axios from 'axios';
 import LoadMoreAnswers from './LoadMoreAnswers.jsx';
 import CollapseAnswers from './CollapseAnswers.jsx';
+import FullAnswersList from './FullAnswersList.jsx';
+import PartialAnswersList from './PartialAnswersList.jsx';
 
 export default class AnswerList extends Component {
 	constructor(props) {
@@ -63,37 +65,22 @@ export default class AnswerList extends Component {
 		//Load More Answers button functionality
 		const showAllAnswers = this.state.allAnswers;
 		let button;
+		let answerProps;
 		if (showAllAnswers) {
 			button = <CollapseAnswers onClick={this.handleCollapseClick} />;
+			answerProps = <FullAnswersList answersList={sortedArray} />;
 		} else {
 			button = <LoadMoreAnswers onClick={this.handleLoadMoreClick} />;
+			answerProps = <PartialAnswersList answersList={sortedArray} />;
 		}
-
 		return (
 			<div class="container">
 				<>
-					<div className="row">{fullAnswerList[0]}</div>
-					<div className="row">{fullAnswerList[1]}</div>
-					<div className="row">{button}</div>
+					{answerProps}
+					{/* If there are two or fewer answers, do not display the Load More Answers Button */}
+					{sortedArray.length <= 2 ? null : <div className="row">{button}</div>}
 				</>
 			</div>
 		);
 	}
 }
-
-// componentDidMount() {
-// 	this.getAnswers();
-// }
-
-// getAnswers() {
-// 	axios
-// 		.get(
-// 			`http://3.21.164.220/qa/questions?product_id=${this.props.questionID}`
-// 		)
-// 		.then((response) => {
-// 			this.setState({ answersList: response.results });
-// 		})
-// 		.catch((err) =>
-// 			console.log('There was an error getting the answers list:', err)
-// 		);
-// }
