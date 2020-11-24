@@ -36,14 +36,13 @@ export default class RelatedItemsEntry extends Component {
       </div>
       )} else {
     return (
-      <div class="card related_card alignComparedCards" onClick={ () => this.props.handleRelatedItemClick(this.props.productID)}><a href="#" class="stretched-link"
+      <div class="card related_card alignComparedCards" style={{width: '18rem'}} onClick={ () => this.props.handleRelatedItemClick(this.props.productID)}><a href="#" class="stretched-link"
       >
-        <img src= {`${this.state.productImage}`} alt="Denim Jeans" ></img>
+        <img src= {`${this.state.productImage}`} alt="Denim Jeans" class="card-img-top"></img>
         <p>{this.state.productData.name}</p>
         <p>{this.state.productData.category}</p>
         <p class="card_price">${this.state.productData.default_price}</p>
         <p>Ratings</p>
-        {/* <p><button>Add to Cart</button></p> */}
         </a>
       </div>
     )}
