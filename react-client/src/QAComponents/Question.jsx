@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HelpfulButton from './HelpfulButton.jsx';
 import AddAnswerButton from './AddAnswerButton.jsx';
 import LoadMoreAnswers from './LoadMoreAnswers.jsx';
-import AnswerList from './AnswerList.jsx';
+import AnswerList from './Answer/AnswerList.jsx';
 
 export default class Question extends Component {
 	constructor(props) {

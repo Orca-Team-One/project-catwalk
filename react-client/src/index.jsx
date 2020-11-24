@@ -85,33 +85,38 @@ export default class App extends Component {
 					});
 				})
 			);
+	}
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <ProductView
-          productID={this.state.productID}
-          productData={this.state.productData}
-          productStyles={this.state.productStyles}/>
-        {this.state.productQuestions.length ?
-        <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
-        <div>
-          Questions loading
-          </div>}
-        <RatingsAndReviews
-        productReviews = {this.state.productReviews}
-        reviewMetadata = {this.state.reviewMetadata}
-        />
-        <RelatedItems_Comparison
-        currentProduct={this.state.productID}
-        getProduct={this.getProduct}
-        relatedProducts={this.state.relatedProducts}
-        handleRelatedItemClick={this.handleRelatedItemClick}
-        />
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<Header />
+				<ProductView
+					productID={this.state.productID}
+					productData={this.state.productData}
+					productStyles={this.state.productStyles}
+				/>
+				{this.state.productQuestions.length ? (
+					<QAComponent
+						productQuestions={this.state.productQuestions}
+						productName={this.state.productData.name}
+					/>
+				) : (
+					<div>Questions loading</div>
+				)}
+				<RatingsAndReviews
+					productReviews={this.state.productReviews}
+					reviewMetadata={this.state.reviewMetadata}
+				/>
+				<RelatedItems_Comparison
+					currentProduct={this.state.productID}
+					getProduct={this.getProduct}
+					relatedProducts={this.state.relatedProducts}
+					handleRelatedItemClick={this.handleRelatedItemClick}
+				/>
+			</div>
+		);
+	}
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
