@@ -10,7 +10,7 @@ function StyleSelector ({ productStyles, selectedStyle, changeStyle }) {
         <Row>
           {productStyles.map((style, index) =>
             <Col sm={2} key={index}>
-              <Style style={style} changeStyle={changeStyle} />
+              <Style style={style} index={index} changeStyle={changeStyle} />
             </Col>
           )}
         </Row>
