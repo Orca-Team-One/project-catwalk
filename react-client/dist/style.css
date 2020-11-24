@@ -1,125 +1,133 @@
 /* RelatedItems And Comparison Styling */
 .related_card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
 }
 
 .comparison_card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
 }
 
 .alignRelatedCards {
-  float: left;
+	float: left;
 }
 
 .alignComparedCards {
-  float: left;
+	float: left;
 }
 
 /* Questions and Answers Component Styling:  */
 .askWidgetContainer {
-  display: block;
-  box-sizing: border-box;
-  font-size: 14px;
-  line-height: 20px;
-  max-width: 900px;
+	display: block;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 20px;
+	max-width: 900px;
 }
 
 .container {
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 14px;
-  line-height: 20px;
-  /* box-sizing: border-box; */
-  max-width: 550px;
+	display: inline-flex;
+	flex-direction: column;
+	font-size: 14px;
+	line-height: 20px;
+	/* box-sizing: border-box; */
+	max-width: 550px;
 }
 
 .askWidgetHeader {
-  color: #0F1111!important;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
-  padding-bottom: 2px;
-  text-rendering: optimizeLegibility;
-  /* margin-block-start: 0.83em;
+	color: #0f1111 !important;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+	padding-bottom: 2px;
+	text-rendering: optimizeLegibility;
+	/* margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px; */
 }
 
 .searchBar {
-  font-size: 14px;
-  line-height: 20px;
-  color: #0F1111;
-  font-family: Helvetica;
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 8px!important;
-  margin-top: 6px!important;
-  margin: 0;
-  overflow: visible;
-  max-width: 550px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #0f1111;
+	font-family: Helvetica;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 8px !important;
+	margin-top: 6px !important;
+	margin: 0;
+	overflow: visible;
+	max-width: 550px;
 }
 
 .QandSection {
-  font-size: 14px;
-  line-height: 20px;
-  color: #0F1111;
-  font-family: Helvetica;
-  box-sizing: border-box;
-  margin-bottom: 0;
+	font-size: 14px;
+	line-height: 20px;
+	color: #0f1111;
+	font-family: Helvetica;
+	box-sizing: border-box;
+	margin-bottom: 0;
 }
 .questionListContainer {
-  display: box;
+	display: box;
 }
 .questionContainer {
-  padding-top: 15px
+	padding-top: 15px;
 }
 .questionContainer {
-  padding-top: 15px
+	padding-top: 15px;
 }
 .helpfulButton {
-  background: none;
-  border: none;
-  display: inline-block;
-  transition-duration: 0.2s;
-  cursor: pointer;
-  font-size: 80%;
-  padding-left: 5px;
-  padding-right: 5px;
+	background: none;
+	border: none;
+	display: inline-block;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	font-size: 80%;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
-.reportButton{
-  background: none;
-  border: none;
-  display: inline-block;
-  transition-duration: 0.2s;
-  cursor: pointer;
-  font-size: 80%;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-decoration: underline;
+.loadMoreOrCollapseButton {
+	background: none;
+	border: none;
+	/* display: inline-block; */
+	transition-duration: 0.2s;
+	cursor: pointer;
+	font-weight: 600;
 }
-.addAnswerButton{
-  background: none;
-  border: none;
-  display: inline-block;
-  transition-duration: 0.2s;
-  cursor: pointer;
-  font-size: 80%;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-decoration: underline;
+
+.reportButton {
+	background: none;
+	border: none;
+	display: inline-block;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	font-size: 80%;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
+}
+.addAnswerButton {
+	background: none;
+	border: none;
+	display: inline-block;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	font-size: 80%;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
 }
 
 .helpfulButton:hover {
-  background-color: #F8F8FF;
+	background-color: #f8f8ff;
 }
-

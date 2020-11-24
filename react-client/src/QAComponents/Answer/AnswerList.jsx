@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Answer from './Answer.jsx';
+import axios from 'axios';
+import LoadMoreAnswers from './LoadMoreAnswers.jsx';
+import CollapseAnswers from './CollapseAnswers.jsx';
 
 export default class AnswerList extends Component {
 	constructor(props) {
@@ -7,7 +10,19 @@ export default class AnswerList extends Component {
 		this.state = {
 			allAnswers: false,
 		};
+		this.handleCollapseClick = this.handleCollapseClick.bind(this);
+		this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this);
 	}
+
+	handleCollapseClick() {
+		this.setState({ allAnswers: false });
+		console.log(this.state.allAnswers);
+	}
+
+	handleLoadMoreClick() {
+		this.setState({ allAnswers: true });
+	}
+
 	render() {
 		//destructuring assignment
 		const { answers } = this.props;
@@ -15,7 +30,7 @@ export default class AnswerList extends Component {
 		//an array of all the answers
 		const answersArray = Object.values(answers);
 
-		// console.log('answerArray', answersArray)
+		console.log('answerArray', answersArray);
 		//final answer list array
 		var finalAnswerList = [];
 
@@ -45,13 +60,40 @@ export default class AnswerList extends Component {
 			<Answer answer={answer} key={answer.id} />
 		));
 
+		//Load More Answers button functionality
+		const showAllAnswers = this.state.allAnswers;
+		let button;
+		if (showAllAnswers) {
+			button = <CollapseAnswers onClick={this.handleCollapseClick} />;
+		} else {
+			button = <LoadMoreAnswers onClick={this.handleLoadMoreClick} />;
+		}
+
 		return (
 			<div class="container">
 				<>
-					<div class="row">{fullAnswerList[0]}</div>
-					<div class="row">{fullAnswerList[1]}</div>
+					<div className="row">{fullAnswerList[0]}</div>
+					<div className="row">{fullAnswerList[1]}</div>
+					<div className="row">{button}</div>
 				</>
 			</div>
 		);
 	}
 }
+
+// componentDidMount() {
+// 	this.getAnswers();
+// }
+
+// getAnswers() {
+// 	axios
+// 		.get(
+// 			`http://3.21.164.220/qa/questions?product_id=${this.props.questionID}`
+// 		)
+// 		.then((response) => {
+// 			this.setState({ answersList: response.results });
+// 		})
+// 		.catch((err) =>
+// 			console.log('There was an error getting the answers list:', err)
+// 		);
+// }
