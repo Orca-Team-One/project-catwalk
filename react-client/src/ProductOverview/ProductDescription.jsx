@@ -14,7 +14,7 @@ function ProductDescription({ productData }) {
           {productData.features.map((feature, index) => {
             return (
               <div key={index}>
-                <p>{feature.value} {feature.feature}</p>
+                <p>{feature.feature} | {feature.value}</p>
               </div>
             )
           })}
