@@ -43,7 +43,7 @@ export class RatingsAndReviews extends Component {
        } 
        if (this.state.sortingPreference === 'Helpfulness') {
         results = this.props.productReviews.results.sort((a, b) => {
-            return a.helpfulness - b.helpfulness
+            return b.helpfulness - a.helpfulness
         })
 
        } if (this.state.sortingPreference === 'Rating') {
@@ -77,23 +77,30 @@ export class RatingsAndReviews extends Component {
         return (
             <div>
                     <div class="row">
-                        <div class="col-3" style={{
+                        <div class="col-4" style={{
                         backgroundColor: "#EBEBEB",
                         fontSize:"20px",
                         }}>
                         Ratings {'&'} Reviews
                         </div>
+                        <div class="row">
+                            <div class="col" style={{
+                                fontSize: "11px",
+                                backgroundColor: "#FE1C49"
+                            }}>
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
                         </div>
+                        </div>
+                        </div>
                     <div class="row">
-                        <div class="col-3" style={{
+                        <div class="col-4" style={{
                             backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
                 <Breakdown productdata= {this.props.productReviews}/>
                 <ProductBreakdown ratingdata= {this.props.reviewMetadata}/>
                 </div>
-                <div class="col-4" style={{
+                <div class="col-8" style={{
                             fontSize:"12px"
                         }}>
                 <ReviewList updateReviewList = {this.updateReviewList} productdata={this.state.sortedReviews || this.props.productReviews.results} reviewstoRender={this.state.reviewstoRender}/>
