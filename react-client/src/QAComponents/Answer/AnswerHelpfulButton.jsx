@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 const axios = require('axios').default;
 
-export default class HelpfulButton extends Component {
+export default class AnswerHelpfulButton extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,7 +22,7 @@ export default class HelpfulButton extends Component {
 		}
 		axios({
 			method: 'put',
-			url: `http://3.21.164.220/qa/questions/${this.props.questionID}/helpful`,
+			url: `http://3.21.164.220/qa/answers/${this.props.answerID}/helpful`,
 		})
 			.then((response) => console.log('Put request successful:', response))
 			.catch((err) =>

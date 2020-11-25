@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import HelpfulButton from './HelpfulButton.jsx';
 import AddAnswerButton from './AddAnswerButton.jsx';
-import LoadMoreAnswers from './LoadMoreAnswers.jsx';
-import AnswerList from './AnswerList.jsx';
+import AnswerList from './Answer/AnswerList.jsx';
 
 export default class Question extends Component {
 	constructor(props) {
@@ -32,12 +31,15 @@ export default class Question extends Component {
 							}}
 						>
 							Q:
+							{question_body}
 						</b>
-						{question_body}
 					</div>
 					<div className="col-sm"></div>
 					<div className="col-">
-						<HelpfulButton helpfulCount={question_helpfulness} />
+						<HelpfulButton
+							helpfulCount={question_helpfulness}
+							questionID={question_id}
+						/>
 					</div>
 					<div className="col-">
 						<AddAnswerButton
@@ -48,7 +50,10 @@ export default class Question extends Component {
 					</div>
 				</div>
 				<div className="row">
-					<AnswerList answers={questionObject.answers} />
+					<AnswerList
+						answers={questionObject.answers}
+						questionID={question_id}
+					/>
 				</div>
 				<div
 					className="row"
@@ -56,9 +61,7 @@ export default class Question extends Component {
 						paddingTop: '10px',
 						fontWeight: 'bold',
 					}}
-				>
-					<LoadMoreAnswers />
-				</div>
+				></div>
 			</>
 		);
 	}
