@@ -16,7 +16,7 @@ function RelatedItemsList(props) {
             <RelatedItemsEntry
             key = {index}
             productID = {props.relatedProducts[index]}
-            handleRelatedItemClick={props.handleRelatedItemClick}
+            grabAllProductData={props.grabAllProductData}
             />
           ))
           }
