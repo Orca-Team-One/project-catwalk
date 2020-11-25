@@ -6,6 +6,7 @@ import productdata from './productdata.jsx'
 import ProductBreakdown from './ProductBreakdown.jsx'
 import ReviewsSorting from './ReviewsSorting.jsx'
 import metadata from './metadata.jsx'
+import { Rating } from '@material-ui/lab';
 
 
 // pass prod data and metadata as props
@@ -83,17 +84,41 @@ export class RatingsAndReviews extends Component {
                 Ratings {'&'} Reviews
                 </div>
                     <div class="row">
-                        <div class="col-4" style={{
+                        <div class="col-2" style={{
                         backgroundColor: "#EBEBEB",
-                        fontSize:"20px",
+                        fontSize:"50px",
+                        paddingLeft: "100px",
+                        paddingTop: "0px"
                         }}>
-                        </div>
+                            <b>
+                            {'3.5'}
+                            </b>
+                            </div>
+                            <div class="col-2" style={{
+                                paddingTop: "30px",
+                                paddingLeft: "0px"
+                            }}>
+                             <Rating
+                            name="simple-controlled"
+                            size="small"
+                            value={3.5}
+                            defaultValue={0}
+                            precision={0.25}
+                            readOnly/>
+                            </div>
                             <div class="col-8" style={{
                                 fontSize: "11px",
-                                backgroundColor: "#FE1C49"
+                                backgroundColor: "#FE1C49",
+                                paddingTop: "60px"
                             }}>
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
                         </div>
+                            <div class="col-4" style={{
+                                paddingLeft: "100px",
+                                fontSize: "11px"
+                            }}>
+                            {`100% of reviews recommend this product`}
+                            </div>
                         </div>
                     <div class="row">
                         <div class="col-4" style={{
