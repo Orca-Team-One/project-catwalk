@@ -77,7 +77,7 @@ export class RatingsAndReviews extends Component {
         return (
             <div>
                     <div class="row">
-                        <div class="col-3" style={{
+                        <div class="col-4" style={{
                         backgroundColor: "#EBEBEB",
                         fontSize:"20px",
                         }}>
@@ -86,14 +86,14 @@ export class RatingsAndReviews extends Component {
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
                         </div>
                     <div class="row">
-                        <div class="col-3" style={{
+                        <div class="col-4" style={{
                             backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
                 <Breakdown productdata= {this.props.productReviews}/>
                 <ProductBreakdown ratingdata= {this.props.reviewMetadata}/>
                 </div>
-                <div class="col-4" style={{
+                <div class="col-8" style={{
                             fontSize:"12px"
                         }}>
                 <ReviewList updateReviewList = {this.updateReviewList} productdata={this.state.sortedReviews || this.props.productReviews.results} reviewstoRender={this.state.reviewstoRender}/>
