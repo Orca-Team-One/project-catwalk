@@ -32,7 +32,6 @@ export default class AnswerList extends Component {
 		//an array of all the answers
 		const answersArray = Object.values(answers);
 
-		console.log('answerArray', answersArray);
 		//final answer list array
 		var finalAnswerList = [];
 

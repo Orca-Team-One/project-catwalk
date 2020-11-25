@@ -65,21 +65,21 @@ export default class QAComponent extends Component {
 					>
 						{questionSection}
 					</div>
-				</div>
-				<div className="container">
-					<div className="row">
-						<div className="col-">
-							{this.state.showMore ? (
-								<button onClick={this.handleClick}>
-									More Answered Questions
-								</button>
-							) : (
-								<></>
-							)}
-						</div>
+					<div className="container">
+						<div className="row">
+							<div className="col-">
+								{this.state.showMore ? (
+									<button onClick={this.handleClick}>
+										More Answered Questions
+									</button>
+								) : (
+									<></>
+								)}
+							</div>
 
-						<div className="col-">
-							<AddAQuestion productName={productName} productID={productID} />
+							<div className="col-">
+								<AddAQuestion productName={productName} productID={productID} />
+							</div>
 						</div>
 					</div>
 				</div>
