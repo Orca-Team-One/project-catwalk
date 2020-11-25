@@ -37,20 +37,7 @@ export default class AddAnswerButton extends Component {
 						Product Name: {productName}
 						<AddAnswerModal questionID={questionID} />
 					</Modal.Body>
-					<Modal.Footer>
-						<Button
-							variant="secondary"
-							onClick={() => this.handleModalShowHide()}
-						>
-							Close
-						</Button>
-						<Button
-							variant="primary"
-							onClick={() => this.handleModalShowHide()}
-						>
-							Submit
-						</Button>
-					</Modal.Footer>
+					<Modal.Footer></Modal.Footer>
 				</Modal>
 			</div>
 		);
