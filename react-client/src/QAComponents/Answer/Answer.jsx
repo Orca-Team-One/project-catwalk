@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import UserInfo from '../Answer/UserInfo.jsx';
 import HelpfulButton from '../HelpfulButton.jsx';
 import ReportButton from '../Answer/ReportButton.jsx';
+import AnswerHelpfulButton from '../Answer/AnswerHelpfulButton.jsx';
 
 export default class Answer extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		// console.log('answer props', this.props)
 		return (
 			<div className="container">
 				<div className="row">
@@ -46,9 +46,9 @@ export default class Answer extends Component {
 						|
 					</div>
 					<div className="col-">
-						<HelpfulButton
+						<AnswerHelpfulButton
 							helpfulCount={this.props.answer.helpfulness}
-							helpfulness={this.props.answer.id}
+							answerID={this.props.answer.id}
 						/>
 					</div>
 
@@ -63,7 +63,7 @@ export default class Answer extends Component {
 					</div>
 
 					<div className="col-">
-						<ReportButton />
+						<ReportButton answerID={this.props.answer.id} />
 					</div>
 				</div>
 			</div>
