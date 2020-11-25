@@ -14,10 +14,10 @@ function ProductDetails({ productData, productStyles, selectedStyle, changeStyle
       <StyleSelector
         productStyles={productStyles}
         selectedStyle={selectedStyle}
-        changeStyle={changeStyle}/>
+        changeStyle={changeStyle}/><br></br>
       <Selectors
         productStyles={productStyles}
-        selectedStyle={selectedStyle}/><br></br><br></br>
+        selectedStyle={selectedStyle}/><br></br>
       <AddToCart />
     </div>
   );
