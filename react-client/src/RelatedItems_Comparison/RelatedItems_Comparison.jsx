@@ -25,7 +25,7 @@ export default class RelatedItems_Comparison extends Component {
         relatedProducts={this.props.relatedProducts}
         currentProduct={this.props.currentProduct}
         getProduct={this.props.getProduct}
-        handleRelatedItemClick={this.props.handleRelatedItemClick}
+        grabAllProductData={this.props.grabAllProductData}
         />
       </div>
     )
