@@ -3,15 +3,34 @@ import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 
-const RatingHelpfulness = () => {
+const RatingHelpfulness = ({review}) => {
         return (
             <div>
-                Was this review helful? 
-                <button>
-                    Yes
+                <button style = {{
+                    background: "none",
+                    border: "none",
+                    display: "inline-block",
+                    transitionduration: "0.2s",
+                    cursor: "pointer",
+                    fontsize: "80%",
+                    paddingleft: "5px",
+                    paddingright: "5px"
+                }}>
+                    Helpful? Yes ({review.helpfulness})
                 </button>
-                <button>
-                    No
+                {' | '}
+                <button style = {{
+                      background: "none",
+                      border: "none",
+                      display: "inlineblock",
+                      transitionduration: "0.2s",
+                      cursor: "pointer",
+                      fontsize: "80%",
+                      paddingleft: "5px",
+                      paddingright: "5px",
+                      textdecoration: "underline",
+                }}>
+                    Report
                 </button>
             </div>
         )
