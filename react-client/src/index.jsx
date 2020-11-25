@@ -151,10 +151,16 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        {/* <ProductView
+        <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
           productStyles={this.state.productStyles}/>
+        <RelatedItems_Comparison
+          currentProduct={this.state.productID}
+          getProduct={this.getProduct}
+          relatedProducts={this.state.relatedProducts}
+          handleRelatedItemClick={this.handleRelatedItemClick}
+        />
         {this.state.productQuestions.length ?
         <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
         <div>
@@ -163,13 +169,8 @@ export default class App extends Component {
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
-        /> */}
-        <RelatedItems_Comparison
-        currentProduct={this.state.productID}
-        getProduct={this.getProduct}
-        relatedProducts={this.state.relatedProducts}
-        handleRelatedItemClick={this.handleRelatedItemClick}
         />
+
       </div>
     )
   }
