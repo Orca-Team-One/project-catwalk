@@ -11,20 +11,18 @@ class ProductView extends Component {
     super(props);
 
     this.state = {
-      selectedStyle: 0
+      selectedStyle: 0 // index of array of styles
     };
 
     // bind functions
     this.changeStyle = this.changeStyle.bind(this);
   }
 
-  changeStyle(selectedStyleId, event) {
+  changeStyle(event, selectedStyleId) {
+    this.setState({
+      selectedStyle: selectedStyleId
+    });
     event.preventDefault();
-    let currentProductStyles = this.props.productStyles;
-    console.log("Default Style:", currentProductStyles[this.state.selectedStyle]);
-    // this.setState({
-    //   currentSelectedStyle: currentProductStyles[selectedStyleId]
-    // });
   }
 
   render() {
