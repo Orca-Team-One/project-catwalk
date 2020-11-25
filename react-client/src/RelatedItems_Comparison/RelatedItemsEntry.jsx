@@ -31,14 +31,14 @@ export default class RelatedItemsEntry extends Component {
 
 
   render() {
-    if (this.props.handleRelatedItemClick === undefined) {
+    if (this.props.grabAllProductData === undefined) {
       return (
       <div>
         now loading....
       </div>
       )} else {
     return (
-        <Card style={{width: '9rem'}} onClick={ () => this.props.handleRelatedItemClick(this.props.productID)}><a href="#" class="stretched-link"
+        <Card style={{width: '9rem'}} onClick={ () => this.props.grabAllProductData(this.props.productID)}><a href="#" class="stretched-link"
         >
           <Card.Img varient = "top" src= {`${this.state.productImage}`} alt="Denim Jeans"></Card.Img>
           <Card.Body>

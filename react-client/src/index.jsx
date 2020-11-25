@@ -27,17 +27,23 @@ export default class App extends Component {
 		// this.getQuestions = this.getQuestions.bind(this)
 		// this.getReviewData = this.getReviewData.bind(this)
 		// this.getMetaData = this.getMetaData.bind(this)
-		// this.getRelatedItems = this.getRelatedItems.bind(this)
+    // this.getRelatedItems = this.getRelatedItems.bind(this)
+    this.grabAllProductData = this.grabAllProductData.bind(this);
 	}
 
 	componentDidMount() {
 		// this.getAllData();
-		let getProduct = `http://3.21.164.220/products/${this.state.productID}`;
-		let getProductStyles = `http://3.21.164.220/products/${this.state.productID}/styles`;
-		let getProductQuestions = `http://3.21.164.220/qa/questions?product_id=${this.state.productID}`;
-		let getProductReviews = `http://3.21.164.220/reviews?product_id=${this.state.productID}`;
-		let getMetaData = `http://3.21.164.220/reviews/meta?product_id=${this.state.productID}`;
-		let getRelatedItems = `http://3.21.164.220/products/${this.state.productID}/related`;
+    this.grabAllProductData(this.state.productID);
+  }
+
+  grabAllProductData(ID) {
+
+		let getProduct = `http://3.21.164.220/products/${ID}`;
+		let getProductStyles = `http://3.21.164.220/products/${ID}/styles`;
+		let getProductQuestions = `http://3.21.164.220/qa/questions?product_id=${ID}`;
+		let getProductReviews = `http://3.21.164.220/reviews?product_id=${ID}`;
+		let getMetaData = `http://3.21.164.220/reviews/meta?product_id=${ID}`;
+		let getRelatedItems = `http://3.21.164.220/products/${ID}/related`;
 
 		const getProductRequest = axios.get(getProduct);
 		const getProductStylesRequest = axios.get(getProductStyles);
@@ -85,7 +91,7 @@ export default class App extends Component {
 					});
 				})
 			);
-	}
+  }
 
   render() {
     return (
@@ -99,7 +105,7 @@ export default class App extends Component {
           currentProduct={this.state.productID}
           getProduct={this.getProduct}
           relatedProducts={this.state.relatedProducts}
-          handleRelatedItemClick={this.handleRelatedItemClick}
+          grabAllProductData={this.grabAllProductData}
         />
         {this.state.productQuestions.length ?
         <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
