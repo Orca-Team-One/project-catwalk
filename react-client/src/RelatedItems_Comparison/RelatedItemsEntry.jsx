@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import { Card } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 export default class RelatedItemsEntry extends Component {
   constructor(props) {
@@ -36,15 +38,17 @@ export default class RelatedItemsEntry extends Component {
       </div>
       )} else {
     return (
-      <div class="card related_card alignComparedCards" style={{width: '18rem'}} onClick={ () => this.props.handleRelatedItemClick(this.props.productID)}><a href="#" class="stretched-link"
-      >
-        <img src= {`${this.state.productImage}`} alt="Denim Jeans" class="card-img-top"></img>
-        <p>{this.state.productData.name}</p>
-        <p>{this.state.productData.category}</p>
-        <p class="card_price">${this.state.productData.default_price}</p>
-        <p>Ratings</p>
-        </a>
-      </div>
+        <Card style={{width: '9rem'}} onClick={ () => this.props.handleRelatedItemClick(this.props.productID)}><a href="#" class="stretched-link"
+        >
+          <Card.Img varient = "top" src= {`${this.state.productImage}`} alt="Denim Jeans"></Card.Img>
+          <Card.Body>
+          <Card.Title>{this.state.productData.name}</Card.Title>
+          <Card.Text>{this.state.productData.category}</Card.Text>
+          <p class="card_price">${this.state.productData.default_price}</p>
+          <p>Ratings</p>
+          </Card.Body>
+          </a>
+        </Card>
     )}
   }
 }
