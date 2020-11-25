@@ -76,20 +76,23 @@ export class RatingsAndReviews extends Component {
         } else {
         return (
             <div>
+                <div class="row" style={{
+                    backgroundColor:"#FEE91C",
+                    paddingLeft:"100px"
+                }}>
+                Ratings {'&'} Reviews
+                </div>
                     <div class="row">
                         <div class="col-4" style={{
                         backgroundColor: "#EBEBEB",
                         fontSize:"20px",
                         }}>
-                        Ratings {'&'} Reviews
                         </div>
-                        <div class="row">
-                            <div class="col" style={{
+                            <div class="col-8" style={{
                                 fontSize: "11px",
                                 backgroundColor: "#FE1C49"
                             }}>
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
-                        </div>
                         </div>
                         </div>
                     <div class="row">
