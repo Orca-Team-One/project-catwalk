@@ -1,3 +1,18 @@
+.announcements {
+  font-size: 13px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.header {
+  text-align: center;
+  background-color: rgb(34, 34, 34);
+}
+
+.logo-text {
+  color: rgb(233, 233, 233);
+}
+
 /* RelatedItems And Comparison Styling */
 .related_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
