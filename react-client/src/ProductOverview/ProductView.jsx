@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ProductImageView from './ProductImageView.jsx';
-import ProductDetailsColumn from './ProductDetailsColumn.jsx';
+import ProductDetails from './ProductDetailsColumn.jsx';
 import ProductDescription from './ProductDescription.jsx';
 
 class ProductView extends Component {
-  // props from App { productID, productData, productStyles}
-
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedStyle: 0 // index of array of styles
+      selectedStyle: 0
     };
 
-    // bind functions
     this.changeStyle = this.changeStyle.bind(this);
   }
 
@@ -38,9 +35,10 @@ class ProductView extends Component {
                     selectedStyle={this.state.selectedStyle}/>
                 </Col>
                 <Col sm={4}>
-                  <ProductDetailsColumn
+                  <ProductDetails
                     productData={this.props.productData}
                     productStyles={this.props.productStyles}
+                    productReviews={this.props.productReviews}
                     selectedStyle={this.state.selectedStyle}
                     changeStyle={this.changeStyle}/>
                 </Col>
