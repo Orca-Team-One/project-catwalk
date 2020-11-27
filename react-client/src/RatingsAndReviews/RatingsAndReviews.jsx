@@ -22,6 +22,7 @@ export class RatingsAndReviews extends Component {
         this.updateReviewList = this.updateReviewList.bind(this);
         this.handleSortingChange = this.handleSortingChange.bind(this);
         this.sortPreferences= this.sortPreferences.bind(this)
+        this.handleStarRatingClick = this.handleStarRatingClick.bind(this);
     }
 
     componentDidMount() {
@@ -33,6 +34,12 @@ export class RatingsAndReviews extends Component {
          this.setState({sortingPreference: e.target.value}, () => {
              this.sortPreferences()
          })
+    }
+
+    handleStarRatingClick(reviewRating) {
+        this.props.productReviews.results.filter((review) => {
+            review.rating === reviewRating
+        })
     }
 
     sortPreferences() {
@@ -125,7 +132,7 @@ export class RatingsAndReviews extends Component {
                             backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
-                <Breakdown productdata= {this.props.productReviews}/>
+                <Breakdown handleStarRatingClick= {this.handleStarRatingClick} ratingdata= {this.props.reviewMetadata}/>
                 <ProductBreakdown ratingdata= {this.props.reviewMetadata}/>
                 </div>
                 <div class="col-8" style={{
