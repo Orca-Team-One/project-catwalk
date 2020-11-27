@@ -17,9 +17,10 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^4.11.1",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
+    "antd": "^4.8.5",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "bluebird": "^3.5.3",
@@ -32,6 +33,9 @@
     "react": "^16.8.5",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.8.5",
+    "react-material-ui-carousel": "^2.1.1",
+    "react-slick": "^0.27.13",
+    "slick-carousel": "^1.8.1",
     "underscore": "^1.11.0",
     "webpack": "^4.29.6"
   }
