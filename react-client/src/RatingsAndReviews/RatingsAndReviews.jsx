@@ -6,6 +6,7 @@ import productdata from './productdata.jsx'
 import ProductBreakdown from './ProductBreakdown.jsx'
 import ReviewsSorting from './ReviewsSorting.jsx'
 import metadata from './metadata.jsx'
+import { Rating } from '@material-ui/lab';
 
 
 // pass prod data and metadata as props
@@ -16,11 +17,12 @@ export class RatingsAndReviews extends Component {
         this.state = {
             reviewstoRender: 2,
             sortingPreference: 'Relevance',
-            sortedReviews: []
+            sortedReviews: [],
         }
         this.updateReviewList = this.updateReviewList.bind(this);
         this.handleSortingChange = this.handleSortingChange.bind(this);
         this.sortPreferences= this.sortPreferences.bind(this)
+        this.handleStarRatingClick = this.handleStarRatingClick.bind(this);
     }
 
     componentDidMount() {
@@ -32,6 +34,12 @@ export class RatingsAndReviews extends Component {
          this.setState({sortingPreference: e.target.value}, () => {
              this.sortPreferences()
          })
+    }
+
+    handleStarRatingClick(reviewRating) {
+       this.setState({sortedReviews: this.props.productReviews.results.filter((review) => {
+           return review.rating === reviewRating
+        })})
     }
 
     sortPreferences() {
@@ -76,28 +84,51 @@ export class RatingsAndReviews extends Component {
         } else {
         return (
             <div>
+                <div class="row" style={{
+                    paddingLeft:"100px"
+                }}>
+                Ratings {'&'} Reviews
+                </div>
                     <div class="row">
-                        <div class="col-4" style={{
-                        backgroundColor: "#EBEBEB",
-                        fontSize:"20px",
+                        <div class="col-1.5" style={{
+                        fontSize:"50px",
+                        paddingLeft: "100px",
+                        paddingTop: "0px"
                         }}>
-                        Ratings {'&'} Reviews
-                        </div>
-                        <div class="row">
-                            <div class="col" style={{
+                            <b>
+                            {'3.5'}
+                            </b>
+                            </div>
+                            <div class="col-2" style={{
+                                paddingTop: "30px",
+                                paddingLeft: "0px"
+                            }}>
+                             <Rating
+                            name="simple-controlled"
+                            size="small"
+                            value={3.5}
+                            defaultValue={0}
+                            precision={0.25}
+                            readOnly/>
+                            </div>
+                            <div class="col-8" style={{
                                 fontSize: "11px",
-                                backgroundColor: "#FE1C49"
+                                paddingTop: "60px"
                             }}>
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
                         </div>
-                        </div>
+                            <div class="col-4" style={{
+                                paddingLeft: "100px",
+                                fontSize: "11px"
+                            }}>
+                            {`100% of reviews recommend this product`}
+                            </div>
                         </div>
                     <div class="row">
                         <div class="col-4" style={{
-                            backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
-                <Breakdown productdata= {this.props.productReviews}/>
+                <Breakdown handleStarRatingClick= {this.handleStarRatingClick} ratingdata= {this.props.reviewMetadata}/>
                 <ProductBreakdown ratingdata= {this.props.reviewMetadata}/>
                 </div>
                 <div class="col-8" style={{
