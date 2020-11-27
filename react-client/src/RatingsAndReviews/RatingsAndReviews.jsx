@@ -17,7 +17,7 @@ export class RatingsAndReviews extends Component {
         this.state = {
             reviewstoRender: 2,
             sortingPreference: 'Relevance',
-            sortedReviews: []
+            sortedReviews: [],
         }
         this.updateReviewList = this.updateReviewList.bind(this);
         this.handleSortingChange = this.handleSortingChange.bind(this);
@@ -37,9 +37,9 @@ export class RatingsAndReviews extends Component {
     }
 
     handleStarRatingClick(reviewRating) {
-        this.props.productReviews.results.filter((review) => {
-            review.rating === reviewRating
-        })
+       this.setState({sortedReviews: this.props.productReviews.results.filter((review) => {
+           return review.rating === reviewRating
+        })})
     }
 
     sortPreferences() {
@@ -85,14 +85,12 @@ export class RatingsAndReviews extends Component {
         return (
             <div>
                 <div class="row" style={{
-                    backgroundColor:"#FEE91C",
                     paddingLeft:"100px"
                 }}>
                 Ratings {'&'} Reviews
                 </div>
                     <div class="row">
-                        <div class="col-2" style={{
-                        backgroundColor: "#EBEBEB",
+                        <div class="col-1.5" style={{
                         fontSize:"50px",
                         paddingLeft: "100px",
                         paddingTop: "0px"
@@ -115,7 +113,6 @@ export class RatingsAndReviews extends Component {
                             </div>
                             <div class="col-8" style={{
                                 fontSize: "11px",
-                                backgroundColor: "#FE1C49",
                                 paddingTop: "60px"
                             }}>
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
@@ -129,7 +126,6 @@ export class RatingsAndReviews extends Component {
                         </div>
                     <div class="row">
                         <div class="col-4" style={{
-                            backgroundColor: "#FBD603",
                             fontSize:"11px",
                         }}>
                 <Breakdown handleStarRatingClick= {this.handleStarRatingClick} ratingdata= {this.props.reviewMetadata}/>
