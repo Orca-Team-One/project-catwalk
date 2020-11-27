@@ -1,16 +1,16 @@
 .announcements {
-  font-size: 13px;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
+	font-size: 13px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
 }
 
 .header {
-  text-align: center;
-  background-color: rgb(34, 34, 34);
+	text-align: center;
+	background-color: rgb(34, 34, 34);
 }
 
 .logo-text {
-  color: rgb(233, 233, 233);
+	color: rgb(233, 233, 233);
 }
 
 /* RelatedItems And Comparison Styling */
@@ -39,7 +39,6 @@
 }
 
 .productImg {
-
 }
 
 /* Questions and Answers Component Styling:  */
@@ -49,6 +48,8 @@
 	font-size: 14px;
 	line-height: 20px;
 	max-width: 900px;
+	padding-top: 15px;
+	padding-bottom: 25px;
 }
 
 .container {
