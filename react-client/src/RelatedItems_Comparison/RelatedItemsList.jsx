@@ -9,8 +9,8 @@ function RelatedItemsList(props) {
   var settings = {
     slidesToShow: 4,
     slidesToScroll:3,
-    arrows: true,
-    dots:true
+    dots:true,
+
   }
   if (props.relatedProducts.length > 0) {
     return (

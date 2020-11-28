@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
-import { Carousel } from 'react-bootstrap';
 
 export default class RelatedItemsEntry extends Component {
   constructor(props) {
