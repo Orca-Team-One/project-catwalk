@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import QASearchBar from './QASearchBar.jsx';
 import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
 import AddAQuestion from './AddAQuestion.jsx';
 import QuestionList from './QuestionList.jsx';
@@ -8,19 +7,16 @@ export default class QAComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			questionsToShow: 2,
-			showMore: true,
+			questionsToShow: 4,
+			showMore: false,
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick() {
-		this.setState((prevState) => ({
-			questionsToShow: prevState.questionsToShow + 2,
-		}));
 		if (
 			this.state.questionsToShow < this.props.productQuestions.length ||
-			this.props.productQuestions.length <= 2
+			this.props.productQuestions.length <= 4
 		) {
 			this.setState((prevState) => ({
 				showMore: !prevState.showMore,
@@ -32,6 +28,7 @@ export default class QAComponent extends Component {
 		//destructuring assignments
 		const { productQuestions, productName, productID } = this.props;
 		const { questionsToShow } = this.state;
+
 		//a copy of questions array takes the number of questions to be displayed from question array passed from the parent
 		const copyOfQuestions = productQuestions.slice(0, questionsToShow);
 
@@ -40,10 +37,15 @@ export default class QAComponent extends Component {
 			return b.question_helpfulness - a.question_helpfulness;
 		});
 
+		//a questionSection variable will store which of the two renders should be returned below
 		let questionSection;
 		if (productQuestions.length > 0) {
 			questionSection = (
-				<QuestionList questions={sortedArray} productName={productName} />
+				<QuestionList
+					questions={sortedArray}
+					productName={productName}
+					allQuestions={productQuestions}
+				/>
 			);
 		} else {
 			questionSection = <div></div>;
@@ -53,18 +55,11 @@ export default class QAComponent extends Component {
 			<>
 				<div className="askWidgetContainer">
 					<h2 className="askWidgetHeader">Questions and Answers</h2>
-
+					{/*
 					<div className="searchBar">
 						<QASearchBar />
-					</div>
-					<div
-						style={{
-							overflow: 'scroll',
-							maxHeight: '400px',
-						}}
-					>
-						{questionSection}
-					</div>
+					</div> */}
+					<div>{questionSection}</div>
 					<div className="container">
 						<div className="row">
 							<div className="col-">
