@@ -14,7 +14,6 @@ const ReviewItem = ({review}) => {
             <>
                 <div class="row">
                         <div class="col" style= {{
-                            backgroundColor: "#FE1CFE",
                             paddingLeft: "0px"
                         }}>
                         <Rating
@@ -26,7 +25,6 @@ const ReviewItem = ({review}) => {
                             readOnly/>
                         </div>
             <div class="col" style= {{
-            backgroundColor: "#FE751C",
             paddingLeft: "400px",
             fontSize: "9px",
             }}>
@@ -49,7 +47,6 @@ const ReviewItem = ({review}) => {
             </div> : <> </>}
             <div class="row">
                 <div class="col" style ={{
-                    backgroundColor: "#BDFE1C"
                 }}>
             {review.body}
             </div>
@@ -57,7 +54,6 @@ const ReviewItem = ({review}) => {
             <div class="row">
                 <div class="col" style= {{
                      borderBottom: "1px solid",
-                     backgroundColor: "#FE3B1C"
                 }}>
                 <RatingHelpfulness review = {review}/>
                 </div>  

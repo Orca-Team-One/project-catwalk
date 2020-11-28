@@ -18,7 +18,6 @@ export default class AnswerList extends Component {
 
 	handleCollapseClick() {
 		this.setState({ allAnswers: false });
-		console.log(this.state.allAnswers);
 	}
 
 	handleLoadMoreClick() {
@@ -32,7 +31,6 @@ export default class AnswerList extends Component {
 		//an array of all the answers
 		const answersArray = Object.values(answers);
 
-		console.log('answerArray', answersArray);
 		//final answer list array
 		var finalAnswerList = [];
 
