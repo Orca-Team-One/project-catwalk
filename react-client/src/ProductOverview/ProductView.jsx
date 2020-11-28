@@ -9,15 +9,24 @@ class ProductView extends Component {
     super(props);
 
     this.state = {
-      selectedStyle: 0
+      selectedStyle: 0,
+      selectedThumbnail: 0
     };
 
     this.changeStyle = this.changeStyle.bind(this);
+    this.changeThumbnail = this.changeThumbnail.bind(this);
   }
 
   changeStyle(event, selectedStyleId) {
     this.setState({
       selectedStyle: selectedStyleId
+    });
+    event.preventDefault();
+  }
+
+  changeThumbnail(event, selectedThumbnailId) {
+    this.setState({
+      selectedThumbnail: selectedThumbnailId
     });
     event.preventDefault();
   }
@@ -32,7 +41,9 @@ class ProductView extends Component {
                 <Col sm={6}>
                   <ProductImageView
                     productStyles={this.props.productStyles}
-                    selectedStyle={this.state.selectedStyle}/>
+                    selectedStyle={this.state.selectedStyle}
+                    selectedThumbnail={this.state.selectedThumbnail}
+                    changeThumbnail={this.changeThumbnail}/>
                 </Col>
                 <Col sm={4}>
                   <ProductDetails
