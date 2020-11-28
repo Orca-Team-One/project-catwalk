@@ -59,15 +59,7 @@ export default class QAComponent extends Component {
 					<div className="searchBar">
 						<QASearchBar />
 					</div> */}
-					<div
-						style={{
-							overflow: 'auto',
-							maxHeight: '600px',
-							overflowX: 'hidden',
-						}}
-					>
-						{questionSection}
-					</div>
+					<div>{questionSection}</div>
 					<div className="container">
 						<div className="row">
 							<div className="col-">

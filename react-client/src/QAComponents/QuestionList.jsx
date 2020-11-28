@@ -51,27 +51,21 @@ export default class QuestionList extends Component {
 
 		return (
 			<>
-				{/* {questions.map((question) => (
-					<div
-						class="container"
-						style={{
-							paddingTop: '15px',
-						}}
-					>
-						<Question
-							question={question}
-							key={question.question_id}
-							productName={productName}
-						/>
-					</div>
-				))} */}
 				<input
 					className="searchBar"
 					type="text"
 					placeholder={'Have a Question? Search for Answers...'}
 					onChange={(e) => this.searchSpace(e)}
 				></input>
-				{items}
+				<div
+					style={{
+						overflow: 'auto',
+						maxHeight: '600px',
+						overflowX: 'hidden',
+					}}
+				>
+					{items}
+				</div>
 			</>
 		);
 	}
