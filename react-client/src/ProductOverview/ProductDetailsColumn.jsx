@@ -11,7 +11,7 @@ function ProductDetails({ productData, productStyles, productReviews, selectedSt
         productData={productData}
         productStyles={productStyles}
         productReviews={productReviews}
-        selectedStyle={selectedStyle}/>
+        selectedStyle={selectedStyle}/><br></br>
       <StyleSelector
         productStyles={productStyles}
         selectedStyle={selectedStyle}

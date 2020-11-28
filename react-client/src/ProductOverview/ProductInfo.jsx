@@ -1,5 +1,10 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 import { Rating } from '@material-ui/lab';
+import { Button } from '@material-ui/core';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import PinterestIcon from '@material-ui/icons/Pinterest';
 
 function ProductInfo({ productData, productStyles, productReviews, selectedStyle }) {
 
@@ -40,19 +45,36 @@ function ProductInfo({ productData, productStyles, productReviews, selectedStyle
 
       {/* Product Category and Name */}
       <p>{productData.category.toUpperCase()}</p>
-      <h5>{productData.name}</h5>
+      <h5><b>{productData.name}</b></h5>
+      <br></br>
 
       {/* Product Price, Sale Price */}
       { productStyles[selectedStyle].sale_price === '0'
         ? <p>${productStyles[selectedStyle].original_price}</p>
         : <div>
             <p style={{textDecoration: 'line-through'}}>${productStyles[selectedStyle].original_price}</p>
-            <p style={{fontWeight: 'bold'}}>${productStyles[selectedStyle].sale_price}</p>
+            <p style={{fontWeight: 'bold', color: 'red'}}>${productStyles[selectedStyle].sale_price}</p>
           </div>
       }
 
       {/* <p>Social Media Links</p> */}
-
+      <Row>
+        <Col xs={2}>
+          <Button>
+            <FacebookIcon color="primary"/>
+          </Button>
+        </Col>
+        <Col xs={2}>
+          <Button>
+            <TwitterIcon color="primary"/>
+          </Button>
+        </Col>
+        <Col xs="auto">
+          <Button>
+            <PinterestIcon color="secondary"/>
+          </Button>
+        </Col>
+      </Row>
     </div>
   );
 }
