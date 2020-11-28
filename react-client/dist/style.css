@@ -5,12 +5,13 @@
 }
 
 .header {
-	text-align: center;
-	background-color: rgb(34, 34, 34);
+	background-color: rgb(168, 168, 168);
 }
 
 .logo-text {
-	color: rgb(233, 233, 233);
+  padding-top: 15px;
+  padding-left: 15px;
+	color: rgb(40, 40, 40);
 }
 
 /* RelatedItems And Comparison Styling */
