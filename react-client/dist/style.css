@@ -136,6 +136,11 @@
 	padding-right: 5px;
 	text-decoration: underline;
 }
+
+.reportButton:hover {
+	background-color: #f8f8ff;
+}
+
 .addAnswerButton {
 	background: none;
 	border: none;
