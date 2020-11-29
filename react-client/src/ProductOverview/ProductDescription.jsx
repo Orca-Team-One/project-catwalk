@@ -6,11 +6,11 @@ function ProductDescription({ productData }) {
     <div className="productDescription">
       <Row>
         <Col sm={8}>
-          <h5>{productData.slogan}</h5>
+          <h5><b>{productData.slogan}</b></h5>
           <p>{productData.description}</p>
         </Col>
         <Col sm={4}>
-          <h5>Product Features</h5>
+          <h5><b>Product Features</b></h5>
           {productData.features.map((feature, index) => {
             return (
               <div key={index}>
