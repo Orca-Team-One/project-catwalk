@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 function AddToCart() {
   return (
     <div>
-      <button>Add to Cart</button>
-      <button>Favorite</button>
+      <Button type="submit">Add to Cart</Button>
+      <Button>Favorite</Button>
     </div>
   );
 }

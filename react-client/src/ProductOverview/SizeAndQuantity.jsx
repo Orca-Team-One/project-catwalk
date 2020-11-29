@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 // import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
+import AddToCart from './AddToCart.jsx';
 
 function Selectors({ productStyles, selectedStyle }) {
 
@@ -33,6 +34,10 @@ function Selectors({ productStyles, selectedStyle }) {
 
           </Form.Row>
         </Form.Group>
+
+        {/* Add to Cart Button */}
+        <AddToCart />
+
       </Form>
     </div>
   );
