@@ -33,7 +33,7 @@ class ProductView extends Component {
 
   render() {
     return (
-      <div className="productViewContainer">
+      <div className="product-view-container">
         { Object.keys(this.props.productData).length === 0 || this.props.productStyles.length === 0
           ? <p>Loading...</p>
           : <div>

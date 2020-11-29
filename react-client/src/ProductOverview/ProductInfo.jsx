@@ -28,15 +28,21 @@ function ProductInfo({ productData, productStyles, productReviews, selectedStyle
       {/* Star Rating, Read all Reviews */}
       <div>
         { productReviews.results.length !== 0
-          ? <div>
+          ? <div className="ratings-reviews">
+            <Row>
+              <Col xs={3}>
               <Rating
                 name="simple-controlled"
                 size="small"
-                value={2}
+                value={3.33}
                 defaultValue={0}
                 precision={0.25}
                 readOnly/>
-              <a href="#ratingsReviewsComponent">  Read all {productReviews.results.length} reviews</a>
+              </Col>
+              <Col xs="auto">
+              <a href="#ratings-reviews">Read all {productReviews.results.length} reviews</a>
+              </Col>
+            </Row>
             </div>
           : <p>Loading...</p>
 
