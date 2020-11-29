@@ -6,6 +6,19 @@ import Slider from "react-slick";
 
 
 export default class ComparisonItemsList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      outfitArray: []
+    }
+  }
+
+  onAddClickHandler() {
+
+  }
+
+
   render() {
     var settings = {
       slidesToShow: 4,
@@ -14,7 +27,6 @@ export default class ComparisonItemsList extends Component {
     }
     return (
       <div>
-
         <Slider {...settings}>
           <Card> <a href="#" class="stretched-link">+ Add this item to your outfit! </a></Card>
           {
