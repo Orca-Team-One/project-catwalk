@@ -18,7 +18,6 @@ export default class AnswerList extends Component {
 
 	handleCollapseClick() {
 		this.setState({ allAnswers: false });
-		console.log(this.state.allAnswers);
 	}
 
 	handleLoadMoreClick() {

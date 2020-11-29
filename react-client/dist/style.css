@@ -1,16 +1,47 @@
 .announcements {
-	font-size: 13px;
-	text-align: center;
+	font-size: 12px;
+  text-align: center;
+  color: rgb(62, 62, 62);
 	background-color: rgb(255, 255, 255);
 }
 
 .header {
-	text-align: center;
-	background-color: rgb(34, 34, 34);
+	background-color: rgb(239, 239, 239);
 }
 
 .logo-text {
-	color: rgb(233, 233, 233);
+  padding-top: 10px;
+  padding-left: 15px;
+	color: rgb(101, 101, 101);
+}
+
+.ratings-reviews a {
+  font-size: 12px;
+  text-decoration: underline;
+  color: rgb(55, 55, 55);
+}
+
+.search-icon {
+  color: rgb(213, 213, 213);
+}
+
+.shopping-cart-icon {
+  color: rgb(213, 213, 213);
+}
+
+.style-icons {
+  border-style: solid;
+  border-width: 2px;
+}
+
+.style-selected-text {
+  font-size: 14px;
+  color: rgb(42, 42, 42);
+}
+
+.thumbnail-image {
+  border-style: solid;
+  border-width: 1px;
 }
 
 /* RelatedItems And Comparison Styling */
@@ -136,6 +167,11 @@
 	padding-right: 5px;
 	text-decoration: underline;
 }
+
+.reportButton:hover {
+	background-color: #f8f8ff;
+}
+
 .addAnswerButton {
 	background: none;
 	border: none;

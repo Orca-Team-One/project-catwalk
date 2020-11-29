@@ -1,22 +1,25 @@
 import React from 'react';
-import { Row, Col, Figure, FigureImage} from 'react-bootstrap'
+import { Row, Col, Figure, FigureImage, Image} from 'react-bootstrap'
 import ProductThumbnailsColumn from './ProductThumbnailsColumn.jsx';
 
-function ProductImageView({ productStyles, selectedStyle }) {
+function ProductImageView({ productStyles, selectedStyle, selectedThumbnail, changeThumbnail }) {
+
   return (
     <div className="productImageView">
       <Row>
-        <Col sm={1}>
+        <Col sm={1}></Col>
+        <Col sm={2}>
           <ProductThumbnailsColumn
             productStyles={productStyles}
-            selectedStyle={selectedStyle}/>
+            selectedStyle={selectedStyle}
+            selectedThumbnail={selectedThumbnail}
+            changeThumbnail={changeThumbnail}/>
         </Col>
-        <Col sm={8}>
+        <Col sm={9}>
           <Figure className="currentImageView">
-            <Figure.Image
-              width={500}
-              height={1100}
-              src={productStyles[selectedStyle].photos[0].url} />
+            <Image
+              src={productStyles[selectedStyle].photos[selectedThumbnail].url}
+              fluid/>
           </Figure>
         </Col>
       </Row>
