@@ -10,7 +10,7 @@ function Header() {
       <div className="header">
         <Row className="logo-text">
           <Col>
-            <h3>Logo | App Name</h3>
+            <h3><b><em> Logo | App Name </em></b></h3>
           </Col>
           <Col xs="auto">
             <TextField
@@ -22,7 +22,7 @@ function Header() {
                 endAdornment: (
                   <InputAdornment>
                     <IconButton>
-                      <SearchIcon color="inherit" />
+                      <SearchIcon />
                     </IconButton>
                   </InputAdornment>
                 )
@@ -31,13 +31,15 @@ function Header() {
           <Col xs="auto">
             <IconButton>
               <Badge badgeContent={0} color="primary">
-                <ShoppingCartIcon/>
+                <ShoppingCartIcon />
               </Badge>
             </IconButton>
           </Col>
           <Col xs="auto"></Col>
         </Row>
       </div>
+
+      {/* Site Announcements */}
       <div className="announcements">
         <p><em>SITE-WIDE ANNOUNCEMENT MESSAGE!</em> - SALE / DISCOUNT <b>OFFER</b> - NEW PRODUCT HIGHLIGHT</p>
       </div>
