@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ProductImageView from './ProductImageView.jsx';
-import ProductDetailsColumn from './ProductDetailsColumn.jsx';
+import ProductDetails from './ProductDetailsColumn.jsx';
 import ProductDescription from './ProductDescription.jsx';
 
 class ProductView extends Component {
-  // props from App { productID, productData, productStyles}
-
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedStyle: 0 // index of array of styles
+      selectedStyle: 0,
+      selectedThumbnail: 0
     };
 
-    // bind functions
     this.changeStyle = this.changeStyle.bind(this);
+    this.changeThumbnail = this.changeThumbnail.bind(this);
   }
 
   changeStyle(event, selectedStyleId) {
@@ -25,9 +24,16 @@ class ProductView extends Component {
     event.preventDefault();
   }
 
+  changeThumbnail(event, selectedThumbnailId) {
+    this.setState({
+      selectedThumbnail: selectedThumbnailId
+    });
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <div className="productViewContainer">
+      <div className="product-view-container">
         { Object.keys(this.props.productData).length === 0 || this.props.productStyles.length === 0
           ? <p>Loading...</p>
           : <div>
@@ -35,12 +41,15 @@ class ProductView extends Component {
                 <Col sm={6}>
                   <ProductImageView
                     productStyles={this.props.productStyles}
-                    selectedStyle={this.state.selectedStyle}/>
+                    selectedStyle={this.state.selectedStyle}
+                    selectedThumbnail={this.state.selectedThumbnail}
+                    changeThumbnail={this.changeThumbnail}/>
                 </Col>
                 <Col sm={4}>
-                  <ProductDetailsColumn
+                  <ProductDetails
                     productData={this.props.productData}
                     productStyles={this.props.productStyles}
+                    productReviews={this.props.productReviews}
                     selectedStyle={this.state.selectedStyle}
                     changeStyle={this.changeStyle}/>
                 </Col>

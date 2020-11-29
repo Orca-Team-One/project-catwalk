@@ -1,12 +1,15 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
+import { Avatar } from '@material-ui/core';
 
-function ProductThumbnail({ photo }) {
+function ProductThumbnail({ photo, index, changeThumbnail }) {
   return (
-    <div>
+    <div className="thumbnail-image-container">
       <Avatar
-        variant="rounded"
-        src={photo.thumbnail_url} />
+        className="thumbnail-image"
+        variant="square"
+        style={{ height: '55px', width: '55px' }}
+        src={photo.thumbnail_url}
+        onClick={(event) => { changeThumbnail(event, index); }}/><br></br>
     </div>
   );
 }

@@ -100,7 +100,12 @@ export default class App extends Component {
         <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
+<<<<<<< HEAD
           productStyles={this.state.productStyles}/> */}
+=======
+          productStyles={this.state.productStyles}
+					productReviews={this.state.productReviews}/>
+>>>>>>> main
         <RelatedItems_Comparison
           currentProduct={this.state.productID}
           getProduct={this.getProduct}
