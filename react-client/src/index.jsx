@@ -27,17 +27,16 @@ export default class App extends Component {
 		// this.getQuestions = this.getQuestions.bind(this)
 		// this.getReviewData = this.getReviewData.bind(this)
 		// this.getMetaData = this.getMetaData.bind(this)
-    // this.getRelatedItems = this.getRelatedItems.bind(this)
-    this.grabAllProductData = this.grabAllProductData.bind(this);
+		// this.getRelatedItems = this.getRelatedItems.bind(this)
+		this.grabAllProductData = this.grabAllProductData.bind(this);
 	}
 
 	componentDidMount() {
 		// this.getAllData();
-    this.grabAllProductData(this.state.productID);
-  }
+		this.grabAllProductData(this.state.productID);
+	}
 
-  grabAllProductData(ID) {
-
+	grabAllProductData(ID) {
 		let getProduct = `http://3.21.164.220/products/${ID}`;
 		let getProductStyles = `http://3.21.164.220/products/${ID}/styles`;
 		let getProductQuestions = `http://3.21.164.220/qa/questions?product_id=${ID}`;
@@ -91,36 +90,40 @@ export default class App extends Component {
 					});
 				})
 			);
-  }
+	}
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <ProductView
-          productID={this.state.productID}
-          productData={this.state.productData}
-          productStyles={this.state.productStyles}
-					productReviews={this.state.productReviews}/>
-        <RelatedItems_Comparison
-          currentProduct={this.state.productID}
-          getProduct={this.getProduct}
-          relatedProducts={this.state.relatedProducts}
-          grabAllProductData={this.grabAllProductData}
-        />
-        {this.state.productQuestions.length ?
-        <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
-        <div>
-          Questions loading
-          </div>}
-        <RatingsAndReviews
-        productReviews = {this.state.productReviews}
-        reviewMetadata = {this.state.reviewMetadata}
-        />
-
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<Header />
+				<ProductView
+					productID={this.state.productID}
+					productData={this.state.productData}
+					productStyles={this.state.productStyles}
+					productReviews={this.state.productReviews}
+				/>
+				<RelatedItems_Comparison
+					currentProduct={this.state.productID}
+					getProduct={this.getProduct}
+					relatedProducts={this.state.relatedProducts}
+					grabAllProductData={this.grabAllProductData}
+				/>
+				{this.state.productQuestions.length ? (
+					<QAComponent
+						productQuestions={this.state.productQuestions}
+						productName={this.state.productData.name}
+						productID={this.state.productID}
+					/>
+				) : (
+					<div>Questions loading</div>
+				)}
+				<RatingsAndReviews
+					productReviews={this.state.productReviews}
+					reviewMetadata={this.state.reviewMetadata}
+				/>
+			</div>
+		);
+	}
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
