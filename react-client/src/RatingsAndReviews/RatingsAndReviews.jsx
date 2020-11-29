@@ -83,7 +83,7 @@ export class RatingsAndReviews extends Component {
             )
         } else {
         return (
-            <div>
+            <div id="ratingsReviewsComponent">
                 <div class="row" style={{
                     paddingLeft:"100px"
                 }}>

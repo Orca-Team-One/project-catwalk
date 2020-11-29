@@ -7,7 +7,14 @@ const ProductBreakdown = ({ratingdata}) => {
                         paddingLeft: "85px",
                         paddingTop: "20px"
                     }}>
-                    <div>
+
+                        {Object.keys(ratingdata.characteristics).map((characteristic) => (
+                                <div>
+                                {characteristic}
+                                <LinearProgress variant="determinate" value={ratingdata.characteristics[characteristic].value}/>
+                                </div>
+                        ))}
+                    {/* <div>
                         Size
                 <LinearProgress variant="determinate" value={ratingdata.characteristics.Size.value}/>
                 </div>
@@ -22,7 +29,7 @@ const ProductBreakdown = ({ratingdata}) => {
                 <div>
                     Quality
                 <LinearProgress variant="determinate" value={ratingdata.characteristics.Quality.value}/>
-                </div>
+                </div> */}
                 </div>
         )
 }
