@@ -5,7 +5,7 @@ function Style ({ style, index, changeStyle }) {
   return (
     <Avatar
       className="style-icons"
-      style={{ height: '55px', width: '55px' }}
+      style={{ height: '60px', width: '60px' }}
       src={style.photos[0].thumbnail_url}
       onClick={(event) => { changeStyle(event, index); }}/>
   )
