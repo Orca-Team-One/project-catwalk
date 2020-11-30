@@ -54,8 +54,13 @@ class ProductView extends Component {
                     changeStyle={this.changeStyle}/>
                 </Col>
               </Row>
-                <ProductDescription
-                  productData={this.props.productData}/>
+              <Row>
+                <Col sm={4}></Col>
+                <Col sm="auto">
+                  <ProductDescription
+                    productData={this.props.productData}/>
+                </Col>
+              </Row>
             </div>
         }
       </div>

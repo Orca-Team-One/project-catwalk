@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
-// import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import AddToCart from './AddToCart.jsx';
 
 function Selectors({ productStyles, selectedStyle }) {
@@ -9,7 +8,7 @@ function Selectors({ productStyles, selectedStyle }) {
   let quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div>
+    <div className="size-quantity-selectors">
       <Form>
         <Form.Group>
           <Form.Row>
@@ -44,9 +43,3 @@ function Selectors({ productStyles, selectedStyle }) {
 }
 
 export default Selectors;
-
-
-// { index === 0
-//   ? <MenuItem key={index} value=""><em>None</em></MenuItem>
-//   :<MenuItem key={index} value={quantity}>{quantity}</MenuItem>
-// }
