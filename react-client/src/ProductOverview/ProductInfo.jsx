@@ -40,7 +40,7 @@ function ProductInfo({ productData, productStyles, productReviews, selectedStyle
                 readOnly/>
               </Col>
               <Col xs="auto">
-              <a href="#ratings-reviews">Read all {productReviews.results.length} reviews</a>
+              <a href="#ratingsReviewsComponent">Read all {productReviews.results.length} reviews</a>
               </Col>
             </Row>
             </div>
@@ -50,9 +50,8 @@ function ProductInfo({ productData, productStyles, productReviews, selectedStyle
       </div>
 
       {/* Product Category and Name */}
-      <p>{productData.category.toUpperCase()}</p>
-      <h5><b>{productData.name}</b></h5>
-      <br></br>
+      <p className="product-category">{productData.category.toUpperCase()}</p>
+      <p className="product-name"><b>{productData.name}</b></p>
 
       {/* Product Price, Sale Price */}
       { productStyles[selectedStyle].sale_price === '0'

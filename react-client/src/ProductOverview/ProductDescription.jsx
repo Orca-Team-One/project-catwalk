@@ -3,18 +3,21 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function ProductDescription({ productData }) {
   return (
-    <div className="productDescription">
+    <div className="product-description">
       <Row>
-        <Col sm={8}>
-          <h5><b>{productData.slogan}</b></h5>
-          <p>{productData.description}</p>
+        <Col sm={1}></Col>
+        <Col sm={6}>
+          <p className="product-data-slogan"><b>{productData.slogan}</b></p>
+          <p className="product-data-description">{productData.description}</p>
         </Col>
         <Col sm={4}>
-          <h5><b>Product Features</b></h5>
+          <p className="product-features-title"><b>Product Features</b></p>
           {productData.features.map((feature, index) => {
             return (
               <div key={index}>
-                <p>{feature.feature} | {feature.value}</p>
+                <p className="product-features-list">
+                  <i className="fa fa-check"></i> {''} {feature.feature} | {feature.value}
+                </p>
               </div>
             )
           })}

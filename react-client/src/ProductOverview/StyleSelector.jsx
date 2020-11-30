@@ -7,7 +7,7 @@ function StyleSelector ({ productStyles, selectedStyle, changeStyle }) {
     <div className="style-selector">
       <div className="style-selected-text">
         <p>
-          <b>STYLE  >  </b>{productStyles[selectedStyle].name.toUpperCase()}
+          <b>STYLE {'\u00A0'} > </b>{'\u00A0'}{productStyles[selectedStyle].name.toUpperCase()}
         </p>
       </div>
       <Container>
