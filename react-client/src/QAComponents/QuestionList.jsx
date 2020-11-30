@@ -22,7 +22,7 @@ export default class QuestionList extends Component {
 		//destructuring assingment
 		const { questions, productName, allQuestions } = this.props;
 
-		const items = allQuestions
+		const items = questions
 			.filter((data) => {
 				if (this.state.search == null) {
 					return data;
@@ -60,7 +60,7 @@ export default class QuestionList extends Component {
 				<div
 					style={{
 						overflow: 'auto',
-						maxHeight: '600px',
+						maxHeight: '500px',
 						overflowX: 'hidden',
 					}}
 				>
