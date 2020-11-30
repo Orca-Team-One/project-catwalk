@@ -27,17 +27,16 @@ export default class App extends Component {
 		// this.getQuestions = this.getQuestions.bind(this)
 		// this.getReviewData = this.getReviewData.bind(this)
 		// this.getMetaData = this.getMetaData.bind(this)
-    // this.getRelatedItems = this.getRelatedItems.bind(this)
-    this.grabAllProductData = this.grabAllProductData.bind(this);
+		// this.getRelatedItems = this.getRelatedItems.bind(this)
+		this.grabAllProductData = this.grabAllProductData.bind(this);
 	}
 
 	componentDidMount() {
 		// this.getAllData();
-    this.grabAllProductData(this.state.productID);
-  }
+		this.grabAllProductData(this.state.productID);
+	}
 
-  grabAllProductData(ID) {
-
+	grabAllProductData(ID) {
 		let getProduct = `http://3.21.164.220/products/${ID}`;
 		let getProductStyles = `http://3.21.164.220/products/${ID}/styles`;
 		let getProductQuestions = `http://3.21.164.220/qa/questions?product_id=${ID}`;
