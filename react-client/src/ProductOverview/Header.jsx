@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { Grid, FormControl, TextField, InputAdornment, IconButton, Badge } from '@material-ui/core';
+import { grey } from '@material-ui/core/colors';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
@@ -8,9 +9,9 @@ function Header() {
   return (
     <div className="header-container">
       <div className="header">
-        <Row className="logo-text">
+        <Row className="header-text">
           <Col>
-            <h3><b><em> Logo | App Name </em></b></h3>
+            <h3><b><em> KRILLA THREADS </em></b></h3>
           </Col>
           <Col xs="auto">
             <TextField
@@ -40,7 +41,7 @@ function Header() {
       </div>
 
       {/* Site Announcements */}
-      <div className="announcements">
+      <div className="header-announcements">
         <p><em>SITE-WIDE ANNOUNCEMENT MESSAGE!</em> - SALE / DISCOUNT <b>OFFER</b> - NEW PRODUCT HIGHLIGHT</p>
       </div>
     </div>
