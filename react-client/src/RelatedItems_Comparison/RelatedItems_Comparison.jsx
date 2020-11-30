@@ -20,16 +20,17 @@ export default class RelatedItems_Comparison extends Component {
       <div>
         <ComparisonItemsList
         comparedItems = {this.state.ComparisonItems.dummyData}
+        productData={this.props.productData}
         currentProduct={this.props.currentProduct}
         />
 
-        {/* <RelatedItemsList
+        <RelatedItemsList
         getRelatedItems={this.props.getRelatedItems}
         relatedProducts={this.props.relatedProducts}
         currentProduct={this.props.currentProduct}
         getProduct={this.props.getProduct}
         grabAllProductData={this.props.grabAllProductData}
-        /> */}
+        />
       </div>
     )
   }

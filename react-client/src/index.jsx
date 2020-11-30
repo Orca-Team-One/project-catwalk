@@ -96,23 +96,20 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {/* <Header />
+        <Header />
         <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
-<<<<<<< HEAD
-          productStyles={this.state.productStyles}/> */}
-=======
           productStyles={this.state.productStyles}
 					productReviews={this.state.productReviews}/>
->>>>>>> main
         <RelatedItems_Comparison
-          currentProduct={this.state.productID}
+					currentProduct={this.state.productID}
+					productData={this.state.productData}
           getProduct={this.getProduct}
           relatedProducts={this.state.relatedProducts}
           grabAllProductData={this.grabAllProductData}
         />
-        {/* {this.state.productQuestions.length ?
+        { this.state.productQuestions.length ?
         <QAComponent productQuestions={this.state.productQuestions} productName={this.state.productData.name}/> :
         <div>
           Questions loading
@@ -120,7 +117,7 @@ export default class App extends Component {
         <RatingsAndReviews
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
-        /> */}
+        />
 
       </div>
     )
