@@ -17,6 +17,7 @@ export default class RelatedItems_Comparison extends Component {
         <ComparisonItemsList
         productData={this.props.productData}
         currentProduct={this.props.currentProduct}
+        productStyles = {this.props.productStyles}
         />
 
         <RelatedItemsList

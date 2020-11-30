@@ -12,22 +12,22 @@ export default class ComparisonItemsList extends Component {
 
     this.state = {
       outfitArray: [],
-      outfitPhotoArray: []
+      outfitPhotoArray: [],
+      isRendered : false
     }
 
     this.onAddClickHandler = this.onAddClickHandler.bind(this);
   }
 
 
-
   onAddClickHandler() {
-    console.log('CURRENT PRODUCT', this.props.productData)
-    axios.get(`http://3.21.164.220/products/${this.props.productData.id}/styles`).then((response) => {
       this.setState({
-        outfitPhotoArray: this.state.outfitPhotoArray.concat(response.data.results[0].photos[0].thumbnail_url),
-        outfitArray: this.state.outfitArray.concat(this.props.productData)
+        outfitPhotoArray: this.state.outfitPhotoArray.concat(this.props.productStyles[0].photos[0].thumbnail_url),
+        outfitArray: this.state.outfitArray.concat(this.props.productData),
+        isRendered : true,
       })
-    })
+
+
 
   }
 
@@ -59,10 +59,13 @@ export default class ComparisonItemsList extends Component {
           </Card>
         </>
       )
-    } else {
+    } else if (this.state.isRendered === false ){
+      return (
+        <div>Loading... </div>
+      )
+    } else if (this.state.isRendered === true) {
     return (
-        <>
-        <h1>Your Outfit..</h1>
+
         <Slider {...settings}>
           <Card onClick={() => this.onAddClickHandler()}> <a href="#" class="stretched-link">+ Add this item to your outfit! </a></Card>
           {
@@ -73,7 +76,6 @@ export default class ComparisonItemsList extends Component {
             ))
           }
         </Slider>
-        </>
     )
     }
   }

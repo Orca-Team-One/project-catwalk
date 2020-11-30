@@ -104,6 +104,7 @@ export default class App extends Component {
 					productReviews={this.state.productReviews}/>
         <RelatedItems_Comparison
 					currentProduct={this.state.productID}
+					productStyles={this.state.productStyles}
 					productData={this.state.productData}
           getProduct={this.getProduct}
           relatedProducts={this.state.relatedProducts}
