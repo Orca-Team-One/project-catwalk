@@ -18,16 +18,15 @@ export default class ComparisonItemsList extends Component {
     this.onAddClickHandler = this.onAddClickHandler.bind(this);
   }
 
+
+
   onAddClickHandler() {
-    this.setState({
-      outfitArray: this.state.outfitArray.concat(this.props.productData)
-    })
-
-    axios.get(`http://3.21.164.220/products/${this.props.currentProduct}/styles`).then((response) => {
+    console.log('CURRENT PRODUCT', this.props.productData)
+    axios.get(`http://3.21.164.220/products/${this.props.productData.id}/styles`).then((response) => {
       this.setState({
-        outfitPhotoArray: this.state.outfitPhotoArray.concat(response.data.results[0].photos[0].thumbnail_url)
+        outfitPhotoArray: this.state.outfitPhotoArray.concat(response.data.results[0].photos[0].thumbnail_url),
+        outfitArray: this.state.outfitArray.concat(this.props.productData)
       })
-
     })
 
   }
@@ -63,17 +62,19 @@ export default class ComparisonItemsList extends Component {
       )
     } else {
     return (
-      <div>
+        <>
+        <h1>Your Outfit..</h1>
         <Slider {...settings}>
           <Card onClick={() => this.onAddClickHandler()}> <a href="#" class="stretched-link">+ Add this item to your outfit! </a></Card>
           {
             this.state.outfitArray.map((outfitItem, index) => (
-              <ComparisonItemsEntry key = {index} outfitEntries = {this.state.outfitArray[index]}
+              <ComparisonItemsEntry key = {index}
+              outfitEntries = {this.state.outfitArray[index]}
               outfitPhotoEntries = {this.state.outfitPhotoArray[index]}/>
             ))
           }
         </Slider>
-      </div>
+        </>
     )
     }
   }

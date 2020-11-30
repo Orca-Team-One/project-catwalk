@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 import ComparisonItemsList from './ComparisonItemsList.jsx'
 import RelatedItemsList from './RelatedItemsList.jsx'
-import dummyData from './dummyData.js'
 import axios from 'axios';
 
 export default class RelatedItems_Comparison extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      RelatedItems: dummyData,
-      ComparisonItems: dummyData
-    }
+
   }
 
 
@@ -19,7 +15,6 @@ export default class RelatedItems_Comparison extends Component {
     return (
       <div>
         <ComparisonItemsList
-        comparedItems = {this.state.ComparisonItems.dummyData}
         productData={this.props.productData}
         currentProduct={this.props.currentProduct}
         />
