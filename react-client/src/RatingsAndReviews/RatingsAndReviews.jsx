@@ -16,7 +16,7 @@ export class RatingsAndReviews extends Component {
         super(props)
         this.state = {
             reviewstoRender: 2,
-            sortingPreference: 'Relevance',
+            sortingPreference: '',
             sortedReviews: [],
         }
         this.updateReviewList = this.updateReviewList.bind(this);
@@ -44,12 +44,22 @@ export class RatingsAndReviews extends Component {
    
 
     sortPreferences() {
+        
         var results;
-        // add axios.then to handle sorting of relevance when API call comes in
+        
+    
         if (this.state.sortingPreference === 'Relevance') {
-            // combined date and helfulness score
-
+            // combined date and helpfulness score
+            results = this.props.productReviews.results.sort((a,b) => {
+                return (Date.parse(b.date) + b.helpfulness) - (Date.parse(a.date) + a.helpfulness)
+               })
        } 
+       if(this.state.sortingPreference === 'Newest') {
+           results = this.props.productReviews.results.sort((a,b) => {
+            return Date.parse(b.date) - Date.parse(a.date)
+           })
+            //results = this.props.productReviews.results.sort()
+       }
        if (this.state.sortingPreference === 'Helpfulness') {
         results = this.props.productReviews.results.sort((a, b) => {
             return b.helpfulness - a.helpfulness
@@ -76,6 +86,7 @@ export class RatingsAndReviews extends Component {
     }
 
     render() {
+
         if(Object.keys(this.props.productReviews).length === 0  || Object.keys(this.props.reviewMetadata).length === 0) { 
             return (
                 <div>
@@ -94,7 +105,9 @@ export class RatingsAndReviews extends Component {
                         paddingTop: "0px"
                         }}>
                             <b>
-                            {'3.5'}
+                                {'3.5'}
+                            {/* {Math.floor(this.props.productReviews.results.reduce((a,b) => (
+                                a.rating + b.rating)) / this.props.productReviews.results.length)} */}
                             </b>
                             </div>
                             <div class="col-2" style={{
@@ -105,6 +118,8 @@ export class RatingsAndReviews extends Component {
                             name="simple-controlled"
                             size="small"
                             value={3.5}
+                            // value={Object.values(this.props.reviewMetadata.ratings).reduce((a,b) => (
+                            //     a + b)) / Object.values(this.props.reviewMetadata.ratings).length}
                             defaultValue={0}
                             precision={0.25}
                             readOnly/>
