@@ -11,7 +11,6 @@ export default class ComparisonItemsEntry extends Component {
 
 
   render() {
-    console.log('PHOTOS', this.props.outfitPhotoEntries)
     return (
       <Card style={{width: '9rem'}} ><a href="#" className="stretched-link"
       >

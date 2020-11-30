@@ -50,15 +50,14 @@ export default class ComparisonItemsList extends Component {
     }
     if (this.state.outfitArray.length === 0) {
       return (
-
+        <>
+          <h1>Your Outfit...</h1>
           <Card style={styles.card} onClick={() => this.onAddClickHandler()}>
-            {/* <Card.Img style={styles.cardImage} varient = "top" src ="https://images-na.ssl-images-amazon.com/images/I/51WSi9ClhgL._AC_SL1303_.jpg" alt="default orca img">
-            </Card.Img> */}
             <a href="#" class="stretched-link">
               + Add this item to your outfit!
             </a>
           </Card>
-
+        </>
       )
     } else {
     return (
