@@ -90,7 +90,8 @@ export default class App extends Component {
 					});
 				})
 			);
-	}
+  }
+
 
 	render() {
 		return (
@@ -104,9 +105,11 @@ export default class App extends Component {
 				/>
 				<RelatedItems_Comparison
 					currentProduct={this.state.productID}
-					getProduct={this.getProduct}
-					relatedProducts={this.state.relatedProducts}
-					grabAllProductData={this.grabAllProductData}
+					productStyles={this.state.productStyles}
+					productData={this.state.productData}
+          getProduct={this.getProduct}
+          relatedProducts={this.state.relatedProducts}
+          grabAllProductData={this.grabAllProductData}
 				/>
 				{this.state.productQuestions.length ? (
 					<QAComponent

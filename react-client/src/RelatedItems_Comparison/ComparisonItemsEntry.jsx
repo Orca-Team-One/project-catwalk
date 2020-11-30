@@ -1,18 +1,32 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+import { Card } from 'react-bootstrap';
 
 export default class ComparisonItemsEntry extends Component {
+  constructor(props){
+    super(props);
+
+  }
+
+
 
   render() {
     return (
-      <div class="card comparison_card alignRelatedCards"><a href="#" class="stretched-link">
-        <img src="https://picsum.photos/id/237/200/300" alt="Denim Jeans" ></img>
-        <p>{this.props.comparedEntries.name}</p>
-        <p>{this.props.comparedEntries.category}</p>
-        <p class="card_price">${this.props.comparedEntries.default_price}</p>
-        {/* will need to create seperate component to calculate ratings  */}
+      <Card style={{width: '9rem'}} ><a href="#" className="stretched-link"
+      >
+        <Card.Img varient = "top" src= {`${this.props.outfitPhotoEntries}`} alt="Denim Jeans"></Card.Img>
+        <Card.Body>
+        <Card.Title>{this.props.outfitEntries.name}</Card.Title>
+        <Card.Text>{this.props.outfitEntries.category}</Card.Text>
+        <p class="card_price">${this.props.outfitEntries.default_price}</p>
         <p>Ratings</p>
+        </Card.Body>
         </a>
-      </div>
-    )
+      </Card>
+  )
+
+
+
+
   }
 }
