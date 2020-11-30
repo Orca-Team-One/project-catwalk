@@ -5,16 +5,19 @@ function ProductDescription({ productData }) {
   return (
     <div className="productDescription">
       <Row>
-        <Col sm={8}>
+        <Col sm={1}></Col>
+        <Col sm={6}>
           <h5><b>{productData.slogan}</b></h5>
           <p>{productData.description}</p>
         </Col>
         <Col sm={4}>
-          <h5><b>Product Features</b></h5>
+          <p className="product-features-title"><b>Product Features</b></p>
           {productData.features.map((feature, index) => {
             return (
               <div key={index}>
-                <p>{feature.feature} | {feature.value}</p>
+                <p className="product-features-list">
+                  <i className="fa fa-check"></i> {''} {feature.feature}: {feature.value}
+                </p>
               </div>
             )
           })}
