@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack -d --watch",
+    "build:dev": "webpack -p --watch",
     "start": "node server/index.js"
   },
   "author": "Team Orcas",
