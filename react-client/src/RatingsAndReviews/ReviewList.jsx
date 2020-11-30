@@ -18,7 +18,7 @@ if(productdata.length === 0) {
         return (
             <div>
                 {productdata.slice(0, reviewstoRender).map((review) => (
-                    <ReviewItem review = {review}/>
+                    <ReviewItem  review = {review}/>
                 ))
             }
             {/* only show this component if more than 2 reviews...conditional rendering?*/}

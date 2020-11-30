@@ -55,7 +55,7 @@ const ReviewItem = ({review}) => {
                 <div class="col" style= {{
                      borderBottom: "1px solid",
                 }}>
-                <RatingHelpfulness review = {review}/>
+                <RatingHelpfulness review={review} reviewHelpfulness = {review.helpfulness}/>
                 </div>  
                 </div>
     </>
