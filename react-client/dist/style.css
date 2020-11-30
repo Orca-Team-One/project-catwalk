@@ -187,3 +187,12 @@
 .helpfulButton:hover {
 	background-color: #f8f8ff;
 }
+
+/*Master styling*/
+
+.masterContainer {
+
+padding-left: 50px;
+padding-bottom: 50px;
+
+}

@@ -41,6 +41,7 @@ export class RatingsAndReviews extends Component {
            return review.rating === reviewRating
         })})
     }
+   
 
     sortPreferences() {
         var results;
@@ -84,15 +85,12 @@ export class RatingsAndReviews extends Component {
         } else {
         return (
             <div id="ratingsReviewsComponent">
-                <div class="row" style={{
-                    paddingLeft:"100px"
-                }}>
+                <div class="row">
                 Ratings {'&'} Reviews
                 </div>
                     <div class="row">
                         <div class="col-1.5" style={{
                         fontSize:"50px",
-                        paddingLeft: "100px",
                         paddingTop: "0px"
                         }}>
                             <b>
@@ -118,7 +116,6 @@ export class RatingsAndReviews extends Component {
                         <ReviewsSorting handleSortingChange = {this.handleSortingChange} sortingPreference = {this.state.sortingPreference}/>
                         </div>
                             <div class="col-4" style={{
-                                paddingLeft: "100px",
                                 fontSize: "11px"
                             }}>
                             {`100% of reviews recommend this product`}

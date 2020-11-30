@@ -93,10 +93,12 @@ export default class App extends Component {
 			);
   }
 
+  
   render() {
     return (
       <div>
         <Header />
+		<div className="masterContainer">
         <ProductView
           productID={this.state.productID}
           productData={this.state.productData}
@@ -117,7 +119,7 @@ export default class App extends Component {
         productReviews = {this.state.productReviews}
         reviewMetadata = {this.state.reviewMetadata}
         />
-
+		</div>
       </div>
     )
   }

@@ -3,7 +3,25 @@ import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 
-const RatingHelpfulness = ({review}) => {
+class RatingHelpfulness extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            ratingHelpfulness: 0
+        }
+        this.handleHelpfulnessClick = this.handleHelpfulnessClick.bind(this)
+    }
+
+handleHelpfulnessClick() {
+    if (!this.state.ratingHelpfulness) {
+    this.setState({ratingHelpfulness: this.props.reviewHelpfulness + 1})
+    } else {
+        return
+    }
+}
+
+    render() {
         return (
             <div>
                 <button style = {{
@@ -15,8 +33,10 @@ const RatingHelpfulness = ({review}) => {
                     fontsize: "80%",
                     paddingleft: "5px",
                     paddingright: "5px"
+                }} onClick={()=> {
+                    this.handleHelpfulnessClick()
                 }}>
-                    Helpful? Yes ({review.helpfulness})
+                    Helpful? Yes ({this.state.ratingHelpfulness || this.props.reviewHelpfulness})
                 </button>
                 {' | '}
                 <button style = {{
@@ -34,5 +54,6 @@ const RatingHelpfulness = ({review}) => {
                 </button>
             </div>
         )
+            }
 }
 export default RatingHelpfulness

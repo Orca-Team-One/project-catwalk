@@ -11,9 +11,7 @@ const Breakdown = ({ratingdata, handleStarRatingClick}) =>  {
     const ratings = [5, 4, 3, 2, 1]
     const ratingTotal = Object.values(ratingdata.ratings).reduce((a, b) => a + b)
         return (
-            <div style={{
-                paddingLeft: "85px"
-            }}>
+            <div>
             {ratings.map((rating)=> (
                 <StarProgress handleStarRatingClick={handleStarRatingClick} ratingTotal={ratingTotal} rating = {rating} ratingdata = {ratingdata}/>
             ))}
