@@ -1,7 +1,7 @@
 .announcements {
 	font-size: 12px;
-  text-align: center;
-  color: rgb(62, 62, 62);
+	text-align: center;
+	color: rgb(62, 62, 62);
 	background-color: rgb(255, 255, 255);
 }
 
@@ -10,38 +10,38 @@
 }
 
 .logo-text {
-  padding-top: 10px;
-  padding-left: 15px;
+	padding-top: 10px;
+	padding-left: 15px;
 	color: rgb(101, 101, 101);
 }
 
 .ratings-reviews a {
-  font-size: 12px;
-  text-decoration: underline;
-  color: rgb(55, 55, 55);
+	font-size: 12px;
+	text-decoration: underline;
+	color: rgb(55, 55, 55);
 }
 
 .search-icon {
-  color: rgb(213, 213, 213);
+	color: rgb(213, 213, 213);
 }
 
 .shopping-cart-icon {
-  color: rgb(213, 213, 213);
+	color: rgb(213, 213, 213);
 }
 
 .style-icons {
-  border-style: solid;
-  border-width: 2px;
+	border-style: solid;
+	border-width: 2px;
 }
 
 .style-selected-text {
-  font-size: 14px;
-  color: rgb(42, 42, 42);
+	font-size: 14px;
+	color: rgb(42, 42, 42);
 }
 
 .thumbnail-image {
-  border-style: solid;
-  border-width: 1px;
+	border-style: solid;
+	border-width: 1px;
 }
 
 /* RelatedItems And Comparison Styling */
@@ -78,9 +78,10 @@
 	box-sizing: border-box;
 	font-size: 14px;
 	line-height: 20px;
-	max-width: 900px;
+	max-width: 700px;
 	padding-top: 15px;
 	padding-bottom: 25px;
+	word-break: break-all;
 }
 
 .container {
@@ -89,7 +90,7 @@
 	font-size: 14px;
 	line-height: 20px;
 	/* box-sizing: border-box; */
-	max-width: 550px;
+	max-width: 700px;
 }
 
 .askWidgetHeader {
@@ -116,7 +117,7 @@
 	margin-top: 6px !important;
 	margin: 0;
 	overflow: visible;
-	max-width: 550px;
+	max-width: 700px;
 }
 
 .QandSection {
