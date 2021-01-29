@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+- https://github.com/teamName/repo
+- https://github.com/teamName/repo
+- https://github.com/teamName/repo
+- https://github.com/teamName/repo
 
 ## Table of Contents
 
@@ -35,4 +35,18 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
+```
+
+### Setup for Running Locally on Port 3000
+
+From within the root directory:
+
+```sh
+npm run build:dev
+```
+
+In a separate terminal, run the server:
+
+```sh
+npm run start
 ```
