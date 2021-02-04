@@ -92,38 +92,38 @@ export default class App extends Component {
 			);
 	}
 
-	render() {
-		console.log('questions length', this.state.productQuestions.length);
+  render() {
 		return (
 			<div>
 				<Header />
-				<ProductView
-					productID={this.state.productID}
-					productData={this.state.productData}
-					productStyles={this.state.productStyles}
-					productReviews={this.state.productReviews}
-				/>
-				<RelatedItems_Comparison
-					currentProduct={this.state.productID}
-					productStyles={this.state.productStyles}
-					productData={this.state.productData}
-					getProduct={this.getProduct}
-					relatedProducts={this.state.relatedProducts}
-					grabAllProductData={this.grabAllProductData}
-				/>
-				{this.state.productQuestions.length ? (
-					<QAComponent
-						productQuestions={this.state.productQuestions}
-						productName={this.state.productData.name}
+				<div className="masterContainer">
+					<ProductView
 						productID={this.state.productID}
+						productData={this.state.productData}
+						productStyles={this.state.productStyles}
+						productReviews={this.state.productReviews}/>
+					<RelatedItems_Comparison
+						currentProduct={this.state.productID}
+						productStyles={this.state.productStyles}
+						productData={this.state.productData}
+						getProduct={this.getProduct}
+						relatedProducts={this.state.relatedProducts}
+						grabAllProductData={this.grabAllProductData}
+						/>
+					{this.state.productQuestions.length ? (
+						<QAComponent
+							productQuestions={this.state.productQuestions}
+							productName={this.state.productData.name}
+							productID={this.state.productID}
+						/>
+						) : (
+						<div>Questions loading</div>
+					)}
+					<RatingsAndReviews
+						productReviews={this.state.productReviews}
+						reviewMetadata={this.state.reviewMetadata}
 					/>
-				) : (
-					<div>Questions loading</div>
-				)}
-				<RatingsAndReviews
-					productReviews={this.state.productReviews}
-					reviewMetadata={this.state.reviewMetadata}
-				/>
+				</div>
 			</div>
 		);
 	}
